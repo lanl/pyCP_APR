@@ -11,7 +11,7 @@
 
 <div align="center", style="font-size: 50px">
 
-### [:information_source: Documentation](#URL) &emsp; [:orange_book: Example Notebooks](examples/) &emsp; [:bar_chart: Datasets](data/tensors) &emsp; [:page_facing_up: Paper](https://ieeexplore.ieee.org/abstract/document/9280524)
+### [:information_source: Documentation](https://lanl.github.io/pyCP_APR/) &emsp; [:orange_book: Example Notebooks](examples/) &emsp; [:bar_chart: Datasets](data/tensors) &emsp; [:page_facing_up: Paper](https://ieeexplore.ieee.org/abstract/document/9280524)
 
 </div>
 
