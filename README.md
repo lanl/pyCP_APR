@@ -143,7 +143,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 ## Developer Test Suite
-Developer test suits are located under [```tests/```](tests/) directory. Tests can be ran from this folder using ```python -m unittest *```.
+Developer test suites are located under [```tests/```](tests/) directory. Tests can be ran from this folder using ```python -m unittest *```.
 
 
 ## References
