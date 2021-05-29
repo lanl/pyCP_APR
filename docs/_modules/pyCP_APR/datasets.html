@@ -339,7 +339,7 @@
     <span class="k">if</span> <span class="n">download</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Downloading the dataset:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
-        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/lanl/pyCP_APR/raw/main/data/tensors/&quot;</span> <span class="o">+</span> <span class="n">name</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com//lanl/pyCP_APR/main/data/tensors/&quot;</span> <span class="o">+</span> <span class="n">name</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="nb">open</span><span class="p">(</span><span class="n">files_dirname</span> <span class="o">+</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
         <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">files_dirname</span><span class="p">)</span>

@@ -88,7 +88,7 @@ How to Cite pyCP_APR?
       year = {2021},
       publisher = {GitHub},
       journal = {GitHub repository},
-      doi = {10.5281/zenodo.xxxxxx},
+      doi = {10.5281/zenodo.4840598},
       howpublished = {\url{https://github.com/lanl/pyCP_APR}}
     }
 

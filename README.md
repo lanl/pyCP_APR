@@ -2,7 +2,7 @@
 
 <div align="center", style="font-size: 50px">
 
-[![Build Status](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg) [![Python Version](https://img.shields.io/badge/python-v3.8.5-blue)](https://img.shields.io/badge/python-v3.8.5-blue) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4722448-blue.svg)](https://doi.org/10.5281/zenodo.4722448)
+[![Build Status](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg) [![Python Version](https://img.shields.io/badge/python-v3.8.5-blue)](https://img.shields.io/badge/python-v3.8.5-blue) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4840598-blue.svg)](https://doi.org/10.5281/zenodo.4840598)
 
 </div>
 
@@ -82,7 +82,7 @@ y_score = cp_apr.predict_scores(coords=coords_test, values=nnz_test)
   year = {2021},
   publisher = {GitHub},
   journal = {GitHub repository},
-  doi = {10.5281/zenodo.xxxxxx},
+  doi = {10.5281/zenodo.4840598},
   howpublished = {\url{https://github.com/lanl/pyCP_APR}}
 }
 
@@ -155,4 +155,6 @@ Developer test suits are located under [```tests/```](tests/) directory. Tests c
 
 [4] Chi, E.C. and Kolda, T.G., 2012. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4), pp.1272-1299.
 
-[5] M. E. Eren, J. S. Moore and B. S. Alexandrov, "Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization," 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.
+[5] M. Turcotte, A. Kent and C. Hash, “Unified Host and Network Data Set”, in Data Science for Cyber-Security. November 2018, 1-22.
+
+[6] M. E. Eren, J. S. Moore and B. S. Alexandrov, "Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization," 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.
