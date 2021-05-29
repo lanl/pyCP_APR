@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+<html lang="Python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyCP_APR.applications.tensor_anomaly_detection_v2 &#8212; pyCP_APR 1.0.0 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CP_APR.html">
+   pyCP_APR.CP_APR API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../datasets.html">
+   pyCP_APR.datasets API
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../modules.html">
+   pyCP_APR Package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../pyCP_APR.html">
+     pyCP_APR package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../pyCP_APR.applications.html">
+       pyCP_APR.applications package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../pyCP_APR.numpy_cp.html">
+       pyCP_APR.numpy_cp package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../pyCP_APR.torch_cp.html">
+       pyCP_APR.torch_cp package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Source code for pyCP_APR.applications.tensor_anomaly_detection_v2</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">tensor_anomaly_detection_v2.py performs p-value scoring over the tensor decomposition, i.e.</span>
+<span class="sd">the KRUSKAL tensor M. The calculated p-values are used to detect anomalies.\n</span>
+<span class="sd">This method was introduced by Eren et al. in [1].\n</span>
+<span class="sd">The second version performs faster calculation of the inner products of the</span>
+<span class="sd">components to extract the lambdas.\n</span>
+<span class="sd">This version also provides dimension fusion methods for lambda calculations.</span>
+
+<span class="sd">References</span>
+<span class="sd">========================================</span>
+<span class="sd">[1] M. E. Eren, J. S. Moore and B. S. Alexandro, &quot;Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization,&quot; 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.</span>
+
+<span class="sd">@author: Juston S. Moore, Maksim Ekin Eren</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="n">ktensor_utils</span> <span class="kn">import</span> <span class="nn">get_X_hat</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="n">ktensor_utils</span> <span class="kn">import</span> <span class="nn">get_X_size</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy_indexed</span> <span class="k">as</span> <span class="nn">npi</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">logsumexp</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">combine_pvalues</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span><span class="p">,</span> <span class="n">auc</span><span class="p">,</span> <span class="n">precision_recall_curve</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<div class="viewcode-block" id="PoissonTensorAnomaly_v2"><a class="viewcode-back" href="../../../pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2">[docs]</a><span class="k">class</span> <span class="nc">PoissonTensorAnomaly_v2</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">indicies</span><span class="p">,</span> <span class="n">tensor_weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initilize the anomaly detection class.\n</span>
+<span class="sd">        Calculates the lambdas, and obtains tensor information.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        components : dict</span>
+<span class="sd">            KRUSKAL Tensor M in dict format.</span>
+<span class="sd">        indicies : array</span>
+<span class="sd">            Non-zero coordinates.</span>
+<span class="sd">        tensor_weights : list, optional</span>
+<span class="sd">            Weight of each lambda for the tensors.\n</span>
+<span class="sd">            Used only when ensemble of tensors used in lambda calculations.</span>
+<span class="sd">            The default is [1].</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">temp_lamb</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="n">tw</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tensor_weights</span><span class="p">):</span>
+            <span class="n">l</span> <span class="o">=</span> <span class="n">get_X_hat</span><span class="p">(</span><span class="n">components</span><span class="p">[</span><span class="n">ii</span><span class="p">],</span> <span class="n">indicies</span><span class="p">)</span>
+            <span class="n">temp_lamb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">l</span> <span class="o">*</span> <span class="n">tensor_weights</span><span class="p">[</span><span class="n">ii</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">temp_lamb</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indices</span> <span class="o">=</span> <span class="n">indicies</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tensor_shape</span> <span class="o">=</span> <span class="n">get_X_size</span><span class="p">(</span><span class="n">components</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_scores</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link_prediction_scores</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+<div class="viewcode-block" id="PoissonTensorAnomaly_v2.get_lambdas"><a class="viewcode-back" href="../../../pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_lambdas">[docs]</a>    <span class="k">def</span> <span class="nf">get_lambdas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the lambda values that are calculated.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lambdas : array</span>
+<span class="sd">            Array of lambda values for the indices.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span></div>
+
+<div class="viewcode-block" id="PoissonTensorAnomaly_v2.get_link_prediction_scores"><a class="viewcode-back" href="../../../pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_link_prediction_scores">[docs]</a>    <span class="k">def</span> <span class="nf">get_link_prediction_scores</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the prediction scores given lambdas and the true labels y.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        y : list</span>
+<span class="sd">            True labels.\n</span>
+<span class="sd">            Label of each index.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        score : dict</span>
+<span class="sd">            Prediction scores. {&quot;roc_auc&quot;: float, &quot;pr_auc&quot;: float}</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">roc_auc</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span><span class="p">)</span>
+        <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">precision_recall_curve</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">pr_auc</span> <span class="o">=</span>  <span class="n">auc</span><span class="p">(</span><span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link_prediction_scores</span><span class="p">[</span><span class="s1">&#39;roc_auc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">roc_auc</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link_prediction_scores</span><span class="p">[</span><span class="s1">&#39;pr_auc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pr_auc</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">link_prediction_scores</span></div>
+
+<div class="viewcode-block" id="PoissonTensorAnomaly_v2.get_dimension_fusion_scores"><a class="viewcode-back" href="../../../pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_dimension_fusion_scores">[docs]</a>    <span class="k">def</span> <span class="nf">get_dimension_fusion_scores</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis_map</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculates the prediction scores given fuzed lambdas and the true labels y.\n</span>
+<span class="sd">        Fusion is performed for the dimension in axis_map.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        axis_map : list</span>
+<span class="sd">            Which dimensions to fuse.</span>
+<span class="sd">        y_true : list</span>
+<span class="sd">            List of true labels for each entry.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        df : Pandas DataFrame</span>
+<span class="sd">            Fusion scores.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">log_pval</span> <span class="o">=</span> <span class="n">logsumexp</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span><span class="p">)],</span> <span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambdas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="s1">&#39;harmonic_allLinks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="s1">&#39;harmonic_observedLinks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="s1">&#39;fisher_allLinks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="s1">&#39;fisher_observedLinks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([</span>
+        <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="p">{</span>
+            <span class="s1">&#39;y_true&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span>
+                <span class="p">(</span><span class="s1">&#39;keys&#39;</span><span class="p">,</span> <span class="s1">&#39;labels&#39;</span><span class="p">),</span>
+                <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">npi</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">[:,</span> <span class="n">axes</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">y_true</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">))</span>
+            <span class="p">)),</span>
+            <span class="s1">&#39;y_pred&#39;</span><span class="p">:</span> <span class="n">OrderedDict</span><span class="p">([</span>
+                <span class="p">(</span><span class="s1">&#39;harmonic_allLinks&#39;</span><span class="p">,</span>      <span class="bp">self</span><span class="o">.</span><span class="n">__fuse_pval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indices</span><span class="p">,</span> <span class="n">log_pval</span><span class="p">,</span> <span class="n">tensor_shape</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">tensor_shape</span><span class="p">,</span> <span class="n">fuse_to_axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">fuser</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__log_harmonic_mean</span><span class="p">,</span> <span class="n">set_N</span><span class="o">=</span><span class="kc">True</span><span class="p">)),</span>
+                <span class="c1">#(&#39;harmonic_observedLinks&#39;, self.__fuse_pval(self.indices, log_pval, tensor_shape=self.tensor_shape, fuse_to_axes=axes, fuser=self.__log_harmonic_mean, set_N=False)),</span>
+                <span class="c1">#(&#39;fisher_allLinks&#39;,        self.__fuse_pval(self.indices, log_pval, tensor_shape=self.tensor_shape, fuse_to_axes=axes, fuser=self.__fisher_fusion, set_N=True)),</span>
+                <span class="c1">#(&#39;fisher_observedLinks&#39;,   self.__fuse_pval(self.indices, log_pval, tensor_shape=self.tensor_shape, fuse_to_axes=axes, fuser=self.__fisher_fusion, set_N=False))</span>
+            <span class="p">])</span>
+        <span class="p">})</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">axes</span> <span class="ow">in</span> <span class="n">axis_map</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">])</span>
+
+        <span class="n">y_true</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">fusion</span> <span class="ow">in</span> <span class="n">axis_map</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">keys_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">fusion</span><span class="p">][</span><span class="s1">&#39;y_true&#39;</span><span class="p">][</span><span class="s1">&#39;keys&#39;</span><span class="p">])</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">fusion</span><span class="p">][</span><span class="s1">&#39;y_true&#39;</span><span class="p">][</span><span class="s1">&#39;keys&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">keys_0</span><span class="p">)</span>
+            <span class="n">labels_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">fusion</span><span class="p">][</span><span class="s1">&#39;y_true&#39;</span><span class="p">][</span><span class="s1">&#39;labels&#39;</span><span class="p">])</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="n">fusion</span><span class="p">][</span><span class="s1">&#39;y_true&#39;</span><span class="p">][</span><span class="s1">&#39;labels&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="n">labels_0</span><span class="p">)</span>
+
+            <span class="n">y_true</span><span class="p">[</span><span class="n">fusion</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels_0</span>
+
+        <span class="n">performance</span> <span class="o">=</span> <span class="p">{}</span>
+
+        <span class="k">for</span> <span class="n">fusion</span><span class="p">,</span> <span class="n">v2</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+            <span class="k">for</span> <span class="n">method</span><span class="p">,</span> <span class="n">y_pred</span> <span class="ow">in</span> <span class="n">v2</span><span class="p">[</span><span class="s1">&#39;y_pred&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># Remove any scores of -inf</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isneginf</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+                <span class="n">y_pred</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">y_pred</span><span class="p">[</span><span class="o">~</span><span class="n">mask</span><span class="p">])</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mf">10.</span>
+
+                <span class="n">performance</span><span class="p">[(</span><span class="n">fusion</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="s1">&#39;ROC-AUC&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">[</span><span class="n">fusion</span><span class="p">],</span> <span class="o">-</span><span class="n">y_pred</span><span class="p">)</span>
+                <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">precision_recall_curve</span><span class="p">(</span><span class="n">y_true</span><span class="p">[</span><span class="n">fusion</span><span class="p">],</span> <span class="o">-</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">performance</span><span class="p">[(</span><span class="n">fusion</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="s1">&#39;PR-AUC&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">auc</span><span class="p">(</span><span class="n">recall</span><span class="p">,</span> <span class="n">precision</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">method</span><span class="p">)][</span><span class="nb">str</span><span class="p">(</span><span class="n">fusion</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">method</span><span class="p">)][</span><span class="nb">str</span><span class="p">(</span><span class="n">fusion</span><span class="p">)][</span><span class="s1">&#39;y_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fusion_preds</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">method</span><span class="p">)][</span><span class="nb">str</span><span class="p">(</span><span class="n">fusion</span><span class="p">)][</span><span class="s1">&#39;y_true&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_true</span><span class="p">[</span><span class="n">fusion</span><span class="p">]</span>
+
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+                <span class="nb">list</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">v</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">performance</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                    <span class="p">],</span>
+                    <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+                        <span class="s1">&#39;fusion&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;method&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;metric&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;score&#39;</span>
+                    <span class="p">]</span>
+            <span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">fusion_scores</span> <span class="o">=</span> <span class="n">df</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+
+    <span class="k">def</span> <span class="nf">__preproc_dec</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Wraps the log array into a function to be used in fusion.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        fn : function</span>
+<span class="sd">            Function to be wrapped.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        function</span>
+<span class="sd">            Wrapped function to be used during fusion.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">wrap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+            <span class="n">log_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">log_arr</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">axis</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="n">log_arr</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">1</span>
+                <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span>
+
+            <span class="k">if</span> <span class="n">N</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">N</span> <span class="o">=</span> <span class="n">log_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+
+            <span class="n">N_extra</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">log_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span>
+            <span class="k">assert</span> <span class="n">N_extra</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+
+            <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span> <span class="n">N_extra</span><span class="o">=</span><span class="n">N_extra</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">wrap</span>
+
+    <span class="nd">@__preproc_dec</span>
+    <span class="k">def</span> <span class="nf">__log_harmonic_mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_arr</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">N_extra</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fuses dimensions using Log of Harmonic Mean.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        log_arr : array</span>
+<span class="sd">            Log of lambdas.</span>
+<span class="sd">        axis : list</span>
+<span class="sd">            which dimensions to fuse.</span>
+<span class="sd">        N : int</span>
+<span class="sd">            Number of elements in current dimension.</span>
+<span class="sd">        N_extra : int</span>
+<span class="sd">            Number of elements in other dimensions.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        array</span>
+<span class="sd">            Harmonic mean fusion results.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">N_extra</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">sh</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">log_arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+            <span class="n">sh</span><span class="p">[</span><span class="n">axis</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">log_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">log_arr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">sh</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">N_extra</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="o">-</span> <span class="n">logsumexp</span><span class="p">(</span><span class="o">-</span><span class="n">log_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+
+    <span class="nd">@__preproc_dec</span>
+    <span class="k">def</span> <span class="nf">__fisher_fusion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">log_arr</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">N_extra</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fuses dimensions using Fisher Fusion.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        log_arr : array</span>
+<span class="sd">            Log of lambdas.</span>
+<span class="sd">        axis : list</span>
+<span class="sd">            which dimensions to fuse.</span>
+<span class="sd">        N : int</span>
+<span class="sd">            Number of elements in current dimension.</span>
+<span class="sd">        N_extra : int</span>
+<span class="sd">            Number of elements in other dimensions.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        array</span>
+<span class="sd">            Fisher fusion results.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">statistic</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">log_arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">chi2</span><span class="o">.</span><span class="n">logsf</span><span class="p">(</span><span class="n">statistic</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__fuse_pval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indices</span><span class="p">,</span> <span class="n">log_pval</span><span class="p">,</span> <span class="n">fuse_to_axes</span><span class="p">,</span> <span class="n">fuser</span><span class="p">,</span> <span class="n">set_N</span><span class="p">,</span> <span class="n">tensor_shape</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Perform p-value fusion given the indices and the log of p-values.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        indices : array</span>
+<span class="sd">            Array of non-zero indices.</span>
+<span class="sd">        log_pval : array</span>
+<span class="sd">            Log of p-values for the given indices.</span>
+<span class="sd">        fuse_to_axes : list</span>
+<span class="sd">            which modes to fuse.</span>
+<span class="sd">        fuser : function</span>
+<span class="sd">            Fusion function that is used.</span>
+<span class="sd">        set_N : bool</span>
+<span class="sd">            If true, calculates fusion for all links. Otherwise, calculates only for the observed links.</span>
+<span class="sd">        tensor_shape : array</span>
+<span class="sd">            Shape of the tensor X, i.e. size of each mode.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        array</span>
+<span class="sd">            p-value fusion of the dimensions.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">set_N</span><span class="p">:</span>
+            <span class="n">raw_fuser</span> <span class="o">=</span> <span class="n">fuser</span>
+            <span class="n">tensor_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">tensor_shape</span><span class="p">)</span>
+            <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">tensor_shape</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">tensor_shape</span><span class="p">[</span><span class="n">fuse_to_axes</span><span class="p">])</span>
+            <span class="n">fuser</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">log_arr</span><span class="p">:</span> <span class="n">raw_fuser</span><span class="p">(</span><span class="n">log_arr</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">)</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">npi</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="n">keys</span><span class="o">=</span><span class="n">indices</span><span class="p">[:,</span> <span class="n">fuse_to_axes</span><span class="p">],</span> <span class="n">values</span><span class="o">=</span><span class="n">log_pval</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="n">fuser</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result</span><span class="p">])</span></div>
+</pre></div>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
+        
+            &copy; Copyright 2021, LANL.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

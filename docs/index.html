@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html lang="Python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to pyCP_APR&#39;s documentation! &#8212; pyCP_APR 1.0.0 documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyCP_APR.CP_APR API" href="CP_APR.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="#">
+      
+      
+      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CP_APR.html">
+   pyCP_APR.CP_APR API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   pyCP_APR.datasets API
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="modules.html">
+   pyCP_APR Package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="pyCP_APR.html">
+     pyCP_APR package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.applications.html">
+       pyCP_APR.applications package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.numpy_cp.html">
+       pyCP_APR.numpy_cp package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.torch_cp.html">
+       pyCP_APR.torch_cp package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/index.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Welcome to pyCP_APR's documentation!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prerequisites">
+   Prerequisites:
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-usage">
+   Example Usage
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-to-cite-pycp-apr">
+   How to Cite pyCP_APR?
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#authors">
+   Authors
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copyright-notice">
+   Copyright Notice
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#developer-test-suite">
+   Developer Test Suite
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-and-tables">
+   Indices and tables
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="welcome-to-pycp-apr-s-documentation">
+<h1>Welcome to pyCP_APR's documentation!<a class="headerlink" href="#welcome-to-pycp-apr-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p><strong>pyCP_APR</strong> is a Python library for tensor decomposition and anomaly detection. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in <span id="id1">[<a class="reference internal" href="#id11">ErenMooreAlexandrov20</a>]</span> using the Unified Host and Network Dataset <span id="id2">[<a class="reference internal" href="#id10">TKH18</a>]</span>. Our work follows the <a class="reference external" href="https://www.tensortoolbox.org/cp.html">MATLAB Tensor Toolbox</a>  <span id="id3">[<a class="reference internal" href="#id7">BK06</a>, <a class="reference internal" href="#id8">BK08</a>, <a class="reference internal" href="#id6">BK+15</a>]</span> implementation of CP-APR <span id="id4">[<a class="reference internal" href="#id9">CK12</a>]</span>.</p>
+</div>
+<div class="section" id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/lanl/pyCP_APR/tree/main/examples">Example Notebooks</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lanl/pyCP_APR/tree/main/data/tensors">Example Tensors</a></p></li>
+<li><p><a class="reference external" href="https://ieeexplore.ieee.org/abstract/document/9280524">Paper</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lanl/pyCP_APR">Repository</a></p></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Option 1: Install using pip</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/lanl/pyCP_APR.git
+</pre></div>
+</div>
+<p><strong>Option 2: Install from source</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/lanl/pyCP_APR.git
+<span class="nb">cd</span> pyCP_APR
+conda create --name pyCP_APR <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.8.5
+<span class="nb">source</span> activate pyCP_APR
+python setup.py install
+</pre></div>
+</div>
+</div>
+<div class="section" id="prerequisites">
+<h1>Prerequisites:<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/">Anaconda</a> (Optional)</p></li>
+<li><p>numpy&gt;=1.19.2</p></li>
+<li><p>numpy-indexed&gt;=0.3.5</p></li>
+<li><p>pandas&gt;=1.0.5</p></li>
+<li><p>matplotlib&gt;=3.3.4</p></li>
+<li><p>joblib&gt;=1.0.1</p></li>
+<li><p>scikit-learn&gt;=0.22.2</p></li>
+<li><p>scipy&gt;=1.5.3</p></li>
+<li><p>seaborn&gt;=0.11.1</p></li>
+<li><p>torch&gt;=1.6.0</p></li>
+<li><p>requests&gt;=2.25.1</p></li>
+</ul>
+</div>
+<div class="section" id="example-usage">
+<h1>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+<span class="kn">from</span> <span class="nn">pyCP_APR.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="c1"># Load a sample tensor</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TOY&quot;</span><span class="p">)</span>
+<span class="n">coords_train</span><span class="p">,</span> <span class="n">nnz_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_coords&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_count&#39;</span><span class="p">]</span>
+<span class="n">coords_test</span><span class="p">,</span> <span class="n">nnz_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_coords&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># CP-APR Object with PyTorch backend on a GPU. Transfer the latent factors back to Numpy arrays.</span>
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+                <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">method</span><span class="o">=</span><span class="s1">&#39;torch&#39;</span><span class="p">,</span>
+                <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span>
+                <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="c1"># Train a rank 45 tensor</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="c1"># Predict the scores over the trained tensor</span>
+<span class="n">y_score</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">predict_scores</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_test</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-to-cite-pycp-apr">
+<h1>How to Cite pyCP_APR?<a class="headerlink" href="#how-to-cite-pycp-apr" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">@MISC{Eren2021_pyCP_APR,</span>
+<span class="go">  author = {M. E. {Eren} and J. S. {Moore} and E. {Skau} and M. {Bhattarai} and G. {Chennupati} and B. S. {Alexandrov}},</span>
+<span class="go">  title = {pyCP_APR},</span>
+<span class="go">  year = {2021},</span>
+<span class="go">  publisher = {GitHub},</span>
+<span class="go">  journal = {GitHub repository},</span>
+<span class="go">  doi = {10.5281/zenodo.xxxxxx},</span>
+<span class="go">  howpublished = {\url{https://github.com/lanl/pyCP_APR}}</span>
+<span class="go">}</span>
+
+<span class="go">@INPROCEEDINGS{Eren2020_ISI,</span>
+<span class="go">  author={M. E. {Eren} and J. S. {Moore} and B. S. {Alexandrov}},</span>
+<span class="go">  booktitle={2020 IEEE International Conference on Intelligence and Security Informatics (ISI)},</span>
+<span class="go">  title={Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization},</span>
+<span class="go">  year={2020},</span>
+<span class="go">  pages={1-6},</span>
+<span class="go">  doi={10.1109/ISI49825.2020.9280524}</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="authors">
+<h1>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="mailto:maksim&#37;&#52;&#48;lanl&#46;gov">Maksim Ekin Eren</a>: Advanced Research in Cyber Systems, Los Alamos National Laboratory</p></li>
+<li><p><a class="reference external" href="mailto:jmoore01&#37;&#52;&#48;lanl&#46;gov">Juston S<span>&#46;</span> Moore</a>: Advanced Research in Cyber Systems, Los Alamos National Laboratory</p></li>
+<li><p><a class="reference external" href="mailto:ewskau&#37;&#52;&#48;lanl&#46;gov">Erik Skau</a>: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory</p></li>
+<li><p><a class="reference external" href="mailto:ceodspspectrum&#37;&#52;&#48;lanl&#46;gov">Manish Bhattarai</a>: Theoretical Division, Los Alamos National Laboratory</p></li>
+<li><p>Gopinath Chennupati: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory</p></li>
+<li><p><a class="reference external" href="mailto:boian&#37;&#52;&#48;lanl&#46;gov">Boian S<span>&#46;</span> Alexandrov</a>: Theoretical Division, Los Alamos National Laboratory</p></li>
+</ul>
+</div>
+<div class="section" id="copyright-notice">
+<h1>Copyright Notice<a class="headerlink" href="#copyright-notice" title="Permalink to this headline">¶</a></h1>
+<p>© 2021. Triad National Security, LLC. All rights reserved.
+This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
+National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
+Department of Energy/National Nuclear Security Administration. All rights in the program are
+reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear
+Security Administration. The Government is granted for itself and others acting on its behalf a
+nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare
+derivative works, distribute copies to the public, perform publicly and display publicly, and to permit
+others to do so.</p>
+<p><strong>LANL C Number: C21028</strong></p>
+</div>
+<div class="section" id="license">
+<h1>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h1>
+<p>This program is open source under the BSD-3 License.
+Redistribution and use in source and binary forms, with or without modification, are permitted
+provided that the following conditions are met:</p>
+<p>1. Redistributions of source code must retain the above copyright notice, this list of conditions and
+the following disclaimer.</p>
+<p>2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
+and the following disclaimer in the documentation and/or other materials provided with the
+distribution.</p>
+<p>3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse
+or promote products derived from this software without specific prior written permission.</p>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS
+IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div>
+<div class="section" id="developer-test-suite">
+<h1>Developer Test Suite<a class="headerlink" href="#developer-test-suite" title="Permalink to this headline">¶</a></h1>
+<p>Developer test suits are located under <code class="docutils literal notranslate"><span class="pre">tests/</span></code> directory (located <a class="reference external" href="https://github.com/lanl/pyCP_APR/tree/main/tests">here</a>).</p>
+<p>Tests can be ran from this folder using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">unittest</span> <span class="pre">*</span></code>.</p>
+</div>
+<div class="section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<p id="id5"><dl class="citation">
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id3">BK06</a></span></dt>
+<dd><p>Brett W. Bader and Tamara G. Kolda. Algorithm 862: matlab tensor classes for fast algorithm prototyping. <em>ACM Trans. Math. Softw.</em>, 32(4):635–653, December 2006. URL: <a class="reference external" href="https://doi.org/10.1145/1186785.1186794">https://doi.org/10.1145/1186785.1186794</a>, <a class="reference external" href="https://doi.org/10.1145/1186785.1186794">doi:10.1145/1186785.1186794</a>.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">BK08</a></span></dt>
+<dd><p>Brett W. Bader and Tamara G. Kolda. Efficient matlab computations with sparse and factored tensors. <em>SIAM Journal on Scientific Computing</em>, 30(1):205–231, 2008. URL: <a class="reference external" href="https://doi.org/10.1137/060676489">https://doi.org/10.1137/060676489</a>, <a class="reference external" href="https://arxiv.org/abs/https://doi.org/10.1137/060676489">arXiv:https://doi.org/10.1137/060676489</a>, <a class="reference external" href="https://doi.org/10.1137/060676489">doi:10.1137/060676489</a>.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id3">BK+15</a></span></dt>
+<dd><p>Brett W. Bader, Tamara G. Kolda, and others. Matlab tensor toolbox version 2.6. Available online, February 2015. URL: <a class="reference external" href="http://www.sandia.gov/~tgkolda/TensorToolbox/">http://www.sandia.gov/~tgkolda/TensorToolbox/</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id4">CK12</a></span></dt>
+<dd><p>Eric C. Chi and Tamara G. Kolda. On tensors, sparsity, and nonnegative factorizations. <em>SIAM Journal on Matrix Analysis and Applications</em>, 33(4):1272–1299, December 2012. <a class="reference external" href="https://doi.org/10.1137/110859063">doi:10.1137/110859063</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id2">TKH18</a></span></dt>
+<dd><p>Melissa J. M. Turcotte, Alexander D. Kent, and Curtis Hash. <em>Unified Host and Network Data Set</em>, chapter Chapter 1, pages 1–22. World Scientific, nov 2018. URL: <a class="reference external" href="https://www.worldscientific.com/doi/abs/10.1142/9781786345646\_001">https://www.worldscientific.com/doi/abs/10.1142/9781786345646\_001</a>, <a class="reference external" href="https://arxiv.org/abs/https://www.worldscientific.com/doi/pdf/10.1142/9781786345646\_001">arXiv:https://www.worldscientific.com/doi/pdf/10.1142/9781786345646\_001</a>, <a class="reference external" href="https://doi.org/10.1142/9781786345646_001">doi:10.1142/9781786345646_001</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id1">ErenMooreAlexandrov20</a></span></dt>
+<dd><p>M. E. Eren, J. S. Moore, and B. S. Alexandrov. Multi-dimensional anomalous entity detection via poisson tensor factorization. In <em>2020 IEEE International Conference on Intelligence and Security Informatics (ISI)</em>, volume, 1–6. 2020. <a class="reference external" href="https://doi.org/10.1109/ISI49825.2020.9280524">doi:10.1109/ISI49825.2020.9280524</a>.</p>
+</dd>
+</dl>
+</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CP_APR.html">pyCP_APR.CP_APR API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CP_APR.html#pycp-apr-pycp-apr-module">pyCP_APR.pyCP_APR module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CP_APR.html#module-pyCP_APR">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">pyCP_APR.datasets API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#pycp-apr-datasets-module">pyCP_APR.datasets module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasets.html#module-pyCP_APR">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">pyCP_APR Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.html">pyCP_APR package</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='right-next' id="next-link" href="CP_APR.html" title="next page">pyCP_APR.CP_APR API</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
+        
+            &copy; Copyright 2021, LANL.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

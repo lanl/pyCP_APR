@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+
+<html lang="Python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyCP_APR.applications package &#8212; pyCP_APR 1.0.0 documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyCP_APR.numpy_cp package" href="pyCP_APR.numpy_cp.html" />
+    <link rel="prev" title="pyCP_APR package" href="pyCP_APR.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CP_APR.html">
+   pyCP_APR.CP_APR API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   pyCP_APR.datasets API
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="modules.html">
+   pyCP_APR Package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="pyCP_APR.html">
+     pyCP_APR package
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       pyCP_APR.applications package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.numpy_cp.html">
+       pyCP_APR.numpy_cp package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.torch_cp.html">
+       pyCP_APR.torch_cp package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pyCP_APR.applications.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.applications.ktensor_utils">
+   pyCP_APR.applications.ktensor_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.applications.sptensor_utils">
+   pyCP_APR.applications.sptensor_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.applications.stat_utils">
+   pyCP_APR.applications.stat_utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.applications.tensor_anomaly_detection">
+   pyCP_APR.applications.tensor_anomaly_detection module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.applications.tensor_anomaly_detection_v2">
+   pyCP_APR.applications.tensor_anomaly_detection_v2 module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.applications">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pycp-apr-applications-package">
+<h1>pyCP_APR.applications package<a class="headerlink" href="#pycp-apr-applications-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pyCP_APR.applications.ktensor_utils">
+<span id="pycp-apr-applications-ktensor-utils-module"></span><h2>pyCP_APR.applications.ktensor_utils module<a class="headerlink" href="#module-pyCP_APR.applications.ktensor_utils" title="Permalink to this headline">¶</a></h2>
+<p>ktensor_utils.py contains the utility functions for KRUSKAL tensor M.</p>
+<p>&#64;author: Maksim Ekin Eren</p>
+<dl class="py function">
+<dt id="pyCP_APR.applications.ktensor_utils.get_X_hat">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.ktensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_hat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indices</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/ktensor_utils.html#get_X_hat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.ktensor_utils.get_X_hat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate X hat from KRUSKAL tensor M, given the non-zero indicies.</p>
+<p>components: KRUSKAL tensor components</p>
+<p>indices: non-zero coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>components</strong> (<em>dict</em>) -- KRUSKAL Tensor M in dict format.</p></li>
+<li><p><strong>indices</strong> (<em>array</em>) -- Array of indices in X hat.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>lambdas</strong> -- Array of lambdas in X calculated from M using the indices.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyCP_APR.applications.ktensor_utils.get_X_size">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.ktensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/ktensor_utils.html#get_X_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.ktensor_utils.get_X_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get tensor shape from the components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>components</strong> (<em>dict</em>) -- KRUSKAL Tensor M in dict format.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>shape</strong> -- Tensor X shape.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyCP_APR.applications.sptensor_utils">
+<span id="pycp-apr-applications-sptensor-utils-module"></span><h2>pyCP_APR.applications.sptensor_utils module<a class="headerlink" href="#module-pyCP_APR.applications.sptensor_utils" title="Permalink to this headline">¶</a></h2>
+<p>sptensor_utils.py contains the utility functions for tensor X.</p>
+<p>&#64;author: Maksim Ekin Eren</p>
+<dl class="py function">
+<dt id="pyCP_APR.applications.sptensor_utils.get_X_dim_size">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.sptensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_dim_size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/sptensor_utils.html#get_X_dim_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.sptensor_utils.get_X_dim_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the shape of X. i.e. size of each mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array</em>) -- Tensor X in COO format. i.e. X is the coordinates of the non-zero values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>size</strong> -- Tensor X shape.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyCP_APR.applications.sptensor_utils.get_X_dimensions">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.sptensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_dimensions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/sptensor_utils.html#get_X_dimensions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.sptensor_utils.get_X_dimensions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of dimensions that tensor X has.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array</em>) -- Tensor X in COO format. i.e. X is the coordinates of the non-zero values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>dimensions</strong> -- Number of dimensions that X has.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyCP_APR.applications.sptensor_utils.get_X_num_non_zeros">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.sptensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_num_non_zeros</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/sptensor_utils.html#get_X_num_non_zeros"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.sptensor_utils.get_X_num_non_zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the number of non-zero elements in X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array</em>) -- Tensor X in COO format. i.e. X is the coordinates of the non-zero values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>non-zeros</strong> -- Number of non-zeros in X.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyCP_APR.applications.sptensor_utils.get_X_num_zeros">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.sptensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_num_zeros</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/sptensor_utils.html#get_X_num_zeros"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.sptensor_utils.get_X_num_zeros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the total number of zeros in X.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array</em>) -- Tensor X in COO format. i.e. X is the coordinates of the non-zero values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>zeros</strong> -- Number of zeros in X.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyCP_APR.applications.sptensor_utils.get_X_size">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.sptensor_utils.</span></code><code class="sig-name descname"><span class="pre">get_X_size</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/sptensor_utils.html#get_X_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.sptensor_utils.get_X_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the total number of elements in X including non-zeros and zeros.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>array</em>) -- Tensor X in COO format. i.e. X is the coordinates of the non-zero values.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>size</strong> -- Number of elements in X.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyCP_APR.applications.stat_utils">
+<span id="pycp-apr-applications-stat-utils-module"></span><h2>pyCP_APR.applications.stat_utils module<a class="headerlink" href="#module-pyCP_APR.applications.stat_utils" title="Permalink to this headline">¶</a></h2>
+<p>stat_utils.py contains the tensor statistic utilities.</p>
+<p>&#64;author: Maksim Ekin Eren</p>
+<dl class="py function">
+<dt id="pyCP_APR.applications.stat_utils.mrr_fuse_ranks">
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.stat_utils.</span></code><code class="sig-name descname"><span class="pre">mrr_fuse_ranks</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/stat_utils.html#mrr_fuse_ranks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.stat_utils.mrr_fuse_ranks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates Mean Reciprocal Rank (MRR).</p>
+<p>Under development.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) -- Tensor x.</p></li>
+<li><p><strong>weights</strong> (<em>array</em><em>, </em><em>optional</em>) -- Array of weights. The default is None.</p></li>
+<li><p><strong>axis</strong> (<em>int</em><em>, </em><em>optional</em>) -- Dimension number. The default is 0.</p></li>
+<li><p><strong>k</strong> (<em>int</em><em>, </em><em>optional</em>) -- Top k. The default is 60..</p></li>
+<li><p><strong>y</strong> (<em>array</em><em>, </em><em>optional</em>) -- Labels. The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>result</strong> -- MRR score.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyCP_APR.applications.tensor_anomaly_detection">
+<span id="pycp-apr-applications-tensor-anomaly-detection-module"></span><h2>pyCP_APR.applications.tensor_anomaly_detection module<a class="headerlink" href="#module-pyCP_APR.applications.tensor_anomaly_detection" title="Permalink to this headline">¶</a></h2>
+<p>tensor_anomaly_detection.py performs p-value scoring over the tensor decomposition, i.e.
+the KRUSKAL tensor M. The calculated p-values are used to detect anomalies.</p>
+<p>This method was introduced by Eren et al. in [1].</p>
+<p>CyberToaster, Project 1, Summer 2020</p>
+<p>Los Alamos National Laboratory</p>
+<p>Anomaly detection using Tensors and their Decompositions.</p>
+<p>Student: Maksim E. Eren</p>
+<p>Primary Mentor: Juston Moore</p>
+<p>Secondary Mentors: Boian Alexandrov and Patrick Avery</p>
+<p class="rubric">References</p>
+<p>[1] M. E. Eren, J. S. Moore and B. S. Alexandro, &quot;Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization,&quot; 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.</p>
+<p>&#64;author: Maksim Ekin Eren, Juston S. Moore</p>
+<dl class="py class">
+<dt id="pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.tensor_anomaly_detection.</span></code><code class="sig-name descname"><span class="pre">PoissonTensorAnomaly</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">objective</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'p_value'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'single_tensor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_value_fusion_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_dimensions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_significance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.1,</span> <span class="pre">0.9]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_dimensions_indx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/tensor_anomaly_detection.html#PoissonTensorAnomaly"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Anomaly detection using Poisson Distribution and Canonical Polyadic (CP)
+with Alternating Poisson Regression tensor decomposition (CP-APR).</p>
+<p>Componenets of the CP-APR used to calculate the p-values for each instance
+through Poisson cumulative distribution function (cdf).</p>
+<p>p-values are then used to determine if the event is an anomaly.
+Lower p-values are more anomalous.</p>
+<p>v2: Utilizes Numpy vectorization for the calculations.</p>
+<p>References:</p>
+<p>1) Chi, Eric C. and Tamara G. Kolda. “On Tensors, Sparsity, and Nonnegative
+Factorizations.” SIAM J. Matrix Anal. Appl. 33 (2012): 1272-1299.</p>
+<p>2) Turcotte, Melissa J. M. et al. “Unified Host and Network Data Set.
+” ArXiv abs/1708.07518 (2017): n. pag.</p>
+<p>3) Wikipedia contributors. &quot;Poisson distribution.&quot; Wikipedia,
+The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 29 Jun. 2020. Web. 6 Jul. 2020.</p>
+<p>Initilize the anomaly detector class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dimensions</strong> (<em>dict</em><em>, </em><em>required</em>) -- Components of the KRUSKAL Tensor Decomposition. The default is dict.n
+Each element is a dimension (factors of a component) and
+each dimension has (nxK) elements for that factor for rank K.</p></li>
+<li><p><strong>weights</strong> (<em>list</em><em>, </em><em>required</em>) -- Weights of each component of parameter dimensions. The default is list.</p></li>
+<li><p><strong>objective</strong> (<em>string</em><em>, </em><em>optional</em>) -- What to calculate.n
+Options: p_value, p_value_fusion_harmonic, p_value_fusion_harmonic_observed,
+p_value_fusion_chi2, p_value_fusion_chi2_observed, p_value_fusion_arithmetic,
+log_likelihood
+The default is 'p_value'.</p></li>
+<li><p><strong>lambda_method</strong> (<em>string</em><em>, </em><em>optional</em>) -- How to calculate lambda.n
+If 'single_tensor', it will use single ktensor passed in dimensions
+when calculating lambda.n
+If 'ensemble', it will use two ktensors where parameter dimensions
+is a K&gt;=1 rank tensor with lambda weight ensemble_significance[0] and
+parameter ensemble_dimensions is a ktensor with K&gt;1 rank tensor with
+lambda weight ensemble_significance[1]. The default is 'single_tensor'.</p></li>
+<li><p><strong>p_value_fusion_index</strong> (<em>list</em>) -- Index to fix, or calculate the p-value fusions. Only used when
+objective is set to p_value_fusion.
+The default is [0].</p></li>
+<li><p><strong>ensemble_dimensions</strong> (<em>dict</em><em>, </em><em>optional</em>) -- Components of the KRUSKAL Tensor Decomposition.n
+Each element is a dimension (factors of a component) and
+each dimension has (nxK) elements for that factor for rank K.n
+This is the second ktensor dimension passed. It will be used if
+lambda_method is set to 'ensemble'.
+Its lambda weight is ensemble_significance[1]. The default is dict().</p></li>
+<li><p><strong>ensemble_weights</strong> (<em>list</em><em>, </em><em>optional</em>) -- Weights of each component of ensemble_dimensions. The default is list().
+Only used if lambda_method is 'ensemble'.</p></li>
+<li><p><strong>ensemble_significance</strong> (<em>list</em><em>, </em><em>optional</em>) -- lambda weight of each ktensor when using 'ensemble' lambda_method.n
+Weight of dimensions: ensemble_significance[0]n.
+Weight of ensemble_dimensions: ensemble_significance[1]n
+The default is [0.1, 0.9].</p></li>
+<li><p><strong>mode_weights</strong> (<em>list</em><em>, </em><em>optional</em>) -- Weight of each dimension.n
+The default is [1].</p></li>
+<li><p><strong>ignore_dimensions_indx</strong> (<em>list</em><em>, </em><em>optional</em>) -- If any dimension in latent factors should be ignored when calculating the lambdas.n
+The default is [].</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly.predict">
+<code class="sig-name descname"><span class="pre">predict</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_matlab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/tensor_anomaly_detection.html#PoissonTensorAnomaly.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the scores using the KRUSKAL components given the non-zero coordinates
+and values and the objective.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>list of list</em>) -- Coordinates of the non-zero elements within the sparse tensor.</p></li>
+<li><p><strong>values</strong> (<em>list</em>) -- Non-zero values that are in the sparse tensor.</p></li>
+<li><p><strong>from_matlab</strong> (<em>bool</em>) -- <p>Set True if need to substract 1 to the coordinates, since matlab starts at 1.</p>
+<p>The default is False.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>prediction</strong> -- Dictionary of calculated objective.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyCP_APR.applications.tensor_anomaly_detection_v2">
+<span id="pycp-apr-applications-tensor-anomaly-detection-v2-module"></span><h2>pyCP_APR.applications.tensor_anomaly_detection_v2 module<a class="headerlink" href="#module-pyCP_APR.applications.tensor_anomaly_detection_v2" title="Permalink to this headline">¶</a></h2>
+<p>tensor_anomaly_detection_v2.py performs p-value scoring over the tensor decomposition, i.e.
+the KRUSKAL tensor M. The calculated p-values are used to detect anomalies.</p>
+<p>This method was introduced by Eren et al. in [1].</p>
+<p>The second version performs faster calculation of the inner products of the
+components to extract the lambdas.</p>
+<p>This version also provides dimension fusion methods for lambda calculations.</p>
+<p class="rubric">References</p>
+<p>[1] M. E. Eren, J. S. Moore and B. S. Alexandro, &quot;Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization,&quot; 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.</p>
+<p>&#64;author: Juston S. Moore, Maksim Ekin Eren</p>
+<dl class="py class">
+<dt id="pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.applications.tensor_anomaly_detection_v2.</span></code><code class="sig-name descname"><span class="pre">PoissonTensorAnomaly_v2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">components</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[1]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/tensor_anomaly_detection_v2.html#PoissonTensorAnomaly_v2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initilize the anomaly detection class.</p>
+<p>Calculates the lambdas, and obtains tensor information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>components</strong> (<em>dict</em>) -- KRUSKAL Tensor M in dict format.</p></li>
+<li><p><strong>indicies</strong> (<em>array</em>) -- Non-zero coordinates.</p></li>
+<li><p><strong>tensor_weights</strong> (<em>list</em><em>, </em><em>optional</em>) -- <p>Weight of each lambda for the tensors.</p>
+<p>Used only when ensemble of tensors used in lambda calculations.
+The default is [1].</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_dimension_fusion_scores">
+<code class="sig-name descname"><span class="pre">get_dimension_fusion_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">axis_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/tensor_anomaly_detection_v2.html#PoissonTensorAnomaly_v2.get_dimension_fusion_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_dimension_fusion_scores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the prediction scores given fuzed lambdas and the true labels y.</p>
+<p>Fusion is performed for the dimension in axis_map.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>axis_map</strong> (<em>list</em>) -- Which dimensions to fuse.</p></li>
+<li><p><strong>y_true</strong> (<em>list</em>) -- List of true labels for each entry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>df</strong> -- Fusion scores.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Pandas DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_lambdas">
+<code class="sig-name descname"><span class="pre">get_lambdas</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/tensor_anomaly_detection_v2.html#PoissonTensorAnomaly_v2.get_lambdas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_lambdas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the lambda values that are calculated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>lambdas</strong> -- Array of lambda values for the indices.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_link_prediction_scores">
+<code class="sig-name descname"><span class="pre">get_link_prediction_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/applications/tensor_anomaly_detection_v2.html#PoissonTensorAnomaly_v2.get_link_prediction_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_link_prediction_scores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the prediction scores given lambdas and the true labels y.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>y</strong> (<em>list</em>) -- <p>True labels.</p>
+<p>Label of each index.</p>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>score</strong> -- Prediction scores. {&quot;roc_auc&quot;: float, &quot;pr_auc&quot;: float}</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyCP_APR.applications">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR.applications" title="Permalink to this headline">¶</a></h2>
+<p>2021. Triad National Security, LLC. All rights reserved.
+This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
+National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
+Department of Energy/National Nuclear Security Administration. All rights in the program are
+reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear
+Security Administration. The Government is granted for itself and others acting on its behalf a
+nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare
+derivative works, distribute copies to the public, perform publicly and display publicly, and to permit
+others to do so.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="pyCP_APR.html" title="previous page">pyCP_APR package</a>
+    <a class='right-next' id="next-link" href="pyCP_APR.numpy_cp.html" title="next page">pyCP_APR.numpy_cp package</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
+        
+            &copy; Copyright 2021, LANL.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

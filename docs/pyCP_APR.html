@@ -1,0 +1,1126 @@
+
+<!DOCTYPE html>
+
+<html lang="Python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyCP_APR package &#8212; pyCP_APR 1.0.0 documentation</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyCP_APR.applications package" href="pyCP_APR.applications.html" />
+    <link rel="prev" title="pyCP_APR Package" href="modules.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CP_APR.html">
+   pyCP_APR.CP_APR API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   pyCP_APR.datasets API
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="modules.html">
+   pyCP_APR Package
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="current reference internal" href="#">
+     pyCP_APR package
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.applications.html">
+       pyCP_APR.applications package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.numpy_cp.html">
+       pyCP_APR.numpy_cp package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="pyCP_APR.torch_cp.html">
+       pyCP_APR.torch_cp package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pyCP_APR.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subpackages">
+   Subpackages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pycp-apr-datasets-module">
+   pyCP_APR.datasets module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pycp-apr-pycp-apr-module">
+   pyCP_APR.pyCP_APR module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.version">
+   pyCP_APR.version module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-pyCP_APR">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="pycp-apr-package">
+<h1>pyCP_APR package<a class="headerlink" href="#pycp-apr-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyCP_APR.applications.html">pyCP_APR.applications package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.ktensor_utils">pyCP_APR.applications.ktensor_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.sptensor_utils">pyCP_APR.applications.sptensor_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.stat_utils">pyCP_APR.applications.stat_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.tensor_anomaly_detection">pyCP_APR.applications.tensor_anomaly_detection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.tensor_anomaly_detection_v2">pyCP_APR.applications.tensor_anomaly_detection_v2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyCP_APR.numpy_cp.html">pyCP_APR.numpy_cp package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#module-pyCP_APR.numpy_cp.CP_APR">pyCP_APR.numpy_cp.CP_APR module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#module-pyCP_APR.numpy_cp.ktensor">pyCP_APR.numpy_cp.ktensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#module-pyCP_APR.numpy_cp.sptensor">pyCP_APR.numpy_cp.sptensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#module-pyCP_APR.numpy_cp.tenmat">pyCP_APR.numpy_cp.tenmat module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#module-pyCP_APR.numpy_cp.tensor">pyCP_APR.numpy_cp.tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_cp.html#module-pyCP_APR.numpy_cp">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyCP_APR.torch_cp.html">pyCP_APR.torch_cp package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_cp.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_cp.html#module-pyCP_APR.torch_cp.CP_APR_Torch">pyCP_APR.torch_cp.CP_APR_Torch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_cp.html#module-pyCP_APR.torch_cp.ktensor_Torch">pyCP_APR.torch_cp.ktensor_Torch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_cp.html#module-pyCP_APR.torch_cp.sptensor_Torch">pyCP_APR.torch_cp.sptensor_Torch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_cp.html#module-pyCP_APR.torch_cp">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pycp-apr-datasets-module">
+<h2>pyCP_APR.datasets module<a class="headerlink" href="#pycp-apr-datasets-module" title="Permalink to this headline">¶</a></h2>
+<p>datasets.py is used to load the example tensors.</p>
+<p>&#64;author Maksim Ekin Eren</p>
+<dl class="py function">
+<dt>
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.datasets.</span></code><code class="sig-name descname"><span class="pre">list_datasets</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/datasets.html#list_datasets"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>This function returns the list of tensor names that are available to load.</p>
+<p>If the listing is requested for the first time, a new directory for the datasets is created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>datasets</strong> -- List of tensor names that are available to load.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR.datasets</span> <span class="kn">import</span> <span class="n">list_datasets</span>
+
+<span class="n">list_datasets</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[&#39;TOY&#39;]</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt>
+<code class="sig-prename descclassname"><span class="pre">pyCP_APR.datasets.</span></code><code class="sig-name descname"><span class="pre">load_dataset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TOY'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/datasets.html#load_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Loads the tensor specified by its name.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a dataset is requested for the first time, it gets downloaded from GitHub.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) -- The name of the tensor to load. The default is <code class="docutils literal notranslate"><span class="pre">name=&quot;TOY&quot;</span></code>.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> -- Tensor contents compressed in Numpy NPZ  format.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Numpy NPZ</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="c1"># Load a sample authentication training and test tensors along with the labels</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;TOY&quot;</span><span class="p">)</span>
+<span class="n">coords_train</span><span class="p">,</span> <span class="n">nnz_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_coords&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_count&#39;</span><span class="p">]</span>
+<span class="n">coords_test</span><span class="p">,</span> <span class="n">nnz_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_coords&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_count&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Available tensor data can be listed as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;TOY&quot;</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[&#39;train_coords&#39;,</span>
+<span class="go"> &#39;train_count&#39;,</span>
+<span class="go"> &#39;test_coords&#39;,</span>
+<span class="go"> &#39;test_count&#39;]</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="pycp-apr-pycp-apr-module">
+<h2>pyCP_APR.pyCP_APR module<a class="headerlink" href="#pycp-apr-pycp-apr-module" title="Permalink to this headline">¶</a></h2>
+<p>pyCP_APR.py is the Scikit-learn like API for interacting with the CP-APR algorithm. The <strong>pyCP_APR.CP_APR</strong> wraps
+both the Numpy and PyTorch backend. <strong>pyCP_APR.CP_APR</strong> also includes API calls for anomaly detection utilities. Sparse tensor entries are scored by calculating p-values over the fitted model, where the lower p-value scores are an indicator for anomaly.</p>
+<p>The fitted model (or factorized tensor, i.e. the KRUSKAL tensor M) during the training time describes the normal or the expected behavior which follows the Poisson distribution. We say that the entries of the tensor in the test set are drawn from the same distribution
+as the factorized training tensor M. Using M, we calculate how likely the entries of the test tensor to occur given what was expected. This methodology was introduced by Eren et al. in [1].</p>
+<p>Some code comments are borrowed from the original implementation of CP-APR in [2-5].</p>
+<p class="rubric">References</p>
+<p>[1] M. E. Eren, J. S. Moore and B. S. Alexandrov, &quot;Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization,&quot; 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.</p>
+<p>[2] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
+<p>[3] Dense tensors: B. W. Bader and T. G. Kolda, Algorithm 862: MATLAB Tensor Classes for Fast Algorithm Prototyping, ACM Trans. Mathematical Software, 32(4):635-653, 2006, <a class="reference external" href="http://dx.doi.org/10.1145/1186785.1186794">http://dx.doi.org/10.1145/1186785.1186794</a>.</p>
+<p>[4] Sparse, Kruskal, and Tucker tensors: B. W. Bader and T. G. Kolda, Efficient MATLAB Computations with Sparse and Factored Tensors, SIAM J. Scientific Computing, 30(1):205-231, 2007, <a class="reference external" href="http://dx.doi.org/10.1137/060676489">http://dx.doi.org/10.1137/060676489</a>.</p>
+<p>[5] Chi, E.C. and Kolda, T.G., 2012. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4), pp.1272-1299.</p>
+<p>&#64;author Maksim Ekin Eren</p>
+<dl class="py class">
+<dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.pyCP_APR.</span></code><code class="sig-name descname"><span class="pre">CP_APR</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Initilize the <strong>pyCP_APR.CP_APR</strong> class. <strong>pyCP_APR.CP_APR</strong> class is the wrapper for the CP-APR algorithm's Python implementation with
+both <em>Numpy</em> and <em>PyTorch</em> backend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>string</em><em>, </em><em>optional</em>) -- <p>Specifies which backend to use when running CP-APR, and sets the model (i.e. <strong>pyCP_APR.CP_APR.model</strong>)
+accordingly.</p>
+<p><code class="docutils literal notranslate"><span class="pre">method='torch'</span></code> or <code class="docutils literal notranslate"><span class="pre">method='pytorch'</span></code> will use PyTorch and enable GPU utilization.</p>
+<p><code class="docutils literal notranslate"><span class="pre">method='numpy'</span></code> will use Numpy backend.</p>
+<p>Default is <code class="docutils literal notranslate"><span class="pre">method='torch'</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">method='torch'</span></code> or <code class="docutils literal notranslate"><span class="pre">method='pytorch'</span></code> only supports sparse tensors in COO format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">method='numpy'</span></code> supports both sparse (COO format) &amp; dense tensors.</p></li>
+</ul>
+</div>
+</p></li>
+<li><p><strong>epsilon</strong> (<em>float</em><em>, </em><em>optional</em>) -- Prevents zero division. Default is 1e-10.</p></li>
+<li><p><strong>kappa</strong> (<em>float</em><em>, </em><em>optional</em>) -- Fix slackness level. Default is 1e-2.</p></li>
+<li><p><strong>kappa_tol</strong> (<em>float</em><em>, </em><em>optional</em>) -- Tolerance on slackness level. Default is 1e-10.</p></li>
+<li><p><strong>max_inner_iters</strong> (<em>int</em><em>, </em><em>optional</em>) -- Number of inner iterations per epoch. Default is 10.</p></li>
+<li><p><strong>follow_M</strong> (<em>bool</em><em>, </em><em>optional</em>) -- Saves M on each iteration if <code class="docutils literal notranslate"><span class="pre">True</span></code>.
+The default is False.</p></li>
+<li><p><strong>n_iters</strong> (<em>int</em><em>, </em><em>optional</em>) -- Number of iterations during optimization or epoch. Default is 1000.</p></li>
+<li><p><strong>print_inner_itn</strong> (<em>int</em><em>, </em><em>optional</em>) -- Print every <em>n</em> inner iterations. Does not print if 0. Default is 0.</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) -- Print every n epoch, or <code class="docutils literal notranslate"><span class="pre">n_iters</span></code>. Does not print if 0. Default is 10.</p></li>
+<li><p><strong>stoptime</strong> (<em>float</em><em>, </em><em>optional</em>) -- Number of seconds before early stopping. Default is 1e6.</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) -- KKT violations tolerance. Default is 1e-4.</p></li>
+<li><p><strong>random_state</strong> (<em>int</em><em>, </em><em>optional</em>) -- Random seed for the initial M (KRUSKAL Tensor). Default is 42.</p></li>
+<li><p><strong>device</strong> (<em>string</em><em>, </em><em>optional</em>) -- <p>Specifies CPU or GPU utilization for factorizing the tensor.</p>
+<p><code class="docutils literal notranslate"><span class="pre">device='cpu'</span></code> to use PyTorch with CPU.</p>
+<p><code class="docutils literal notranslate"><span class="pre">device='gpu'</span></code> to use PyTorch with GPU. Only if a CUDA device is available.</p>
+<p>Default is <code class="docutils literal notranslate"><span class="pre">device='cpu'</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only used when <code class="docutils literal notranslate"><span class="pre">method='torch'</span></code> or <code class="docutils literal notranslate"><span class="pre">method='pytorch'</span></code>.</p>
+</div>
+</p></li>
+<li><p><strong>device_num</strong> (<em>int</em><em> or </em><em>string</em><em>, </em><em>optional</em>) -- <p>Which GPU to use to compute the KRUSKAL tensor M.</p>
+<p>Default is <code class="docutils literal notranslate"><span class="pre">device_num=0</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only used when <code class="docutils literal notranslate"><span class="pre">method='torch'</span></code> and <code class="docutils literal notranslate"><span class="pre">device='gpu'</span></code>.</p>
+</div>
+</p></li>
+<li><p><strong>return_type</strong> (<em>string</em><em>, </em><em>optional</em>) -- <p>The return type for the final KRUSKAL tensor M.</p>
+<p><code class="docutils literal notranslate"><span class="pre">return_type='torch'</span></code> keep as torch tensors.</p>
+<p><code class="docutils literal notranslate"><span class="pre">return_type='numpy'</span></code> convert to Numpy arrays and transfer the tensor back to CPU if GPU was used.</p>
+<p>Default is <code class="docutils literal notranslate"><span class="pre">return_type='numpy'</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only used when <code class="docutils literal notranslate"><span class="pre">method='torch'</span></code> or <code class="docutils literal notranslate"><span class="pre">method='pytorch'</span></code>.</p>
+</div>
+</p></li>
+<li><p><strong>dtype</strong> -- <p>Type to be used in torch tensors.</p>
+<p>Default is <strong>'torch.DoubleTensor'</strong> when <code class="docutils literal notranslate"><span class="pre">device='cpu'</span></code>. Default is <strong>'torch.cuda.DoubleTensor'</strong> when <code class="docutils literal notranslate"><span class="pre">device='gpu'</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<p>Using the <em>PyTorch</em> backend on GPU 0:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR.pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+
+<span class="c1"># CP-APR Object with PyTorch backend on a GPU. Transfer the latent factors back to Numpy arrays.</span>
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span> <span class="n">device_num</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Using the <em>Numpy</em> backend:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Takes the decomposition of sparse or dense tensor X and returns the KRUSKAL tensor M.</p>
+<p>Here M is  latent factors and the weight of each R (rank) component.</p>
+<p>If a list of ranks is passed, factorize the tensor for each 2 of the ranks.</p>
+<p>The factorized 2 tensors M in this case will follow the weighted lambda calculations during prediction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensor</strong> (<em>PyTorch.sparse</em><em> or </em><em>Numpy array</em>) -- <p>Original dense or sparse tensor X.</p>
+<p>Can be used when <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> needs to be a <em>PyTorch Sparse</em> tensor format.</p>
+<p>Or use with <code class="docutils literal notranslate"><span class="pre">Type='tensor'</span></code> and pass <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> as a dense Numpy array.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that PyTorch backend only supports <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code>.</p>
+</div>
+</p></li>
+<li><p><strong>coords</strong> (<em>Numpy array</em>) -- <p>Array of non-zero coordinates for sparse tensor X. COO format.</p>
+<p>Each entry in this array is a coordinate of a non-zero value in the original tensor X.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li><p>Used when <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code>, and when <code class="docutils literal notranslate"><span class="pre">tensor</span></code> parameter is not passed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">len(coords)</span></code> is number of total entiries in X, and <code class="docutils literal notranslate"><span class="pre">len(coords[0])</span></code> should give the number of dimensions X has.</p></li>
+</ul>
+</div>
+</p></li>
+<li><p><strong>values</strong> (<em>Numpy array</em>) -- <p>List of non-zero values corresponding to each list of non-zero coordinates (<code class="docutils literal notranslate"><span class="pre">coords</span></code>).
+Array of non-zero tensor entries. COO format.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li><p>Used when <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code> and <code class="docutils literal notranslate"><span class="pre">tensor</span></code> parameter is not passed.</p></li>
+<li><p>Length of <code class="docutils literal notranslate"><span class="pre">values</span></code> must match the length of <code class="docutils literal notranslate"><span class="pre">coords</span></code>.</p></li>
+</ul>
+</div>
+</p></li>
+<li><p><strong>rank</strong> (<em>int</em><em> or </em><em>list</em>) -- <p>Tensor rank, or list of ranks for two tensors.</p>
+<p>Tensor rank determines the number of components.</p>
+<p>List of ranks will allow using weighted prediction between the two latent factors in KRUSKAL tensor M.</p>
+<p>Pass a single integer or list of length two.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">rank=2</span></code>.</p>
+</p></li>
+<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary of latent factors</em>) -- <p>Initial value of latent factors.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">Minit='random'</span></code>, initial factors are drawn randomly from uniform distribution between 0 and 1.</p>
+<p>Else, pass a dictionary where the key is the mode number and value is array size <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">x</span> <span class="pre">r</span></code>
+where <code class="docutils literal notranslate"><span class="pre">d</span></code> is the number of elements on the dimension and <code class="docutils literal notranslate"><span class="pre">r</span></code> is the rank.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">Minit='random'</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Example on creating initial M for 3 dimensional tensor shaped <em>5x5x5</em> for rank 4 decomposition:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">num_dimensions</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">tensor_shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">rank</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">M_init</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_dimensions</span><span class="p">):</span>
+        <span class="n">M_init</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">tensor_shape</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">rank</span><span class="p">))</span>
+<span class="n">M_init</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go"> &#39;0&#39;: array([[0.821161  , 0.419537  , 0.62692165, 0.06294969],</span>
+<span class="go">        [0.02032657, 0.88625546, 0.74128504, 0.71855629],</span>
+<span class="go">        [0.70760879, 0.83813636, 0.35128158, 0.94442011],</span>
+<span class="go">        [0.35780608, 0.83703369, 0.84602297, 0.93760842],</span>
+<span class="go">        [0.00746915, 0.05974905, 0.49097518, 0.60615737]]),</span>
+<span class="go"> &#39;1&#39;: array([[0.61902526, 0.78453503, 0.05596952, 0.69149084],</span>
+<span class="go">        [0.56300552, 0.82418509, 0.04278352, 0.25716303],</span>
+<span class="go">        [0.66221183, 0.13888761, 0.92502242, 0.57817265],</span>
+<span class="go">        [0.31738958, 0.87061048, 0.64170398, 0.62236073],</span>
+<span class="go">        [0.9110603 , 0.5133135 , 0.89232955, 0.09881775]]),</span>
+<span class="go"> &#39;2&#39;: array([[0.0580065 , 0.82367217, 0.07616138, 0.93873983],</span>
+<span class="go">        [0.89247679, 0.41388867, 0.82089524, 0.10293565],</span>
+<span class="go">        [0.13540868, 0.09809637, 0.10844113, 0.90405324],</span>
+<span class="go">        [0.91167498, 0.67068632, 0.51705956, 0.82211517],</span>
+<span class="go">        [0.80942828, 0.08450466, 0.6306868 , 0.78132797]])</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+</p></li>
+<li><p><strong>Type</strong> (<em>string</em>) -- <p>Type of tensor (i.e. sparse or dense).</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code> for sparse, and <code class="docutils literal notranslate"><span class="pre">Type='tensor'</span></code> for dense tensors.</p>
+<p>'sptensor' can be used with <code class="docutils literal notranslate"><span class="pre">method='torch'</span></code>, and <code class="docutils literal notranslate"><span class="pre">method='numpy'</span></code>.</p>
+<p>If 'sptensor' used, pass the list of non-zero coordinates using the <code class="docutils literal notranslate"><span class="pre">coords</span></code> parameter
+and the corresponding list of non-zero elements with <code class="docutils literal notranslate"><span class="pre">values</span></code> parameter. This is the COO representation of X.</p>
+<p>'sptensor' can also be used with the <em>PyTorch Sparse</em> format.
+In that case, pass the tensor X that is in <em>torch.sparse</em> format using the <code class="docutils literal notranslate"><span class="pre">tensor</span></code> parameter.</p>
+<p>'tensor' can be used with <code class="docutils literal notranslate"><span class="pre">method='numpy'</span></code>. In this case, pass the tensor X using the <code class="docutils literal notranslate"><span class="pre">tensor</span></code> parameter.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>KRUSKAL tensor M</strong> -- KRUSKAL tensor M is returned in dict format.</p>
+<p>The latent factors can be found with the key 'Factors'.</p>
+<p>The weight of each component can be found with the key 'Weights'.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<p>Sparse tensor X in COO format decomposed using a GPU in the below example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;TOY&quot;</span><span class="p">)</span>
+
+<span class="c1"># Training set</span>
+<span class="n">coords_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_coords&#39;</span><span class="p">]</span>
+<span class="n">nnz_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># Test set</span>
+<span class="n">coords_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_coords&#39;</span><span class="p">]</span>
+<span class="n">nnz_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># CP-APR model</span>
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;torch&#39;</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span>
+    <span class="n">device_num</span><span class="o">=</span><span class="mi">0</span>
+   <span class="p">)</span>
+
+<span class="c1"># factorize the tensor for ranks 1 and 4</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Above example takes the tensor decomposition of X for ranks 1 and 4. Below is an example showing a single rank decomposition:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example of factorized X, i.e. M (KRUSKAL tensor). Below example M is rank 2, and has 3 dimensions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go">   &#39;Factors&#39;:</span>
+<span class="go">   {</span>
+<span class="go">      &#39;0&#39;:</span>
+<span class="go">         array([[5.88838457e-51, 2.13058370e-01],</span>
+<span class="go">         [3.23364716e-04, 1.34610100e-01],</span>
+<span class="go">         [2.05013230e-01, 7.12928005e-37],</span>
+<span class="go">         [1.48424405e-01, 0.00000000e+00],</span>
+<span class="go">         [9.76200219e-02, 1.48477484e-01],</span>
+<span class="go">         [2.51566211e-02, 2.06908903e-01],</span>
+<span class="go">         [1.43573934e-01, 3.34319439e-88],</span>
+<span class="go">         [2.61925420e-01, 4.76257924e-33],</span>
+<span class="go">         [9.37106506e-02, 1.87295857e-01],</span>
+<span class="go">         [2.42523537e-02, 1.09649287e-01]]),</span>
+<span class="go">      &#39;1&#39;:</span>
+<span class="go">         array([[2.31775360e-241, 5.03672967e-002],</span>
+<span class="go">         [7.79309622e-002, 1.00144467e-137],</span>
+<span class="go">         [0.00000000e+000, 7.84481789e-002],</span>
+<span class="go">         [1.23105143e-001, 9.77480876e-002],</span>
+<span class="go">         [3.30736653e-002, 5.64828345e-002],</span>
+<span class="go">         [1.56285154e-078, 9.36029407e-003],</span>
+<span class="go">         [4.85047483e-002, 0.00000000e+000],</span>
+<span class="go">         [3.10430389e-002, 0.00000000e+000],</span>
+<span class="go">         [2.39290092e-002, 3.29838934e-002],</span>
+<span class="go">         [0.00000000e+000, 0.00000000e+000],</span>
+<span class="go">         [6.75832826e-002, 0.00000000e+000]]),</span>
+<span class="go">      &#39;2&#39;:</span>
+<span class="go">         array([[2.71626813e-002, 0.00000000e+000],</span>
+<span class="go">         [1.68530286e-003, 4.18040234e-002],</span>
+<span class="go">         [0.00000000e+000, 2.00577503e-002],</span>
+<span class="go">         [0.00000000e+000, 5.34873341e-002],</span>
+<span class="go">         [0.00000000e+000, 2.89723060e-002],</span>
+<span class="go">         [4.00972915e-002, 4.85187813e-161],</span>
+<span class="go">         [4.49477703e-002, 0.00000000e+000],</span>
+<span class="go">         [1.00243229e-002, 0.00000000e+000],</span>
+<span class="go">         [0.00000000e+000, 3.69954061e-002],</span>
+<span class="go">         [2.29589330e-002, 1.33718335e-002],</span>
+<span class="go">         [3.23365254e-002, 0.00000000e+000]])},</span>
+<span class="go">  &#39;Weights&#39;: array([3092.47820339, 2243.52179661])</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+<p>Below is an example of how <em>torch.sparse</em> format can be used as the tensor X:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">v</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tensor</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Using TITAN RTX</span>
+<span class="go">CP-APR (MU):</span>
+<span class="go">Iter=1, Inner Iter=30, KKT Violation=0.425532, obj=4.887921, nViolations=0</span>
+<span class="go">Exiting because all subproblems reached KKT tol.</span>
+<span class="go">===========================================</span>
+<span class="go"> Final log-likelihood = 4.888204</span>
+<span class="go"> Final least squares fit = 0.999995</span>
+<span class="go"> Final KKT violation = 0.000007</span>
+<span class="go"> Total inner iterations = 37</span>
+<span class="go"> Total execution time = 0.2447 seconds</span>
+<span class="go">Converting the latent factors to Numpy arrays.</span>
+</pre></div>
+</div>
+<p>Below is an example on using a dense Numpy array as tensor X:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+
+<span class="c1"># X has the shape 10 x 30 x 40</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12001</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">40</span><span class="p">])</span>
+
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">tensor</span><span class="o">=</span><span class="n">X</span><span class="p">,</span> <span class="n">Type</span><span class="o">=</span><span class="s1">&#39;tensor&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">CP-APR (MU):</span>
+<span class="go">Iter=1, Inner Iter=30, KKT Violation=0.244501, obj=534739600.517348, nViolations=0</span>
+<span class="go">Exiting because all subproblems reached KKT tol.</span>
+<span class="go">===========================================</span>
+<span class="go"> Final log-likelihood = 534841753.347965</span>
+<span class="go"> Final least squares fit = 0.971281</span>
+<span class="go"> Final KKT violation = 0.000091</span>
+<span class="go"> Total inner iterations = 161</span>
+<span class="go"> Total execution time = 1.1126 seconds</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dict_keys([&#39;Factors&#39;, &#39;Weights&#39;])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Factors&#39;</span><span class="p">]</span>
+<span class="n">Gamma</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Weights&#39;</span><span class="p">]</span>
+
+<span class="n">M_0</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span>
+<span class="n">Gamma_0</span> <span class="o">=</span> <span class="n">Gamma</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Component 0:&#39;</span><span class="p">,</span> <span class="n">M_0</span><span class="p">,</span> <span class="s1">&#39;Gamma 0:&#39;</span><span class="p">,</span> <span class="n">Gamma_0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Component 0:</span>
+<span class="go">[[0.01002107 0.0099889 ]</span>
+<span class="go">[0.03001639 0.02999136]</span>
+<span class="go">[0.05001171 0.04999383]</span>
+<span class="go">[0.07000709 0.0699962 ]</span>
+<span class="go">[0.09000233 0.08999878]</span>
+<span class="go">[0.10999784 0.11000099]</span>
+<span class="go">[0.12999289 0.13000382]</span>
+<span class="go">[0.14998825 0.15000623]</span>
+<span class="go">[0.16998359 0.17000867]</span>
+<span class="go">[0.18997884 0.19001122]]</span>
+<span class="go">Gamma 0: 41633867.33685632</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">get_params</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>The function call that returns the <em>model</em> parameters in a dictionary where a key is the <em>model</em> variable name
+and the value is its current value. <em>model</em> is the backend used during factorization (i.e. <strong>pyCP_APR.torch_cp.CP_APR_Torch</strong> or
+<strong>pyCP_APR.numpy_cp.CP_APR</strong>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Model parameters can also be accessed with a call directly to the <em>model</em> (i.e. <strong>pyCP_APR.CP_APR.model</strong>).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">cp_apr</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go"> &#39;verbose&#39;: 10,</span>
+<span class="go"> &#39;print_inner_itn&#39;: 0,</span>
+<span class="go"> &#39;start_time&#39;: -1,</span>
+<span class="go"> &#39;final_iter&#39;: -1,</span>
+<span class="go"> &#39;dtype&#39;: &#39;torch.DoubleTensor&#39;,</span>
+<span class="go"> &#39;device&#39;: &#39;cpu&#39;,</span>
+<span class="go"> &#39;device_num&#39;: &#39;0&#39;,</span>
+<span class="go"> &#39;return_type&#39;: &#39;numpy&#39;,</span>
+<span class="go"> &#39;X&#39;: None,</span>
+<span class="go"> &#39;M&#39;: None,</span>
+<span class="go"> &#39;tol&#39;: 0.0001,</span>
+<span class="go"> &#39;stoptime&#39;: 1000000.0,</span>
+<span class="go"> &#39;exec_time&#39;: -1,</span>
+<span class="go"> &#39;n_iters&#39;: 10,</span>
+<span class="go"> &#39;max_inner_iters&#39;: 10,</span>
+<span class="go"> &#39;random_state&#39;: 42,</span>
+<span class="go"> &#39;kappa&#39;: 0.01,</span>
+<span class="go"> &#39;kappa_tol&#39;: 1e-10,</span>
+<span class="go"> &#39;kktViolations&#39;: tensor([-1., -1., -1., -1., -1., -1., -1., -1., -1., -1.]),</span>
+<span class="go"> &#39;nInnerIters&#39;: tensor([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),</span>
+<span class="go"> &#39;times&#39;: tensor([0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]),</span>
+<span class="go"> &#39;logLikelihoods&#39;: tensor([1., 1., 1., 1., 1., 1., 1., 1., 1., 1.]),</span>
+<span class="go"> &#39;epsilon&#39;: tensor(1.0000e-10),</span>
+<span class="go"> &#39;obj&#39;: 0</span>
+<span class="go"> }</span>
+</pre></div>
+</div>
+<p>The model parameters of a fitted model may look like following:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go"> &#39;verbose&#39;: 1,</span>
+<span class="go"> &#39;print_inner_itn&#39;: 0,</span>
+<span class="go"> &#39;start_time&#39;: 1621842138.9178197,</span>
+<span class="go"> &#39;final_iter&#39;: 10,</span>
+<span class="go"> &#39;dtype&#39;: &#39;torch.cuda.DoubleTensor&#39;,</span>
+<span class="go"> &#39;device&#39;: device(type=&#39;cuda&#39;, index=0),</span>
+<span class="go"> &#39;device_num&#39;: &#39;0&#39;,</span>
+<span class="go"> &#39;return_type&#39;: &#39;numpy&#39;,</span>
+<span class="go"> &#39;X&#39;: &lt;pyCP_APR.torch_cp.sptensor_Torch.SP_TENSOR at 0x7f759dde0eb0&gt;,</span>
+<span class="go"> &#39;M&#39;: &lt;pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR at 0x7f759dde0c40&gt;,</span>
+<span class="go"> &#39;tol&#39;: 0.0001,</span>
+<span class="go"> &#39;stoptime&#39;: 1000000.0,</span>
+<span class="go"> &#39;exec_time&#39;: 0.41489696502685547,</span>
+<span class="go"> &#39;n_iters&#39;: 10,</span>
+<span class="go"> &#39;max_inner_iters&#39;: 10,</span>
+<span class="go"> &#39;random_state&#39;: 42,</span>
+<span class="go"> &#39;kappa&#39;: 0.01,</span>
+<span class="go"> &#39;kappa_tol&#39;: 1e-10,</span>
+<span class="go"> &#39;kktViolations&#39;: array([  0.90469806, 170.76687748, 439.2454979 , 171.40815408,</span>
+<span class="go">         32.90351131,  49.3060232 , 112.32568973, 156.01606934,</span>
+<span class="go">         30.25656979,  24.61207396]),</span>
+<span class="go"> &#39;nInnerIters&#39;: array([38., 34., 34., 33., 33., 33., 33., 33., 33., 33.]),</span>
+<span class="go"> &#39;times&#39;: array([0.05231047, 0.09365845, 0.14037013, 0.18132734, 0.22193289,</span>
+<span class="go">        0.26159644, 0.29836512, 0.33511233, 0.37501359, 0.41115212]),</span>
+<span class="go"> &#39;logLikelihoods&#39;: array([9.59298322e+12, 1.02443325e+13, 1.03623011e+13, 1.04159710e+13,</span>
+<span class="go">        1.04551136e+13, 1.04828857e+13, 1.05091620e+13, 1.05297763e+13,</span>
+<span class="go">        1.05492323e+13, 1.05635448e+13]),</span>
+<span class="go"> &#39;epsilon&#39;: array(1.e-10),</span>
+<span class="go"> &#39;obj&#39;: 10563544752580.432</span>
+<span class="go"> }</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">get_prediction</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_prediction"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>The function call that returns the predictions.</p>
+<p>The model must be already fitted using <strong>pyCP_APR.CP_APR.fit()</strong>,
+and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores()</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The prediction is returned as dictionary with the keys 'objective' and 'lambda'.</p>
+<p>The 'objective' key depends on the <code class="docutils literal notranslate"><span class="pre">objective</span></code> parameter used when predicting the scores in <strong>pyCP_APR.CP_APR.predict_scores()</strong>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><p><strong>predictions</strong> -- The prediction contents are based on the objective parameter used during <strong>pyCP_APR.CP_APR.predict_scores()</strong>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code>, returns <code class="docutils literal notranslate"><span class="pre">{'p_value':</span> <span class="pre">array,</span> <span class="pre">'lambda':</span> <span class="pre">array}</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">objective='log_likelihood'</span></code>, returns <code class="docutils literal notranslate"><span class="pre">{'log_likelihood':</span> <span class="pre">array,</span> <span class="pre">'lambda':</span> <span class="pre">array}</span></code>.</p>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cp_apr</span><span class="o">.</span><span class="n">get_prediction</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
+<span class="go"> &#39;p_value&#39;: array([1., 1., 1., ..., 1., 1., 1.]),</span>
+<span class="go"> &#39;lambda&#39;: array([ 3796.43165171,  2315.69440274,  1001.22377495, ..., 290.35037293,  2952.72557334, 30309.82134089])</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">get_score</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>The function call that returns the objective value of the model.</p>
+<p>Model is <strong>pyCP_APR.CP_APR.model.obj</strong>.</p>
+<p>If an ensemble of tensors is trained (see <strong>pyCP_APR.CP_APR.fit()</strong>), a list of scores is provided instead.</p>
+<p>Note that the model has to be already fit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>score</strong> -- Model fit score.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">predict_probas</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.predict_probas"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Calculates the probabilities of the test tensor entries.</p>
+<p>Then returns the prediction scores with ROC-AUC and PR-AUC metrics.</p>
+<p>Fusion is performed on the dimensions indicated by <code class="docutils literal notranslate"><span class="pre">axis_map</span></code>.
+Dimension fusion uses the Harmonic Mean.</p>
+<p><strong>This function is in beta stage.</strong></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>list</em><em> or </em><em>array</em>) -- Labels for each entry in the sparse test tensor.</p></li>
+<li><p><strong>axis_map</strong> (<em>OrderedDict</em><em>, </em><em>optional</em>) -- <p>If fusing dimensions, list of dimension numbers can be passed as <em>OrderedDict</em> to identify which dimensions to fuse.</p>
+<p>The tuples in the ordered dictionary map will have 2 entries, where the first entry is the dimension name in string, and the
+second entry is the dimension number(s) in list.
+The default is <code class="docutils literal notranslate"><span class="pre">axis_map=None</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>prediction scores</strong> -- If not fusing the dimensions over the transformed tensor, returns a dictionary with prediction scores.</p>
+<p><code class="docutils literal notranslate"><span class="pre">{&quot;roc_auc&quot;:float,</span> <span class="pre">&quot;pr_auc&quot;:float}</span></code></p>
+<p>If dimensions are being fused using the <code class="docutils literal notranslate"><span class="pre">axis_map</span></code> parameter, returns a <em>Pandas DataFrame</em> with the prediction
+scores. The columns for the returned DataFrame in this case are 'fusion', 'method', 'metric', and 'score'.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><p>dict or Pandas DataFrame</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a four dimensional tensor with dimension names <em>U x S x D x s</em>, <code class="docutils literal notranslate"><span class="pre">axis_map</span></code> to fuse to first dimension, and first and second
+dimensions would be: <code class="docutils literal notranslate"><span class="pre">axis_map=OrderedDict((('U',</span> <span class="pre">[0]),</span> <span class="pre">('US',</span> <span class="pre">[0,</span> <span class="pre">1])))</span></code>. Here <code class="docutils literal notranslate"><span class="pre">'U'</span></code> and <code class="docutils literal notranslate"><span class="pre">'US'</span></code> are the dimension names,
+and <code class="docutils literal notranslate"><span class="pre">[0]</span></code> and <code class="docutils literal notranslate"><span class="pre">[0,1]</span></code> are the dimension numbers respectively.</p>
+<p>Another example is illustrated below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="n">axis_map</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(((</span><span class="s1">&#39;U&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;UD&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span> <span class="p">(</span><span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">predict_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.predict_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>The function call that can be used for classification of anomalies after fitting the tensor.
+The model will use the trained latent factors to generate the Poisson lambda scores corresponding to the given
+new coordinate.</p>
+<p>These lambda values are then used to calculate the p-values for classification of the entries.</p>
+<p>The lower p-value here is an indicator of an anomaly.</p>
+<p>Since the learned or expected behaviour during the training time is represented by the KRUSKAL tensor M,
+we can calculate how likely a new index to occur in M (i.e. M represents the average number of expected events for each coordinate).
+If two tensors trained during fitting, the prediction will weight the lambdas before calculating the p-values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We find that using ensemble of tensors during prediction significantly reduces the false positive rates for anomaly detection as shown in [2].</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coords</strong> (<em>array</em>) -- Coordinates of the non-zero values.</p></li>
+<li><p><strong>values</strong> (<em>list</em>) -- <p>List of non-zero values.</p>
+<p>Length must match the <code class="docutils literal notranslate"><span class="pre">coords</span></code> parameter length.</p>
+<p>Example binary links: <code class="docutils literal notranslate"><span class="pre">array([1,</span> <span class="pre">1,</span> <span class="pre">1])</span></code>.</p>
+</p></li>
+<li><p><strong>from_matlab</strong> (<em>boolean</em><em>, </em><em>optional</em>) -- <p>If the dataset used in MATLAB as well, indices may start at 1 instead of 0.</p>
+<p>This parameter can be used to subtract 1 from the indices.</p>
+<p>The default is False.</p>
+</p></li>
+<li><p><strong>objective</strong> (<em>string</em><em>, </em><em>optional</em>) -- <p><code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code> calculates the Poisson p-value.</p>
+<p>Fusion <code class="docutils literal notranslate"><span class="pre">objective</span></code> options: 'p_value_fusion_harmonic', 'p_value_fusion_harmonic_observed', 'p_value_fusion_chi2',
+'p_value_fusion_chi2_observed', 'p_value_fusion_arithmetic'.</p>
+<p>If fusion is being used, specify the list of dimensions that are being targeted
+via the <code class="docutils literal notranslate"><span class="pre">p_value_fusion_index</span></code> parameter.</p>
+<p>Calculate log_likelihood of observing the link with <code class="docutils literal notranslate"><span class="pre">objective='log_likelihood'</span></code>.</p>
+<p>The default is <code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code>.</p>
+</p></li>
+<li><p><strong>ensemble_significance</strong> (<em>list of length two</em><em>, </em><em>optional</em>) -- Weight of each tensor, if two is trained. Two is trained when <code class="docutils literal notranslate"><span class="pre">rank=[r1,r2]</span></code> during <strong>pyCP_APR.CP_APR.fit()</strong>
+where <em>r1</em> and <em>r2</em> are intiger ranks.
+The default is <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[0.1,</span> <span class="pre">0.9]</span></code>.</p></li>
+<li><p><strong>p_value_fusion_index</strong> (<em>list</em><em>, </em><em>optional</em>) -- <p>Fuses down to the target dimensions.</p>
+<p>List should contain the index of the dimensions to fuse.
+The default is <code class="docutils literal notranslate"><span class="pre">p_value_fusion_index=[0]</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only used if fusion objective is being used.</p>
+</div>
+</p></li>
+<li><p><strong>ignore_dimensions_indx</strong> (<em>list</em><em>, </em><em>optional</em>) -- If used, the dimension numbers in the list will be ignored during the calculation of the lambdas.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>predictions</strong> -- Returns the prediction objective.</p>
+<p>For instance, if parameter was <code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code>, array of p-values are returned for each entry in the test tensor.</p>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<p>Sample coordinate and value pair for a four dimensional tensor with 3 entries:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># coordinates of 3 entries of 4 dimensional tensor</span>
+<span class="n">coords</span> <span class="o">=</span> <span class="n">array</span><span class="p">([[</span>    <span class="mi">0</span><span class="p">,</span>   <span class="mi">961</span><span class="p">,</span>     <span class="mi">0</span><span class="p">,</span>     <span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span>    <span class="mi">0</span><span class="p">,</span>   <span class="mi">961</span><span class="p">,</span>  <span class="mi">1742</span><span class="p">,</span>     <span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span>    <span class="mi">0</span><span class="p">,</span>   <span class="mi">961</span><span class="p">,</span>  <span class="mi">2588</span><span class="p">,</span>     <span class="mi">0</span><span class="p">]])</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Extracting the p-values from the test tensor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;TOY&quot;</span><span class="p">)</span>
+
+<span class="c1"># Training set</span>
+<span class="n">coords_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_coords&#39;</span><span class="p">]</span>
+<span class="n">nnz_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># Test set</span>
+<span class="n">coords_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_coords&#39;</span><span class="p">]</span>
+<span class="n">nnz_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># CP-APR model</span>
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;torch&#39;</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span> <span class="n">device_num</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># factorize the tensor for ranks 1 and 4.</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># calculate the p-values for the entries in the test set</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">predict_scores</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_test</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_test</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These p-values are also saved in the class variable, and can be found as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cp_apr</span><span class="o">.</span><span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;p_value&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">set_params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.set_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Sets the model parameters.</p>
+<p>Here the model is <strong>pyCP_APR.CP_APR.model</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parameters</strong> (<em>dict</em>) -- All model parameters. See <strong>pyCP_APR.CP_APR</strong> class initilization parameters.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>self</strong> -- self is returned.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt>
+<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_significance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Given the sparse test tensor entries (or indicies, i.e. coordinates of non-zero values), calculate the Poisson lambda values.</p>
+<p>The Poission lambda value can be used to identify how likely was that coordinate in the test tensor to occur given
+what we have learned during the training time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If 2 tensors are weighted during the calculation of lambdas, the weight of each can be specified using
+<code class="docutils literal notranslate"><span class="pre">ensemble_significance</span></code>. See <strong>pyCP_APR.CP_APR.fit()</strong> for factorazing ensemble of tensor ranks.</p>
+<p>For instance, if <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[0.1,</span> <span class="pre">0.9]</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">=</span> <span class="pre">(0.1</span> <span class="pre">x</span> <span class="pre">lambda_1)</span> <span class="pre">+</span> <span class="pre">(0.9</span> <span class="pre">x</span> <span class="pre">lambda_2)</span></code>.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>indicies</strong> (<em>list</em><em> or </em><em>array</em>) -- List of non-zero coordinates in the test tensor.</p></li>
+<li><p><strong>ensemble_significance</strong> (<em>list</em><em>, </em><em>optional</em>) -- <p>The weight of each tensor during lambda calculations.</p>
+<p>Ensemble significance is automatically applied if multiple tensors are fitted.</p>
+<p>If multiple tensors are fitted, the default is <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[0.1,</span> <span class="pre">0.9]</span></code>.</p>
+<p>If single tensor is fitted, the default is <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[1]</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>lambdas</strong> -- List of lambda values for each of the non-zero coordinates.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Example</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyCP_APR.datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">pyCP_APR</span> <span class="kn">import</span> <span class="n">CP_APR</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;TOY&quot;</span><span class="p">)</span>
+
+<span class="c1"># Training set</span>
+<span class="n">coords_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_coords&#39;</span><span class="p">]</span>
+<span class="n">nnz_train</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;train_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># Test set</span>
+<span class="n">coords_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_coords&#39;</span><span class="p">]</span>
+<span class="n">nnz_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_count&#39;</span><span class="p">]</span>
+
+<span class="c1"># CP-APR model</span>
+<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+
+<span class="c1"># factorize X for ranks 1 and 4</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># get the lambdas</span>
+<span class="c1"># returned lambdas are weighted values for rank 1 and rank 4 tensor decomposition Ms</span>
+<span class="n">lambdas</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coords_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pyCP_APR.version">
+<span id="pycp-apr-version-module"></span><h2>pyCP_APR.version module<a class="headerlink" href="#module-pyCP_APR.version" title="Permalink to this headline">¶</a></h2>
+<p>pyCP_APR version.</p>
+</div>
+<div class="section" id="module-pyCP_APR">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR" title="Permalink to this headline">¶</a></h2>
+<p>2021. Triad National Security, LLC. All rights reserved.
+This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
+National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
+Department of Energy/National Nuclear Security Administration. All rights in the program are
+reserved by Triad National Security, LLC, and the U.S. Department of Energy/National Nuclear
+Security Administration. The Government is granted for itself and others acting on its behalf a
+nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare
+derivative works, distribute copies to the public, perform publicly and display publicly,
+and to permit others to do so.</p>
+</div>
+</div>
+
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="modules.html" title="previous page">pyCP_APR Package</a>
+    <a class='right-next' id="next-link" href="pyCP_APR.applications.html" title="next page">pyCP_APR.applications package</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
+        
+            &copy; Copyright 2021, LANL.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

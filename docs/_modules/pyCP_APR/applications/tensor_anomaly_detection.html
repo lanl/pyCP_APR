@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+<html lang="Python">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyCP_APR.applications.tensor_anomaly_detection &#8212; pyCP_APR 1.0.0 documentation</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <p class="caption">
+ <span class="caption-text">
+  Contents:
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../CP_APR.html">
+   pyCP_APR.CP_APR API
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../datasets.html">
+   pyCP_APR.datasets API
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../../modules.html">
+   pyCP_APR Package
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../../../pyCP_APR.html">
+     pyCP_APR package
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../pyCP_APR.applications.html">
+       pyCP_APR.applications package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../pyCP_APR.numpy_cp.html">
+       pyCP_APR.numpy_cp package
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../../pyCP_APR.torch_cp.html">
+       pyCP_APR.torch_cp package
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <h1>Source code for pyCP_APR.applications.tensor_anomaly_detection</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">tensor_anomaly_detection.py performs p-value scoring over the tensor decomposition, i.e.</span>
+<span class="sd">the KRUSKAL tensor M. The calculated p-values are used to detect anomalies.\n</span>
+<span class="sd">This method was introduced by Eren et al. in [1].</span>
+
+<span class="sd">CyberToaster, Project 1, Summer 2020\n</span>
+<span class="sd">Los Alamos National Laboratory\n</span>
+
+<span class="sd">Anomaly detection using Tensors and their Decompositions.\n</span>
+<span class="sd">Student: Maksim E. Eren\n</span>
+<span class="sd">Primary Mentor: Juston Moore\n</span>
+<span class="sd">Secondary Mentors: Boian Alexandrov and Patrick Avery</span>
+
+<span class="sd">References</span>
+<span class="sd">========================================</span>
+<span class="sd">[1] M. E. Eren, J. S. Moore and B. S. Alexandro, &quot;Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization,&quot; 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), 2020, pp. 1-6, doi: 10.1109/ISI49825.2020.9280524.</span>
+
+<span class="sd">@author: Maksim Ekin Eren, Juston S. Moore</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.special</span> <span class="k">as</span> <span class="nn">sc</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">chdtrc</span> <span class="k">as</span> <span class="n">chi2_cdf</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">poisson</span>
+
+
+<div class="viewcode-block" id="PoissonTensorAnomaly"><a class="viewcode-back" href="../../../pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly">[docs]</a><span class="k">class</span> <span class="nc">PoissonTensorAnomaly</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Anomaly detection using Poisson Distribution and Canonical Polyadic (CP)</span>
+<span class="sd">    with Alternating Poisson Regression tensor decomposition (CP-APR).</span>
+
+<span class="sd">    Componenets of the CP-APR used to calculate the p-values for each instance</span>
+<span class="sd">    through Poisson cumulative distribution function (cdf).</span>
+
+<span class="sd">    p-values are then used to determine if the event is an anomaly.</span>
+<span class="sd">    Lower p-values are more anomalous.</span>
+
+<span class="sd">    v2: Utilizes Numpy vectorization for the calculations.</span>
+
+
+<span class="sd">    References:\n</span>
+<span class="sd">    1) Chi, Eric C. and Tamara G. Kolda. “On Tensors, Sparsity, and Nonnegative</span>
+<span class="sd">    Factorizations.” SIAM J. Matrix Anal. Appl. 33 (2012): 1272-1299.\n</span>
+<span class="sd">    2) Turcotte, Melissa J. M. et al. “Unified Host and Network Data Set.</span>
+<span class="sd">    ” ArXiv abs/1708.07518 (2017): n. pag.\n</span>
+<span class="sd">    3) Wikipedia contributors. &quot;Poisson distribution.&quot; Wikipedia,</span>
+<span class="sd">    The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 29 Jun. 2020. Web. 6 Jul. 2020.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># LIBRARY INFORMATION</span>
+    <span class="n">__version_info__</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span>
+    <span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">__version_info__</span><span class="p">)</span>
+    <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Maksim E. Eren, Juston Moore&quot;</span>
+    <span class="n">__info__</span> <span class="o">=</span> <span class="s2">&quot;Anomaly detection using Poisson Distribution and Canonical Polyadic (CP) </span><span class="se">\</span>
+<span class="s2">    with Alternating Poisson Regression tensor decomposition (CP-APR). This version utilize </span><span class="se">\</span>
+<span class="s2">    Numpy vectorization in the calculations.&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dimensions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span> <span class="n">weights</span><span class="o">=</span><span class="nb">list</span><span class="p">(),</span>
+                 <span class="n">objective</span><span class="o">=</span><span class="s1">&#39;p_value&#39;</span><span class="p">,</span> <span class="n">lambda_method</span><span class="o">=</span><span class="s1">&#39;single_tensor&#39;</span><span class="p">,</span>
+                 <span class="n">p_value_fusion_index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                 <span class="n">ensemble_dimensions</span><span class="o">=</span><span class="nb">dict</span><span class="p">(),</span> <span class="n">ensemble_weights</span><span class="o">=</span><span class="nb">list</span><span class="p">(),</span> <span class="n">ensemble_significance</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">],</span>
+                 <span class="n">mode_weights</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ignore_dimensions_indx</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initilize the anomaly detector class.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dimensions : dict, required</span>
+<span class="sd">            Components of the KRUSKAL Tensor Decomposition. The default is dict.\n</span>
+<span class="sd">            Each element is a dimension (factors of a component) and</span>
+<span class="sd">            each dimension has (nxK) elements for that factor for rank K.</span>
+<span class="sd">        weights : list, required</span>
+<span class="sd">            Weights of each component of parameter dimensions. The default is list.</span>
+<span class="sd">        objective : string, optional</span>
+<span class="sd">            What to calculate.\n</span>
+<span class="sd">            Options: p_value, p_value_fusion_harmonic, p_value_fusion_harmonic_observed,</span>
+<span class="sd">            p_value_fusion_chi2, p_value_fusion_chi2_observed, p_value_fusion_arithmetic,</span>
+<span class="sd">            log_likelihood</span>
+<span class="sd">            The default is &#39;p_value&#39;.</span>
+<span class="sd">        lambda_method : string, optional</span>
+<span class="sd">            How to calculate lambda.\n</span>
+<span class="sd">            If &#39;single_tensor&#39;, it will use single ktensor passed in dimensions</span>
+<span class="sd">            when calculating lambda.\n</span>
+<span class="sd">            If &#39;ensemble&#39;, it will use two ktensors where parameter dimensions</span>
+<span class="sd">            is a K&gt;=1 rank tensor with lambda weight ensemble_significance[0] and</span>
+<span class="sd">            parameter ensemble_dimensions is a ktensor with K&gt;1 rank tensor with</span>
+<span class="sd">            lambda weight ensemble_significance[1]. The default is &#39;single_tensor&#39;.</span>
+<span class="sd">        p_value_fusion_index :  list</span>
+<span class="sd">            Index to fix, or calculate the p-value fusions. Only used when</span>
+<span class="sd">            objective is set to p_value_fusion.</span>
+<span class="sd">            The default is [0].</span>
+<span class="sd">        ensemble_dimensions : dict, optional</span>
+<span class="sd">            Components of the KRUSKAL Tensor Decomposition.\n</span>
+<span class="sd">            Each element is a dimension (factors of a component) and</span>
+<span class="sd">            each dimension has (nxK) elements for that factor for rank K.\n</span>
+<span class="sd">            This is the second ktensor dimension passed. It will be used if</span>
+<span class="sd">            lambda_method is set to &#39;ensemble&#39;.</span>
+<span class="sd">            Its lambda weight is ensemble_significance[1]. The default is dict().</span>
+<span class="sd">        ensemble_weights : list, optional</span>
+<span class="sd">            Weights of each component of ensemble_dimensions. The default is list().</span>
+<span class="sd">            Only used if lambda_method is &#39;ensemble&#39;.</span>
+<span class="sd">        ensemble_significance : list, optional</span>
+<span class="sd">            lambda weight of each ktensor when using &#39;ensemble&#39; lambda_method.\n</span>
+<span class="sd">            Weight of dimensions: ensemble_significance[0]\n.</span>
+<span class="sd">            Weight of ensemble_dimensions: ensemble_significance[1]\n</span>
+<span class="sd">            The default is [0.1, 0.9].</span>
+<span class="sd">        mode_weights : list, optional</span>
+<span class="sd">            Weight of each dimension.\n</span>
+<span class="sd">            The default is [1].</span>
+<span class="sd">        ignore_dimensions_indx : list, optional</span>
+<span class="sd">            If any dimension in latent factors should be ignored when calculating the lambdas.\n</span>
+<span class="sd">            The default is [].</span>
+
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Store KRUSKAL Tensor componenets</span>
+        <span class="c1"># Each index in dimensions is a dimension from the tensor</span>
+        <span class="c1"># and each dimension consist of that dimension&#39;s values and Ranks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dimensions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">numpy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">value</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
+
+        <span class="c1"># K, Rank of the tensor</span>
+        <span class="c1"># if K = 1</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+            <span class="c1"># Component weights</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">weights</span><span class="p">])</span>
+            <span class="c1"># Rank</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="c1"># Component weights</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+            <span class="c1"># Rank</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># D, Order or mode of the tensor. Number of dimensions</span>
+        <span class="c1"># There are D factors within each K components</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">D</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
+
+        <span class="c1"># Tensor/Dimensions Size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dimensions_size</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dimensions_size</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dimension</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="c1"># How to calculate the scores</span>
+        <span class="n">avail_objectives</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;p_value&#39;</span><span class="p">,</span> \
+                            <span class="s1">&#39;p_value_fusion_harmonic&#39;</span><span class="p">,</span> <span class="s1">&#39;p_value_fusion_harmonic_observed&#39;</span><span class="p">,</span> \
+                            <span class="s1">&#39;p_value_fusion_arithmetic&#39;</span><span class="p">,</span> \
+                            <span class="s1">&#39;p_value_fusion_chi2&#39;</span><span class="p">,</span> <span class="s1">&#39;p_value_fusion_chi2_observed&#39;</span><span class="p">,</span> \
+                            <span class="s1">&#39;log_likelihood&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">objective</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">avail_objectives</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Invalid objective. Available methods: &#39;</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">avail_objectives</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">=</span> <span class="n">objective</span>
+
+        <span class="c1"># Lamda calculation method</span>
+        <span class="n">avail_lambda_methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;single_tensor&#39;</span><span class="p">,</span> <span class="s1">&#39;ensemble&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">objective</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">avail_objectives</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Invalid lambda method. Available methods: &#39;</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">avail_lambda_methods</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">lambda_method</span> <span class="o">=</span> <span class="n">lambda_method</span>
+
+        <span class="c1"># ensemble lambda will have multiple tensors with different ranks to be used</span>
+        <span class="c1"># when calculating the lambda</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_dimensions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_weights</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_significance</span> <span class="o">=</span> <span class="n">ensemble_significance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">K_ensemble</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1"># extract dimensions from each tensor in the bag</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_method</span> <span class="o">==</span> <span class="s1">&#39;ensemble&#39;</span><span class="p">:</span>
+
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">ensemble_dimensions</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">numpy_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">value</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_dimensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ensemble_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ensemble_weights</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">K_ensemble</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ensemble_weights</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">K_ensemble</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_dimensions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span> <span class="o">=</span> <span class="n">p_value_fusion_index</span>
+
+        <span class="c1"># Weight of each dimension</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mode_weights</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mode_weights</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">):</span>
+                <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="s1">&#39;Mode weights must be same number of dimensions.&#39;</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">mode_weights</span> <span class="o">=</span> <span class="n">mode_weights</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mode_weights</span> <span class="o">=</span> <span class="n">mode_weights</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">)</span>
+
+        <span class="c1"># Dimensions to ignore when calculating the lambdas</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ignore_dimensions_indx</span> <span class="o">=</span> <span class="n">ignore_dimensions_indx</span>
+
+
+<div class="viewcode-block" id="PoissonTensorAnomaly.predict"><a class="viewcode-back" href="../../../pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly.predict">[docs]</a>    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">from_matlab</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Get the scores using the KRUSKAL components given the non-zero coordinates</span>
+<span class="sd">        and values and the objective.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        coords : list of list</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+<span class="sd">        values : list</span>
+<span class="sd">            Non-zero values that are in the sparse tensor.</span>
+<span class="sd">        from_matlab : bool</span>
+<span class="sd">            Set True if need to substract 1 to the coordinates, since matlab starts at 1.\n</span>
+<span class="sd">            The default is False.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        prediction : dict</span>
+<span class="sd">            Dictionary of calculated objective.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="c1"># change coords to a numpy array or arrays</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">coords</span><span class="p">])</span>
+        <span class="c1"># change values to a numpy array</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+
+        <span class="c1"># substract 1 from each element since for Matlab +1 was done</span>
+        <span class="k">if</span> <span class="n">from_matlab</span><span class="p">:</span>
+            <span class="n">coords</span> <span class="o">-=</span> <span class="mi">1</span>
+
+        <span class="c1"># calculate Poisson Lambda values for each instance, or event</span>
+        <span class="n">lambdas</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_lambdas</span><span class="p">(</span><span class="n">coords</span><span class="p">)</span>
+
+        <span class="c1"># calculate the p_values</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;p_value&#39;</span><span class="p">:</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_values</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+        <span class="c1"># calculate p_value fusion with harmonic mean</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;p_value_fusion_harmonic&#39;</span><span class="p">:</span>
+            <span class="n">p_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_values</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_value_fusion_harmonic</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
+        <span class="c1"># calculate p_value fusion with harmonic mean for observed events</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;p_value_fusion_harmonic_observed&#39;</span><span class="p">:</span>
+            <span class="n">p_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_values</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_value_fusion_harmonic_observed</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
+        <span class="c1"># calculate p_value fusion with arithmetic mean</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;p_value_fusion_arithmetic&#39;</span><span class="p">:</span>
+            <span class="n">p_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_values</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_value_fusion_arithmetic</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
+        <span class="c1">#  cakculate p_value fusion with chi-squared test</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;p_value_fusion_chi2&#39;</span><span class="p">:</span>
+            <span class="n">p_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_values</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_value_fusion_chi2</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
+        <span class="c1"># cakculate p_value fusion with chi-squared test for observed events</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;p_value_fusion_chi2_observed&#39;</span><span class="p">:</span>
+            <span class="n">p_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_values</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_p_value_fusion_chi2_observed</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
+        <span class="c1"># calculate log_likelihood</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">objective</span> <span class="o">==</span> <span class="s1">&#39;log_likelihood&#39;</span><span class="p">:</span>
+            <span class="n">scores</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_log_likelihood</span><span class="p">(</span><span class="n">lambdas</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
+
+            <span class="c1"># prepare the return value</span>
+        <span class="n">prediction</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="n">prediction</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">objective</span><span class="p">]</span> <span class="o">=</span> <span class="n">scores</span>
+        <span class="n">prediction</span><span class="p">[</span><span class="s1">&#39;lambda&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lambdas</span>
+
+        <span class="k">return</span> <span class="n">prediction</span></div>
+
+    <span class="k">def</span> <span class="nf">__get_log_likelihood</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate the log-likelihood given the Poisson lambda values, coordinates</span>
+<span class="sd">        of the non-zero elements, and list of non-zero elements.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lambdas : numpy array</span>
+<span class="sd">            array of Poisson lambdas.</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+<span class="sd">        values : numpy array</span>
+<span class="sd">            non-zero values of a tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        log_likelihood : float</span>
+<span class="sd">            log-likelihood score of given coordinates.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="c1"># Calculate the non-zero log sum</span>
+        <span class="n">log_sum_nnz</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">lambd</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lambdas</span><span class="p">):</span>
+            <span class="n">log_sum_nnz</span> <span class="o">+=</span> <span class="p">((</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">lambd</span><span class="p">))</span> <span class="o">-</span> <span class="n">sc</span><span class="o">.</span><span class="n">gammaln</span><span class="p">(</span><span class="n">values</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="c1"># Calculate Lambda (capital lambda)</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">dimension_index</span><span class="p">,</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># if rank is 1, no components to sum</span>
+                <span class="n">theta</span> <span class="o">*=</span> <span class="p">(</span><span class="n">dimension</span><span class="p">[</span><span class="n">coords</span><span class="p">[:,</span> <span class="n">dimension_index</span><span class="p">]]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">theta</span> <span class="o">*=</span> <span class="p">(</span><span class="n">dimension</span><span class="p">[</span><span class="n">coords</span><span class="p">[:,</span> <span class="n">dimension_index</span><span class="p">]]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">Lambda</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_method</span> <span class="o">==</span> <span class="s1">&#39;ensemble&#39;</span><span class="p">:</span>
+            <span class="c1"># main ktensor&#39;s lambdas weight</span>
+            <span class="n">Lambda</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_significance</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># Calculate Lambda_2 (capital lambda 2), Lambda for the secondary tensor</span>
+            <span class="n">theta</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">dimension_index</span><span class="p">,</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ensemble_dimensions</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">K_ensemble</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># if rank is 1, no components to sum</span>
+                    <span class="n">theta</span> <span class="o">*=</span> <span class="p">(</span><span class="n">dimension</span><span class="p">[</span><span class="n">coords</span><span class="p">[:,</span> <span class="n">dimension_index</span><span class="p">]]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_weights</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">theta</span> <span class="o">*=</span> <span class="p">(</span><span class="n">dimension</span><span class="p">[</span><span class="n">coords</span><span class="p">[:,</span> <span class="n">dimension_index</span><span class="p">]]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_weights</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># Add Lambda_2 to Lambda</span>
+            <span class="n">Lambda</span> <span class="o">+=</span> <span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_significance</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="n">log_likelihood</span> <span class="o">=</span> <span class="n">log_sum_nnz</span> <span class="o">-</span> <span class="n">Lambda</span>
+
+        <span class="k">return</span> <span class="n">log_likelihood</span>
+
+    <span class="k">def</span> <span class="nf">__get_p_value_fusion_arithmetic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate p_value for instances in dimension &#39;p_value_fusion_index&#39; using</span>
+<span class="sd">        p_value fusion with arithmetic mean over the all tensor (including zeros).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_values : list</span>
+<span class="sd">            List of Poisson p-values.</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        p_value_fusions : list</span>
+<span class="sd">            p_value for each instance in dimension &#39;p_value_fusion_index&#39;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">p_value_fusions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="c1"># unique array of target instances to calculate p_value fussion</span>
+        <span class="n">unfold_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># unfold size is the tensor size unfolding at index &#39;p_value_fusion_index&#39;</span>
+        <span class="c1"># multiply dimension sizes ignoring the unfolding dimension &#39;p_value_fusion_index&#39;</span>
+        <span class="n">unfold_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+
+        <span class="c1"># calculate p-value for each target</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">unfold_target</span><span class="p">:</span>
+            <span class="c1"># coordinates of the current target</span>
+            <span class="n">nnz_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># remove the current target from bag for speed improvment on next iteration</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">nnz_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">target_p_value_sum</span> <span class="o">=</span> <span class="n">p_values</span><span class="p">[</span><span class="n">nnz_indices</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="c1"># total number of zero elements stored in the tensor at the current unfolding</span>
+            <span class="n">total_zero</span> <span class="o">=</span> <span class="n">unfold_size</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nnz_indices</span><span class="p">)</span>
+
+            <span class="n">arithmetic_p_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">target_p_value_sum</span> <span class="o">+</span> <span class="n">total_zero</span><span class="p">)</span> <span class="o">/</span> <span class="n">unfold_size</span>
+
+            <span class="n">p_value_fusions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arithmetic_p_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p_value_fusions</span>
+
+    <span class="k">def</span> <span class="nf">__get_p_value_fusion_harmonic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate p_value for instances in dimension &#39;p_value_fusion_index&#39; using</span>
+<span class="sd">        p_value fusion with harmonic mean over the all tensor (including zeros).</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_values : list</span>
+<span class="sd">            List of Poisson p-values.</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        p_value_fusions : list</span>
+<span class="sd">            p_value for each instance in dimension &#39;p_value_fusion_index&#39;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">p_value_fusions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="c1"># unique array of target instances to calculate p_value fussion</span>
+        <span class="n">unfold_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># unfold size is the tensor size unfolding at index &#39;p_value_fusion_index&#39;</span>
+        <span class="c1"># multiply dimension sizes ignoring the unfolding dimension &#39;p_value_fusion_index&#39;</span>
+        <span class="n">unfold_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+
+        <span class="c1"># calculate p-value for each target</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">unfold_target</span><span class="p">:</span>
+            <span class="c1"># coordinates of the current target</span>
+            <span class="n">nnz_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># remove the current target from bag for speed improvment on next iteration</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">nnz_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">target_p_value_sum</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">p_values</span><span class="p">[</span><span class="n">nnz_indices</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="c1"># total number of zero elements stored in the tensor at the current unfolding</span>
+            <span class="n">total_zero</span> <span class="o">=</span> <span class="n">unfold_size</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">nnz_indices</span><span class="p">)</span>
+
+            <span class="n">harmonic_p_value</span> <span class="o">=</span> <span class="n">unfold_size</span> <span class="o">/</span> <span class="p">(</span><span class="n">target_p_value_sum</span> <span class="o">+</span> <span class="n">total_zero</span><span class="p">)</span>
+
+            <span class="n">p_value_fusions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">harmonic_p_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p_value_fusions</span>
+
+    <span class="k">def</span> <span class="nf">__get_p_value_fusion_harmonic_observed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate p_value for instances in dimension &#39;p_value_fusion_index&#39; using</span>
+<span class="sd">        p_value fusion with harmonic mean over the observed events only.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_values : list</span>
+<span class="sd">            List of Poisson p-values.</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        p_value_fusions : list</span>
+<span class="sd">            p_value for each instance in dimension &#39;p_value_fusion_index&#39;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">p_value_fusions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="c1"># unique array of target instances to calculate p_value fussion</span>
+        <span class="n">unfold_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># calculate p-value for each target</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">unfold_target</span><span class="p">:</span>
+            <span class="c1"># coordinates of the current target</span>
+            <span class="n">nnz_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># remove the current target from bag for speed improvment on next iteration</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">nnz_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">target_p_value_sum</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">p_values</span><span class="p">[</span><span class="n">nnz_indices</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="n">harmonic_p_value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nnz_indices</span><span class="p">)</span> <span class="o">/</span> <span class="n">target_p_value_sum</span>
+
+            <span class="n">p_value_fusions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">harmonic_p_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p_value_fusions</span>
+
+    <span class="k">def</span> <span class="nf">__get_p_value_fusion_chi2_observed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate p-value fusion using Fisher&#39;s test over observed events</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_values : list</span>
+<span class="sd">            List of Poisson p-values.</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        p_value_fusions : list</span>
+<span class="sd">            p_value for each instance in dimension &#39;p_value_fusion_index&#39;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">p_value_fusions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="c1"># unique array of target instances to calculate p_value fussion</span>
+        <span class="n">unfold_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># calculate p-value for each target</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">unfold_target</span><span class="p">:</span>
+            <span class="c1"># coordinates of the current target</span>
+            <span class="n">nnz_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># remove the current target from bag for speed improvment on next iteration</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">nnz_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">statistic</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p_values</span><span class="p">[</span><span class="n">nnz_indices</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+            <span class="n">k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nnz_indices</span><span class="p">)</span>
+            <span class="c1"># chi2_p_value = chi2.cdf(2*k, statistic)</span>
+            <span class="n">chi2_p_value</span> <span class="o">=</span> <span class="n">chi2_cdf</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">k</span><span class="p">,</span> <span class="n">statistic</span><span class="p">)</span>
+
+            <span class="n">p_value_fusions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2_p_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p_value_fusions</span>
+
+    <span class="k">def</span> <span class="nf">__get_p_value_fusion_chi2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_values</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate p-value fusion using Fisher&#39;s test</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        p_values : list</span>
+<span class="sd">            List of Poisson p-values.</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        p_value_fusions : list</span>
+<span class="sd">            p_value for each instance in dimension &#39;p_value_fusion_index&#39;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">p_value_fusions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+        <span class="c1"># unique array of target instances to calculate p_value fussion</span>
+        <span class="n">unfold_target</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># unfold size is the tensor size unfolding at index &#39;p_value_fusion_index&#39;</span>
+        <span class="c1"># multiply dimension sizes ignoring the unfolding dimension &#39;p_value_fusion_index&#39;</span>
+        <span class="n">unfold_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+
+        <span class="c1"># calculate p-value for each target</span>
+        <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">unfold_target</span><span class="p">:</span>
+            <span class="c1"># coordinates of the current target</span>
+            <span class="n">nnz_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">coords</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p_value_fusion_index</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+            <span class="c1"># remove the current target from bag for speed improvment on next iteration</span>
+            <span class="n">coords</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">nnz_indices</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="n">statistic</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p_values</span><span class="p">[</span><span class="n">nnz_indices</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+            <span class="c1"># chi2_p_value = chi2.cdf(2*k, statistic)</span>
+            <span class="n">chi2_p_value</span> <span class="o">=</span> <span class="n">chi2_cdf</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">unfold_size</span><span class="p">,</span> <span class="n">statistic</span><span class="p">)</span>
+
+            <span class="n">p_value_fusions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chi2_p_value</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p_value_fusions</span>
+
+    <span class="k">def</span> <span class="nf">__get_p_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate the Poisson p-value for the given x (number of occurrences values[i])</span>
+<span class="sd">        and Poisson lambda (lambdas[i])</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        lambdas : numpy array</span>
+<span class="sd">            array of Poisson lambdas.</span>
+<span class="sd">        values : numpy array</span>
+<span class="sd">            non-zero values of a tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        p_values : list</span>
+<span class="sd">            List of Poisson p-values.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="n">p_value_calculator</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">lamb</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">poisson</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">lamb</span><span class="p">))</span>
+        <span class="n">p_value_func</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vectorize</span><span class="p">(</span><span class="n">p_value_calculator</span><span class="p">)</span>
+
+        <span class="n">p_values</span> <span class="o">=</span> <span class="n">p_value_func</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">lambdas</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">p_values</span>
+
+    <span class="k">def</span> <span class="nf">__get_lambdas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Calculate lambda, average number of occurences for Poisson Distribution.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        coords : numpy array</span>
+<span class="sd">            Coordinates of the non-zero elements within the sparse tensor.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        lambdas : numpy array</span>
+<span class="sd">            array of Poisson lambda values.</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">dimension_index</span><span class="p">,</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dimensions</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">dimension_index</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ignore_dimensions_indx</span><span class="p">:</span>
+                <span class="n">theta</span> <span class="o">*=</span> <span class="p">(</span><span class="n">dimension</span><span class="p">[</span><span class="n">coords</span><span class="p">[:,</span> <span class="n">dimension_index</span><span class="p">]])</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode_weights</span><span class="p">[</span><span class="n">dimension_index</span><span class="p">]</span>
+        <span class="n">theta</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">K</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># if rank is 1, no components to sum</span>
+            <span class="n">lambdas</span> <span class="o">=</span> <span class="n">theta</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lambdas</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">lambda_method</span> <span class="o">==</span> <span class="s1">&#39;ensemble&#39;</span><span class="p">:</span>
+            <span class="c1"># main ktensor&#39;s lambdas weight</span>
+            <span class="n">lambdas</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_significance</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="c1"># calculate the secondary tensor&#39;s lambdas</span>
+            <span class="n">theta</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">dimension_index</span><span class="p">,</span> <span class="n">dimension</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ensemble_dimensions</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">dimension_index</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ignore_dimensions_indx</span><span class="p">:</span>
+                    <span class="n">theta</span> <span class="o">*=</span> <span class="n">dimension</span><span class="p">[</span><span class="n">coords</span><span class="p">[:,</span> <span class="n">dimension_index</span><span class="p">]]</span>
+            <span class="n">theta</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_weights</span>
+
+            <span class="c1"># combine lambdas</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">K_ensemble</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># if rank is 1, no components to sum</span>
+                <span class="n">lambdas</span> <span class="o">+=</span> <span class="p">(</span><span class="n">theta</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_significance</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lambdas</span> <span class="o">+=</span> <span class="p">(</span><span class="n">theta</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">ensemble_significance</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">lambdas</span></div>
+</pre></div>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
+        
+            &copy; Copyright 2021, LANL.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
