@@ -162,7 +162,7 @@ def _get_file_paths(name=""):
     if download:
         print("Downloading the dataset:", name)
 
-        url = "https://github.com/lanl/pyCP_APR/raw/main/data/tensors/" + name
+        url = "https://raw.githubusercontent.com//lanl/pyCP_APR/main/data/tensors/" + name
         r = requests.get(url, allow_redirects=True)
         open(files_dirname + name, 'wb').write(r.content)
         files = os.listdir(files_dirname)
