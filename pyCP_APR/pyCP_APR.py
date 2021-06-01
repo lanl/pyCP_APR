@@ -337,6 +337,18 @@ class CP_APR():
         Dimension fusion uses the Harmonic Mean.\n
         **This function is in beta stage.**
 
+        
+        .. note::
+            Anomaly detection can be performed either using **predict_scores()**, or using **transform()** and **predict_probas()**. 
+            While using **transform()** and **predict_probas()** yields faster computation time and more established dimension fusion results, **predict_scores()** provides wider range of features for anomaly detection.
+
+
+        .. warning:: 
+            In order to use the **predict_probas()** function, below has to be done first:
+
+            1. Tensor has to be factorized using **fit()** function first to extract the KRUSKAL tensor M.
+            2. After **fit()**, Poisson lambda values for the test tensor has to be calculated using the **transform()** function.
+
 
         Parameters
         ----------
@@ -385,9 +397,11 @@ class CP_APR():
         
         .. note::
         
-            If 2 tensors are weighted during the calculation of lambdas, the weight of each can be specified using
-            ``ensemble_significance``. See **pyCP_APR.CP_APR.fit()** for factorazing ensemble of tensor ranks.\n
-            For instance, if ``ensemble_significance=[0.1, 0.9]``, ``lambda = (0.1 x lambda_1) + (0.9 x lambda_2)``.
+            * If 2 tensors are weighted during the calculation of lambdas, the weight of each can be specified using ``ensemble_significance``. See **pyCP_APR.CP_APR.fit()** for factorazing ensemble of tensor ranks. For instance, if ``ensemble_significance=[0.1, 0.9]``, ``lambda = (0.1 x lambda_1) + (0.9 x lambda_2)``.
+            * Anomaly detection can be performed either using **predict_scores()**, or using **transform()** and **predict_probas()**. While using **transform()** and **predict_probas()** yields faster computation time and more established dimension fusion results, **predict_scores()** provides wider range of features for anomaly detection.
+        
+        .. warning:: 
+            To use the **transform()** function, the model has to be **fit()** first.
 
 
         Parameters
@@ -789,7 +803,13 @@ class CP_APR():
 
         .. note::
         
-            We find that using ensemble of tensors during prediction significantly reduces the false positive rates for anomaly detection as shown in [2].
+            * We find that using ensemble of tensors during prediction significantly reduces the false positive rates for anomaly detection as shown in [2].
+            * Anomaly detection can be performed either using **predict_scores()**, or using **transform()** and **predict_probas()**. While using **transform()** and **predict_probas()** yields faster computation time and more established dimension fusion results, **predict_scores()** provides wider range of features for anomaly detection. 
+
+
+        .. warning:: 
+
+            * To use **predict_scores()**, **fit()** the model first.
 
 
         Parameters
