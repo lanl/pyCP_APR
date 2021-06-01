@@ -6,7 +6,7 @@
 Welcome to pyCP_APR's documentation!
 ========================================
 
-**pyCP_APR** is a Python library for tensor decomposition and anomaly detection. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in :cite:p:`Eren2020_ISI` using the Unified Host and Network Dataset :cite:p:`UnifiedHostandNetwork2018`. Our work follows the `MATLAB Tensor Toolbox <https://www.tensortoolbox.org/cp.html>`_  :cite:p:`TTB_Software,Bader2006,Bader2008` implementation of CP-APR :cite:p:`ChKo12`.
+**pyCP_APR** is a Python library for tensor decomposition and anomaly detection. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in :cite:p:`Eren2020_ISI` using the `Unified Host and Network Dataset <https://csr.lanl.gov/data/2017/>`_  :cite:p:`UnifiedHostandNetwork2018`. Our work follows the `MATLAB Tensor Toolbox <https://www.tensortoolbox.org/cp.html>`_  :cite:p:`TTB_Software,Bader2006,Bader2008` implementation of CP-APR :cite:p:`ChKo12`.
 
 
 
@@ -15,7 +15,7 @@ Resources
 * `Example Notebooks <https://github.com/lanl/pyCP_APR/tree/main/examples>`_
 * `Example Tensors <https://github.com/lanl/pyCP_APR/tree/main/data/tensors>`_
 * `Paper <https://ieeexplore.ieee.org/abstract/document/9280524>`_
-* `Repository <https://github.com/lanl/pyCP_APR>`_
+* `Code <https://github.com/lanl/pyCP_APR>`_
 
 Installation
 ========================================
@@ -108,7 +108,7 @@ Authors
 - `Juston S. Moore <mailto:jmoore01@lanl.gov>`_: Advanced Research in Cyber Systems, Los Alamos National Laboratory
 - `Erik Skau <mailto:ewskau@lanl.gov>`_: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
 - `Manish Bhattarai <mailto:ceodspspectrum@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- Gopinath Chennupati: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
+- `Gopinath Chennupati <mailto:cgnath.dr@gmail.com>`_: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
 - `Boian S. Alexandrov <mailto:boian@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
 
 
@@ -158,7 +158,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Developer Test Suite
 ========================================
-Developer test suits are located under ``tests/`` directory (located `here <https://github.com/lanl/pyCP_APR/tree/main/tests>`_).
+Developer test suites are located under ``tests/`` directory (located `here <https://github.com/lanl/pyCP_APR/tree/main/tests>`_).
 
 Tests can be ran from this folder using ``python -m unittest *``.
 
