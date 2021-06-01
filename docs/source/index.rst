@@ -15,7 +15,7 @@ Resources
 * `Example Notebooks <https://github.com/lanl/pyCP_APR/tree/main/examples>`_
 * `Example Tensors <https://github.com/lanl/pyCP_APR/tree/main/data/tensors>`_
 * `Paper <https://ieeexplore.ieee.org/abstract/document/9280524>`_
-* `Repository <https://github.com/lanl/pyCP_APR>`_
+* `Code <https://github.com/lanl/pyCP_APR>`_
 
 Installation
 ========================================
@@ -108,7 +108,7 @@ Authors
 - `Juston S. Moore <mailto:jmoore01@lanl.gov>`_: Advanced Research in Cyber Systems, Los Alamos National Laboratory
 - `Erik Skau <mailto:ewskau@lanl.gov>`_: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
 - `Manish Bhattarai <mailto:ceodspspectrum@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
-- Gopinath Chennupati: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
+- `Gopinath Chennupati <mailto:cgnath.dr@gmail.com>`_: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
 - `Boian S. Alexandrov <mailto:boian@lanl.gov>`_: Theoretical Division, Los Alamos National Laboratory
 
 
@@ -158,7 +158,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Developer Test Suite
 ========================================
-Developer test suits are located under ``tests/`` directory (located `here <https://github.com/lanl/pyCP_APR/tree/main/tests>`_).
+Developer test suites are located under ``tests/`` directory (located `here <https://github.com/lanl/pyCP_APR/tree/main/tests>`_).
 
 Tests can be ran from this folder using ``python -m unittest *``.
 
