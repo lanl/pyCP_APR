@@ -752,6 +752,19 @@ and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores
 <p>Fusion is performed on the dimensions indicated by <code class="docutils literal notranslate"><span class="pre">axis_map</span></code>.
 Dimension fusion uses the Harmonic Mean.</p>
 <p><strong>This function is in beta stage.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Anomaly detection can be performed either using <strong>predict_scores()</strong>, or using <strong>transform()</strong> and <strong>predict_probas()</strong>.
+While using <strong>transform()</strong> and <strong>predict_probas()</strong> yields faster computation time and more established dimension fusion results, <strong>predict_scores()</strong> provides wider range of features for anomaly detection.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order to use the <strong>predict_probas()</strong> function, below has to be done first:</p>
+<ol class="arabic simple">
+<li><p>Tensor has to be factorized using <strong>fit()</strong> function first to extract the KRUSKAL tensor M.</p></li>
+<li><p>After <strong>fit()</strong>, Poisson lambda values for the test tensor has to be calculated using the <strong>transform()</strong> function.</p></li>
+</ol>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -801,7 +814,16 @@ we can calculate how likely a new index to occur in M (i.e. M represents the ave
 If two tensors trained during fitting, the prediction will weight the lambdas before calculating the p-values.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We find that using ensemble of tensors during prediction significantly reduces the false positive rates for anomaly detection as shown in [2].</p>
+<ul class="simple">
+<li><p>We find that using ensemble of tensors during prediction significantly reduces the false positive rates for anomaly detection as shown in [2].</p></li>
+<li><p>Anomaly detection can be performed either using <strong>predict_scores()</strong>, or using <strong>transform()</strong> and <strong>predict_probas()</strong>. While using <strong>transform()</strong> and <strong>predict_probas()</strong> yields faster computation time and more established dimension fusion results, <strong>predict_scores()</strong> provides wider range of features for anomaly detection.</p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>To use <strong>predict_scores()</strong>, <strong>fit()</strong> the model first.</p></li>
+</ul>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -916,9 +938,14 @@ The default is <code class="docutils literal notranslate"><span class="pre">p_va
 what we have learned during the training time.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If 2 tensors are weighted during the calculation of lambdas, the weight of each can be specified using
-<code class="docutils literal notranslate"><span class="pre">ensemble_significance</span></code>. See <strong>pyCP_APR.CP_APR.fit()</strong> for factorazing ensemble of tensor ranks.</p>
-<p>For instance, if <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[0.1,</span> <span class="pre">0.9]</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">=</span> <span class="pre">(0.1</span> <span class="pre">x</span> <span class="pre">lambda_1)</span> <span class="pre">+</span> <span class="pre">(0.9</span> <span class="pre">x</span> <span class="pre">lambda_2)</span></code>.</p>
+<ul class="simple">
+<li><p>If 2 tensors are weighted during the calculation of lambdas, the weight of each can be specified using <code class="docutils literal notranslate"><span class="pre">ensemble_significance</span></code>. See <strong>pyCP_APR.CP_APR.fit()</strong> for factorazing ensemble of tensor ranks. For instance, if <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[0.1,</span> <span class="pre">0.9]</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">=</span> <span class="pre">(0.1</span> <span class="pre">x</span> <span class="pre">lambda_1)</span> <span class="pre">+</span> <span class="pre">(0.9</span> <span class="pre">x</span> <span class="pre">lambda_2)</span></code>.</p></li>
+<li><p>Anomaly detection can be performed either using <strong>predict_scores()</strong>, or using <strong>transform()</strong> and <strong>predict_probas()</strong>. While using <strong>transform()</strong> and <strong>predict_probas()</strong> yields faster computation time and more established dimension fusion results, <strong>predict_scores()</strong> provides wider range of features for anomaly detection.</p></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To use the <strong>transform()</strong> function, the model has to be <strong>fit()</strong> first.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
