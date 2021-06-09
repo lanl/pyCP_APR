@@ -101,7 +101,7 @@ y_score = cp_apr.predict_scores(coords=coords_test, values=nnz_test)
 - [Juston S. Moore](mailto:jmoore01@lanl.gov): Advanced Research in Cyber Systems, Los Alamos National Laboratory
 - [Erik Skau](mailto:ewskau@lanl.gov): Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
 - [Manish Bhattarai](mailto:ceodspspectrum@lanl.gov): Theoretical Division, Los Alamos National Laboratory
-- [Gopinath Chennupati](cgnath.dr@gmail.com): Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
+- [Gopinath Chennupati](mailto:cgnath.dr@gmail.com): Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory
 - [Boian S. Alexandrov](mailto:boian@lanl.gov): Theoretical Division, Los Alamos National Laboratory
 
 
