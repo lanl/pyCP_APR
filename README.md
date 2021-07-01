@@ -32,7 +32,7 @@ source activate pyCP_APR
 python setup.py install
 ```
 
-## Prerequisites:
+## Prerequisites
 - [Anaconda](https://docs.anaconda.com/anaconda/install/)(Optional)
 - numpy>=1.19.2
 - numpy-indexed>=0.3.5
@@ -52,22 +52,26 @@ from pyCP_APR.datasets import load_dataset
 
 # Load a sample tensor
 data = load_dataset(name="TOY")
+
+# Training and test tensor in COO format
+# Non-zero coordinates and corresponding non-zero values
 coords_train, nnz_train = data['train_coords'], data['train_count']
 coords_test, nnz_test = data['test_coords'], data['test_binary']
 
-# CP-APR Object with PyTorch backend on a GPU. Transfer the latent factors back to Numpy arrays.
-cp_apr = CP_APR(n_iters=10,
+# CP-APR Object with PyTorch backend on a GPU. 
+# Transfer the latent factors back to Numpy arrays.
+model = CP_APR(n_iters=10,
                 random_state=42,
                 verbose=1,
                 method='torch',
                 device='gpu',
                 return_type='numpy')
 
-# Train a rank 45 tensor
-M = cp_apr.fit(coords=coords_train, values=nnz_train, rank=45)
+# Take rank 45 decomposition
+M = model.fit(coords=coords_train, values=nnz_train, rank=45)
 
 # Predict the scores over the trained tensor
-y_score = cp_apr.predict_scores(coords=coords_test, values=nnz_test)
+y_score = model.predict_scores(coords=coords_test, values=nnz_test)
 ```
 **See the [examples](examples/) for more.**
 
@@ -105,7 +109,7 @@ y_score = cp_apr.predict_scores(coords=coords_test, values=nnz_test)
 - [Boian S. Alexandrov](mailto:boian@lanl.gov): Theoretical Division, Los Alamos National Laboratory
 
 
-## Copyright Notice:
+## Copyright Notice
 >© 2021. Triad National Security, LLC. All rights reserved.
 This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
 National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
@@ -144,6 +148,10 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ## Developer Test Suite
 Developer test suites are located under [```tests/```](tests/) directory. Tests can be ran from this folder using ```python -m unittest *```.
+
+
+## Acknowledgments
+We thank Austin Thresher for the valuable feedback on our software design.
 
 
 ## References
