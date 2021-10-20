@@ -6,7 +6,11 @@
 
 </div>
 
-**pyCP_APR** is a Python library for tensor decomposition and anomaly detection. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in [6] using the [Unified Host and Network Dataset](https://csr.lanl.gov/data/2017/) [5]. Our work follows the [MATLAB Tensor Toolbox](https://www.tensortoolbox.org/cp.html) [1-3] implementation of CP-APR [4].
+<p align="center">
+  <img width="324" height="200" src="docs/rd100.png">
+</p>
+
+**pyCP_APR** is a Python library for tensor decomposition and anomaly detection that is developed as part of the R&D 100 award wining (**SmartTensors**)[https://www.lanl.gov/collaboration/smart-tensors/] project. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in [6] using the [Unified Host and Network Dataset](https://csr.lanl.gov/data/2017/) [5]. Our work follows the [MATLAB Tensor Toolbox](https://www.tensortoolbox.org/cp.html) [1-3] implementation of CP-APR [4].
 
 
 <div align="center", style="font-size: 50px">
@@ -61,11 +65,11 @@ coords_test, nnz_test = data['test_coords'], data['test_binary']
 # CP-APR Object with PyTorch backend on a GPU. 
 # Transfer the latent factors back to Numpy arrays.
 model = CP_APR(n_iters=10,
-                random_state=42,
-                verbose=1,
-                method='torch',
-                device='gpu',
-                return_type='numpy')
+               random_state=42,
+               verbose=1,
+               method='torch',
+               device='gpu',
+               return_type='numpy')
 
 # Take rank 45 decomposition
 M = model.fit(coords=coords_train, values=nnz_train, rank=45)
@@ -80,17 +84,17 @@ y_score = model.predict_scores(coords=coords_test, values=nnz_test)
 
 ```latex
 
-@MISC{Eren2021_pyCP_APR,
+@MISC{Eren2021pyCPAPR,
   author = {M. E. {Eren} and J. S. {Moore} and E. {Skau} and M. {Bhattarai} and G. {Chennupati} and B. S. {Alexandrov}},
-  title = {pyCP_APR},
+  title = {pyCP\_APR},
   year = {2021},
   publisher = {GitHub},
   journal = {GitHub repository},
   doi = {10.5281/zenodo.4840598},
-  howpublished = {\url{https://github.com/lanl/pyCP_APR}}
+  howpublished = {\url{https://github.com/lanl/pyCP\_APR}}
 }
 
-@INPROCEEDINGS{Eren2020_ISI,
+@INPROCEEDINGS{Eren2020ISI,
   author={M. E. {Eren} and J. S. {Moore} and B. S. {Alexandrov}},
   booktitle={2020 IEEE International Conference on Intelligence and Security Informatics (ISI)},
   title={Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization},

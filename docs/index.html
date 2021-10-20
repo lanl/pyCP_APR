@@ -206,7 +206,7 @@
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites:
+   Prerequisites
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -222,6 +222,11 @@
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
    Authors
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgments">
+   Acknowledgments
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
@@ -262,7 +267,8 @@
                 
   <div class="section" id="welcome-to-pycp-apr-s-documentation">
 <h1>Welcome to pyCP_APR's documentation!<a class="headerlink" href="#welcome-to-pycp-apr-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p><strong>pyCP_APR</strong> is a Python library for tensor decomposition and anomaly detection. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in <span id="id1">[<a class="reference internal" href="#id11">ErenMooreAlexandrov20</a>]</span> using the <a class="reference external" href="https://csr.lanl.gov/data/2017/">Unified Host and Network Dataset</a>  <span id="id2">[<a class="reference internal" href="#id10">TKH18</a>]</span>. Our work follows the <a class="reference external" href="https://www.tensortoolbox.org/cp.html">MATLAB Tensor Toolbox</a>  <span id="id3">[<a class="reference internal" href="#id7">BK06</a>, <a class="reference internal" href="#id8">BK08</a>, <a class="reference internal" href="#id6">BK+15</a>]</span> implementation of CP-APR <span id="id4">[<a class="reference internal" href="#id9">CK12</a>]</span>.</p>
+<a class="reference internal image-reference" href="_images/rd100.png"><img alt="RD100" class="align-center" src="_images/rd100.png" style="width: 324.0px; height: 200.0px;" /></a>
+<p><strong>pyCP_APR</strong> is a Python library for tensor decomposition and anomaly detection that is developed as part of the R&amp;D 100 award wining project <a class="reference external" href="https://www.lanl.gov/collaboration/smart-tensors/">SmartTensors</a>. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in <span id="id1">[<a class="reference internal" href="#id11">ErenMooreAlexandrov20</a>]</span> using the <a class="reference external" href="https://csr.lanl.gov/data/2017/">Unified Host and Network Dataset</a>  <span id="id2">[<a class="reference internal" href="#id10">TKH18</a>]</span>. Our work follows the <a class="reference external" href="https://www.tensortoolbox.org/cp.html">MATLAB Tensor Toolbox</a>  <span id="id3">[<a class="reference internal" href="#id7">BK06</a>, <a class="reference internal" href="#id8">BK08</a>, <a class="reference internal" href="#id6">BK+15</a>]</span> implementation of CP-APR <span id="id4">[<a class="reference internal" href="#id9">CK12</a>]</span>.</p>
 </div>
 <div class="section" id="resources">
 <h1>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
@@ -289,7 +295,7 @@ python setup.py install
 </div>
 </div>
 <div class="section" id="prerequisites">
-<h1>Prerequisites:<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.anaconda.com/anaconda/install/">Anaconda</a> (Optional)</p></li>
 <li><p>numpy&gt;=1.19.2</p></li>
@@ -315,34 +321,35 @@ python setup.py install
 <span class="n">coords_test</span><span class="p">,</span> <span class="n">nnz_test</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_coords&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test_count&#39;</span><span class="p">]</span>
 
 <span class="c1"># CP-APR Object with PyTorch backend on a GPU. Transfer the latent factors back to Numpy arrays.</span>
-<span class="n">cp_apr</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-                <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
-                <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                <span class="n">method</span><span class="o">=</span><span class="s1">&#39;torch&#39;</span><span class="p">,</span>
-                <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span>
-                <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">CP_APR</span><span class="p">(</span><span class="n">n_iters</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+               <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+               <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+               <span class="n">method</span><span class="o">=</span><span class="s1">&#39;torch&#39;</span><span class="p">,</span>
+               <span class="n">device</span><span class="o">=</span><span class="s1">&#39;gpu&#39;</span><span class="p">,</span>
+               <span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
 
 <span class="c1"># Train a rank 45 tensor</span>
-<span class="n">M</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">M</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_train</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_train</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
 
 <span class="c1"># Predict the scores over the trained tensor</span>
-<span class="n">y_score</span> <span class="o">=</span> <span class="n">cp_apr</span><span class="o">.</span><span class="n">predict_scores</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_test</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_test</span><span class="p">)</span>
+<span class="n">y_score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_scores</span><span class="p">(</span><span class="n">coords</span><span class="o">=</span><span class="n">coords_test</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">nnz_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="how-to-cite-pycp-apr">
 <h1>How to Cite pyCP_APR?<a class="headerlink" href="#how-to-cite-pycp-apr" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">@MISC{Eren2021_pyCP_APR,</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">@MISC{Eren2021pyCPAPR,</span>
 <span class="go">  author = {M. E. {Eren} and J. S. {Moore} and E. {Skau} and M. {Bhattarai} and G. {Chennupati} and B. S. {Alexandrov}},</span>
-<span class="go">  title = {pyCP_APR},</span>
+<span class="go">  title = {pyCP\_APR},</span>
 <span class="go">  year = {2021},</span>
 <span class="go">  publisher = {GitHub},</span>
 <span class="go">  journal = {GitHub repository},</span>
 <span class="go">  doi = {10.5281/zenodo.4840598},</span>
-<span class="go">  howpublished = {\url{https://github.com/lanl/pyCP_APR}}</span>
+<span class="go">  howpublished = {\url{https://github.com/lanl/pyCP\_APR}}</span>
 <span class="go">}</span>
 
-<span class="go">@INPROCEEDINGS{Eren2020_ISI,</span>
+
+<span class="go">@INPROCEEDINGS{Eren2020ISI,</span>
 <span class="go">  author={M. E. {Eren} and J. S. {Moore} and B. S. {Alexandrov}},</span>
 <span class="go">  booktitle={2020 IEEE International Conference on Intelligence and Security Informatics (ISI)},</span>
 <span class="go">  title={Multi-Dimensional Anomalous Entity Detection via Poisson Tensor Factorization},</span>
@@ -363,6 +370,10 @@ python setup.py install
 <li><p><a class="reference external" href="mailto:cgnath&#46;dr&#37;&#52;&#48;gmail&#46;com">Gopinath Chennupati</a>: Computer, Computational, and Statistical Sciences Division, Los Alamos National Laboratory</p></li>
 <li><p><a class="reference external" href="mailto:boian&#37;&#52;&#48;lanl&#46;gov">Boian S<span>&#46;</span> Alexandrov</a>: Theoretical Division, Los Alamos National Laboratory</p></li>
 </ul>
+</div>
+<div class="section" id="acknowledgments">
+<h1>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h1>
+<p>We thank Austin Thresher for the valuable feedback on our software design.</p>
 </div>
 <div class="section" id="copyright-notice">
 <h1>Copyright Notice<a class="headerlink" href="#copyright-notice" title="Permalink to this headline">¶</a></h1>
