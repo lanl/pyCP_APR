@@ -21,8 +21,8 @@ References
 import sys
 import numpy as np
 
-from .torch_cp.CP_APR_Torch import CP_APR_MU as CP_APR_MU_tr
-from .numpy_cp.CP_APR import CP_APR_MU
+from .torch_backend.CP_APR_Torch import CP_APR_MU as CP_APR_MU_tr
+from .numpy_backend.CP_APR import CP_APR_MU
 
 from .applications.tensor_anomaly_detection import PoissonTensorAnomaly
 from .applications.tensor_anomaly_detection_v2 import PoissonTensorAnomaly_v2 as PTA
@@ -526,10 +526,10 @@ class CP_APR():
                     num_dimensions = 3
                     tensor_shape = [5,5,5]
                     rank = 4
-                    M_init = dict()
+                    M_init = {"Factors":{}, "Weights":[1,1,1]}
                     for d in range(num_dimensions):
-                            M_init[str(d)] = np.random.uniform(low=0, high=1, size=(tensor_shape[d], rank))
-                    M_init
+                            M_init["Factors"][str(d)] = np.random.uniform(low=0, high=1, size=(tensor_shape[d], rank))
+                    M_init["Factors"]
                     
                 .. code-block:: console
                 

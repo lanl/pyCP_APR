@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to pyCP_APR&#39;s documentation! &#8212; pyCP_APR 1.0.0 documentation</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,13 +22,13 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -37,7 +37,10 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pyCP_APR.CP_APR API" href="CP_APR.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="Python">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -55,15 +58,16 @@
     <a class="navbar-brand text-wrap" href="#">
       
       
+      
       <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -105,13 +109,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.numpy_cp.html">
-       pyCP_APR.numpy_cp package
+      <a class="reference internal" href="pyCP_APR.numpy_backend.html">
+       pyCP_APR.numpy_backend package
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.torch_cp.html">
-       pyCP_APR.torch_cp package
+      <a class="reference internal" href="pyCP_APR.torch_backend.html">
+       pyCP_APR.torch_backend package
       </a>
      </li>
     </ul>
@@ -187,7 +191,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
@@ -268,7 +272,7 @@
   <div class="section" id="welcome-to-pycp-apr-s-documentation">
 <h1>Welcome to pyCP_APR's documentation!<a class="headerlink" href="#welcome-to-pycp-apr-s-documentation" title="Permalink to this headline">¶</a></h1>
 <a class="reference internal image-reference" href="_images/rd100.png"><img alt="RD100" class="align-center" src="_images/rd100.png" style="width: 324.0px; height: 200.0px;" /></a>
-<p><strong>pyCP_APR</strong> is a Python library for tensor decomposition and anomaly detection that is developed as part of the R&amp;D 100 award wining <a class="reference external" href="https://www.lanl.gov/collaboration/smart-tensors/">SmartTensors</a> project. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in <span id="id1">[<a class="reference internal" href="#id11">ErenMooreAlexandrov20</a>]</span> using the <a class="reference external" href="https://csr.lanl.gov/data/2017/">Unified Host and Network Dataset</a>  <span id="id2">[<a class="reference internal" href="#id10">TKH18</a>]</span>. Our work follows the <a class="reference external" href="https://www.tensortoolbox.org/cp.html">MATLAB Tensor Toolbox</a>  <span id="id3">[<a class="reference internal" href="#id7">BK06</a>, <a class="reference internal" href="#id8">BK08</a>, <a class="reference internal" href="#id6">BK+15</a>]</span> implementation of CP-APR <span id="id4">[<a class="reference internal" href="#id9">CK12</a>]</span>.</p>
+<p><strong>pyCP_APR</strong> is a Python library for tensor decomposition and anomaly detection that is developed as part of the R&amp;D 100 award wining <a class="reference external" href="https://www.lanl.gov/collaboration/smart-tensors/">SmartTensors</a> project. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in <span id="id1">[<a class="reference internal" href="#id11" title="M. E. Eren, J. S. Moore, and B. S. Alexandrov. Multi-dimensional anomalous entity detection via poisson tensor factorization. In 2020 IEEE International Conference on Intelligence and Security Informatics (ISI), volume, 1-6. 2020. doi:10.1109/ISI49825.2020.9280524.">ErenMooreAlexandrov20</a>]</span> using the <a class="reference external" href="https://csr.lanl.gov/data/2017/">Unified Host and Network Dataset</a>  <span id="id2">[<a class="reference internal" href="#id10" title="Melissa J. M. Turcotte, Alexander D. Kent, and Curtis Hash. Unified Host and Network Data Set, chapter Chapter 1, pages 1-22. World Scientific, nov 2018. URL: https://www.worldscientific.com/doi/abs/10.1142/9781786345646\_001, arXiv:https://www.worldscientific.com/doi/pdf/10.1142/9781786345646\_001, doi:10.1142/9781786345646_001.">TKH18</a>]</span>. Our work follows the <a class="reference external" href="https://www.tensortoolbox.org/cp.html">MATLAB Tensor Toolbox</a>  <span id="id3">[<a class="reference internal" href="#id7" title="Brett W. Bader and Tamara G. Kolda. Algorithm 862: matlab tensor classes for fast algorithm prototyping. ACM Trans. Math. Softw., 32(4):635–653, December 2006. URL: https://doi.org/10.1145/1186785.1186794, doi:10.1145/1186785.1186794.">BK06</a>, <a class="reference internal" href="#id8" title="Brett W. Bader and Tamara G. Kolda. Efficient matlab computations with sparse and factored tensors. SIAM Journal on Scientific Computing, 30(1):205-231, 2008. URL: https://doi.org/10.1137/060676489, arXiv:https://doi.org/10.1137/060676489, doi:10.1137/060676489.">BK08</a>, <a class="reference internal" href="#id6" title="Brett W. Bader, Tamara G. Kolda, and others. Matlab tensor toolbox version 2.6. Available online, February 2015. URL: http://www.sandia.gov/~tgkolda/TensorToolbox/.">BK+15</a>]</span> implementation of CP-APR <span id="id4">[<a class="reference internal" href="#id9" title="Eric C. Chi and Tamara G. Kolda. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4):1272-1299, December 2012. doi:10.1137/110859063.">CK12</a>]</span>.</p>
 </div>
 <div class="section" id="resources">
 <h1>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
@@ -441,7 +445,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 </dl>
 </p>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="CP_APR.html">pyCP_APR.CP_APR API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="CP_APR.html#pycp-apr-pycp-apr-module">pyCP_APR.pyCP_APR module</a></li>
@@ -473,15 +477,20 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='right-next' id="next-link" href="CP_APR.html" title="next page">pyCP_APR.CP_APR API</a>
-
-        </div>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='right-next' id="next-link" href="CP_APR.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyCP_APR.CP_APR API</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -497,8 +506,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

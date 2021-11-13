@@ -8,8 +8,8 @@ Subpackages
    :maxdepth: 4
 
    pyCP_APR.applications
-   pyCP_APR.numpy_cp
-   pyCP_APR.torch_cp
+   pyCP_APR.numpy_backend
+   pyCP_APR.torch_backend
 
 Submodules
 ----------
