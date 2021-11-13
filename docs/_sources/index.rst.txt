@@ -56,7 +56,8 @@ Prerequisites
 * seaborn>=0.11.1
 * torch>=1.6.0
 * requests>=2.25.1
-
+* tqdm>=4.62.3
+* sparse>=0.13.0
 
 Example Usage
 ========================================
