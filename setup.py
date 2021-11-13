@@ -11,7 +11,7 @@ and to permit others to do so.
 """
 from setuptools import setup, find_packages
 from glob import glob
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 # add readme
 with open('README.md', 'r') as f:
