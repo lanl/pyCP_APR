@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pyCP_APR.CP_APR API &#8212; pyCP_APR 1.0.0 documentation</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,13 +22,13 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -38,7 +38,10 @@
     <link rel="next" title="pyCP_APR.datasets API" href="datasets.html" />
     <link rel="prev" title="Welcome to pyCP_APR&#39;s documentation!" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="Python">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -56,15 +59,16 @@
     <a class="navbar-brand text-wrap" href="index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -106,13 +110,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.numpy_cp.html">
-       pyCP_APR.numpy_cp package
+      <a class="reference internal" href="pyCP_APR.numpy_backend.html">
+       pyCP_APR.numpy_backend package
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.torch_cp.html">
-       pyCP_APR.torch_cp package
+      <a class="reference internal" href="pyCP_APR.torch_backend.html">
+       pyCP_APR.torch_backend package
       </a>
      </li>
     </ul>
@@ -188,7 +192,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#pycp-apr-pycp-apr-module">
@@ -263,8 +267,8 @@ as the factorized training tensor M. Using M, we calculate how likely the entrie
 <p>[5] Chi, E.C. and Kolda, T.G., 2012. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4), pp.1272-1299.</p>
 <p>&#64;author Maksim Ekin Eren</p>
 <dl class="py class">
-<dt id="pyCP_APR.pyCP_APR.CP_APR">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.pyCP_APR.</span></code><code class="sig-name descname"><span class="pre">CP_APR</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.pyCP_APR.</span></span><span class="sig-name descname"><span class="pre">CP_APR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the <strong>pyCP_APR.CP_APR</strong> class. <strong>pyCP_APR.CP_APR</strong> class is the wrapper for the CP-APR algorithm's Python implementation with
 both <em>Numpy</em> and <em>PyTorch</em> backend.</p>
@@ -343,8 +347,8 @@ The default is False.</p></li>
 </div>
 </div>
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.fit">
-<code class="sig-name descname"><span class="pre">fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.fit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes the decomposition of sparse or dense tensor X and returns the KRUSKAL tensor M.</p>
 <p>Here M is  latent factors and the weight of each R (rank) component.</p>
 <p>If a list of ranks is passed, factorize the tensor for each 2 of the ranks.</p>
@@ -399,10 +403,10 @@ where <code class="docutils literal notranslate"><span class="pre">d</span></cod
 <span class="n">num_dimensions</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">tensor_shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">rank</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">M_init</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+<span class="n">M_init</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Factors&quot;</span><span class="p">:{},</span> <span class="s2">&quot;Weights&quot;</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
 <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_dimensions</span><span class="p">):</span>
-        <span class="n">M_init</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">tensor_shape</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">rank</span><span class="p">))</span>
-<span class="n">M_init</span>
+        <span class="n">M_init</span><span class="p">[</span><span class="s2">&quot;Factors&quot;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">tensor_shape</span><span class="p">[</span><span class="n">d</span><span class="p">],</span> <span class="n">rank</span><span class="p">))</span>
+<span class="n">M_init</span><span class="p">[</span><span class="s2">&quot;Factors&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{</span>
@@ -608,8 +612,8 @@ In that case, pass the tensor X that is in <em>torch.sparse</em> format using th
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.get_params">
-<code class="sig-name descname"><span class="pre">get_params</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.get_params" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.get_params">
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function call that returns the <em>model</em> parameters in a dictionary where a key is the <em>model</em> variable name
 and the value is its current value. <em>model</em> is the backend used during factorization (i.e. <strong>pyCP_APR.torch_cp.CP_APR_Torch</strong> or
 <strong>pyCP_APR.numpy_cp.CP_APR</strong>).</p>
@@ -691,8 +695,8 @@ and the value is its current value. <em>model</em> is the backend used during fa
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.get_prediction">
-<code class="sig-name descname"><span class="pre">get_prediction</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_prediction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.get_prediction" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.get_prediction">
+<span class="sig-name descname"><span class="pre">get_prediction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_prediction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.get_prediction" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function call that returns the predictions.</p>
 <p>The model must be already fitted using <strong>pyCP_APR.CP_APR.fit()</strong>,
 and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores()</strong>.</p>
@@ -728,8 +732,8 @@ and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.get_score">
-<code class="sig-name descname"><span class="pre">get_score</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.get_score" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.get_score">
+<span class="sig-name descname"><span class="pre">get_score</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.get_score"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.get_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function call that returns the objective value of the model.</p>
 <p>Model is <strong>pyCP_APR.CP_APR.model.obj</strong>.</p>
 <p>If an ensemble of tensors is trained (see <strong>pyCP_APR.CP_APR.fit()</strong>), a list of scores is provided instead.</p>
@@ -745,8 +749,8 @@ and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.predict_probas">
-<code class="sig-name descname"><span class="pre">predict_probas</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.predict_probas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.predict_probas" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.predict_probas">
+<span class="sig-name descname"><span class="pre">predict_probas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.predict_probas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.predict_probas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the probabilities of the test tensor entries.</p>
 <p>Then returns the prediction scores with ROC-AUC and PR-AUC metrics.</p>
 <p>Fusion is performed on the dimensions indicated by <code class="docutils literal notranslate"><span class="pre">axis_map</span></code>.
@@ -802,8 +806,8 @@ and <code class="docutils literal notranslate"><span class="pre">[0]</span></cod
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.predict_scores">
-<code class="sig-name descname"><span class="pre">predict_scores</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.predict_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.predict_scores" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.predict_scores">
+<span class="sig-name descname"><span class="pre">predict_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.predict_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.predict_scores" title="Permalink to this definition">¶</a></dt>
 <dd><p>The function call that can be used for classification of anomalies after fitting the tensor.
 The model will use the trained latent factors to generate the Poisson lambda scores corresponding to the given
 new coordinate.</p>
@@ -913,8 +917,8 @@ The default is <code class="docutils literal notranslate"><span class="pre">p_va
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.set_params">
-<code class="sig-name descname"><span class="pre">set_params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.set_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.set_params" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.set_params">
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.set_params"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the model parameters.</p>
 <p>Here the model is <strong>pyCP_APR.CP_APR.model</strong>.</p>
 <dl class="field-list simple">
@@ -931,8 +935,8 @@ The default is <code class="docutils literal notranslate"><span class="pre">p_va
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyCP_APR.pyCP_APR.CP_APR.transform">
-<code class="sig-name descname"><span class="pre">transform</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_significance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.transform" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.pyCP_APR.CP_APR.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicies</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensemble_significance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/pyCP_APR.html#CP_APR.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.pyCP_APR.CP_APR.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given the sparse test tensor entries (or indicies, i.e. coordinates of non-zero values), calculate the Poisson lambda values.</p>
 <p>The Poission lambda value can be used to identify how likely was that coordinate in the test tensor to occur given
 what we have learned during the training time.</p>
@@ -1018,16 +1022,27 @@ and to permit others to do so.</p>
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Welcome to pyCP_APR's documentation!</a>
-    <a class='right-next' id="next-link" href="datasets.html" title="next page">pyCP_APR.datasets API</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Welcome to pyCP_APR's documentation!</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="datasets.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">pyCP_APR.datasets API</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -1043,8 +1058,7 @@ and to permit others to do so.</p>
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

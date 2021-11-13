@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pyCP_APR.pyCP_APR &#8212; pyCP_APR 1.0.0 documentation</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet" />
-  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,13 +22,13 @@
       
 
     
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -36,7 +36,10 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="Python">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -54,15 +57,16 @@
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -104,13 +108,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../pyCP_APR.numpy_cp.html">
-       pyCP_APR.numpy_cp package
+      <a class="reference internal" href="../../pyCP_APR.numpy_backend.html">
+       pyCP_APR.numpy_backend package
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="../../pyCP_APR.torch_cp.html">
-       pyCP_APR.torch_cp package
+      <a class="reference internal" href="../../pyCP_APR.torch_backend.html">
+       pyCP_APR.torch_backend package
       </a>
      </li>
     </ul>
@@ -198,8 +202,8 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">.torch_cp.CP_APR_Torch</span> <span class="kn">import</span> <span class="n">CP_APR_MU</span> <span class="k">as</span> <span class="n">CP_APR_MU_tr</span>
-<span class="kn">from</span> <span class="nn">.numpy_cp.CP_APR</span> <span class="kn">import</span> <span class="n">CP_APR_MU</span>
+<span class="kn">from</span> <span class="nn">.torch_backend.CP_APR_Torch</span> <span class="kn">import</span> <span class="n">CP_APR_MU</span> <span class="k">as</span> <span class="n">CP_APR_MU_tr</span>
+<span class="kn">from</span> <span class="nn">.numpy_backend.CP_APR</span> <span class="kn">import</span> <span class="n">CP_APR_MU</span>
 
 <span class="kn">from</span> <span class="nn">.applications.tensor_anomaly_detection</span> <span class="kn">import</span> <span class="n">PoissonTensorAnomaly</span>
 <span class="kn">from</span> <span class="nn">.applications.tensor_anomaly_detection_v2</span> <span class="kn">import</span> <span class="n">PoissonTensorAnomaly_v2</span> <span class="k">as</span> <span class="n">PTA</span>
@@ -703,10 +707,10 @@
 <span class="sd">                    num_dimensions = 3</span>
 <span class="sd">                    tensor_shape = [5,5,5]</span>
 <span class="sd">                    rank = 4</span>
-<span class="sd">                    M_init = dict()</span>
+<span class="sd">                    M_init = {&quot;Factors&quot;:{}, &quot;Weights&quot;:[1,1,1]}</span>
 <span class="sd">                    for d in range(num_dimensions):</span>
-<span class="sd">                            M_init[str(d)] = np.random.uniform(low=0, high=1, size=(tensor_shape[d], rank))</span>
-<span class="sd">                    M_init</span>
+<span class="sd">                            M_init[&quot;Factors&quot;][str(d)] = np.random.uniform(low=0, high=1, size=(tensor_shape[d], rank))</span>
+<span class="sd">                    M_init[&quot;Factors&quot;]</span>
 <span class="sd">                    </span>
 <span class="sd">                .. code-block:: console</span>
 <span class="sd">                </span>
@@ -1145,14 +1149,13 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-
-        </div>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -1168,8 +1171,7 @@
       </div>
     </div>
   
-  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

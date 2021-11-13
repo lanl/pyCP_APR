@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pyCP_APR.torch_cp package &#8212; pyCP_APR 1.0.0 documentation</title>
+    <title>pyCP_APR.torch_backend package &#8212; pyCP_APR 1.0.0 documentation</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -22,22 +22,25 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="pyCP_APR.numpy_cp package" href="pyCP_APR.numpy_cp.html" />
+    <link rel="prev" title="pyCP_APR.numpy_backend package" href="pyCP_APR.numpy_backend.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="Python">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -55,15 +58,16 @@
     <a class="navbar-brand text-wrap" href="index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">pyCP_APR 1.0.0 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <p class="caption">
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Contents:
  </span>
@@ -105,13 +109,13 @@
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.numpy_cp.html">
-       pyCP_APR.numpy_cp package
+      <a class="reference internal" href="pyCP_APR.numpy_backend.html">
+       pyCP_APR.numpy_backend package
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       pyCP_APR.torch_cp package
+       pyCP_APR.torch_backend package
       </a>
      </li>
     </ul>
@@ -159,7 +163,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/pyCP_APR.torch_cp.rst.txt"><button type="button"
+        <a class="dropdown-buttons" href="_sources/pyCP_APR.torch_backend.rst.txt"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.rst</button></a>
         <!-- Download PDF via print -->
@@ -187,7 +191,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#submodules">
@@ -195,22 +199,22 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_cp.CP_APR_Torch">
-   pyCP_APR.torch_cp.CP_APR_Torch module
+  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_backend.CP_APR_Torch">
+   pyCP_APR.torch_backend.CP_APR_Torch module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_cp.ktensor_Torch">
-   pyCP_APR.torch_cp.ktensor_Torch module
+  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_backend.ktensor_Torch">
+   pyCP_APR.torch_backend.ktensor_Torch module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_cp.sptensor_Torch">
-   pyCP_APR.torch_cp.sptensor_Torch module
+  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_backend.sptensor_Torch">
+   pyCP_APR.torch_backend.sptensor_Torch module
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_cp">
+  <a class="reference internal nav-link" href="#module-pyCP_APR.torch_backend">
    Module contents
   </a>
  </li>
@@ -225,13 +229,13 @@
         
               <div>
                 
-  <div class="section" id="pycp-apr-torch-cp-package">
-<h1>pyCP_APR.torch_cp package<a class="headerlink" href="#pycp-apr-torch-cp-package" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pycp-apr-torch-backend-package">
+<h1>pyCP_APR.torch_backend package<a class="headerlink" href="#pycp-apr-torch-backend-package" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-pyCP_APR.torch_cp.CP_APR_Torch">
-<span id="pycp-apr-torch-cp-cp-apr-torch-module"></span><h2>pyCP_APR.torch_cp.CP_APR_Torch module<a class="headerlink" href="#module-pyCP_APR.torch_cp.CP_APR_Torch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-pyCP_APR.torch_backend.CP_APR_Torch">
+<span id="pycp-apr-torch-backend-cp-apr-torch-module"></span><h2>pyCP_APR.torch_backend.CP_APR_Torch module<a class="headerlink" href="#module-pyCP_APR.torch_backend.CP_APR_Torch" title="Permalink to this headline">¶</a></h2>
 <p>Python implementation of the CP-APR algorithm [1-4] with PyTorch backend.</p>
 <p>This backend can be used to factorize sparse tensorsin COO format on GPU or CPU.</p>
 <p class="rubric">References</p>
@@ -241,8 +245,8 @@
 <p>[4] Chi, E.C. and Kolda, T.G., 2012. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4), pp.1272-1299.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py class">
-<dt id="pyCP_APR.torch_cp.CP_APR_Torch.CP_APR_MU">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.torch_cp.CP_APR_Torch.</span></code><code class="sig-name descname"><span class="pre">CP_APR_MU</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inner_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_inner_itn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stoptime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'numpy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'torch.DoubleTensor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/CP_APR_Torch.html#CP_APR_MU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.CP_APR_Torch.CP_APR_MU" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.torch_backend.CP_APR_Torch.CP_APR_MU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.torch_backend.CP_APR_Torch.</span></span><span class="sig-name descname"><span class="pre">CP_APR_MU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inner_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_inner_itn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stoptime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'0'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'numpy'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'torch.DoubleTensor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">follow_M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_backend/CP_APR_Torch.html#CP_APR_MU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_backend.CP_APR_Torch.CP_APR_MU" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the CP_APR_MU class. Sets up the class variables and the CUDA for
 tensors.</p>
@@ -256,6 +260,7 @@ tensors.</p>
 <li><p><strong>n_iters</strong> (<em>int</em><em>, </em><em>optional</em>) -- Number of iterations during optimization or epoch. Default is 1000.</p></li>
 <li><p><strong>print_inner_itn</strong> (<em>int</em><em>, </em><em>optional</em>) -- Print every <em>n</em> inner iterations. Does not print if 0. Default is 0.</p></li>
 <li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>optional</em>) -- Print every n epoch, or <code class="docutils literal notranslate"><span class="pre">n_iters</span></code>. Does not print if 0. Default is 10.</p></li>
+<li><p><strong>simple_verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) -- Turns off details for verbose, such as fit, but instead shows a progress bar.</p></li>
 <li><p><strong>stoptime</strong> (<em>float</em><em>, </em><em>optional</em>) -- Number of seconds before early stopping. Default is 1e6.</p></li>
 <li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) -- KKT violations tolerance. Default is 1e-4.</p></li>
 <li><p><strong>random_state</strong> (<em>int</em><em>, </em><em>optional</em>) -- Random seed for initial M.
@@ -276,8 +281,8 @@ The default is False.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="pyCP_APR.torch_cp.CP_APR_Torch.CP_APR_MU.train">
-<code class="sig-name descname"><span class="pre">train</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sptensor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/CP_APR_Torch.html#CP_APR_MU.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.CP_APR_Torch.CP_APR_MU.train" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.torch_backend.CP_APR_Torch.CP_APR_MU.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sptensor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_backend/CP_APR_Torch.html#CP_APR_MU.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_backend.CP_APR_Torch.CP_APR_MU.train" title="Permalink to this definition">¶</a></dt>
 <dd><p>Factorize the tensor X (i.e. compute the KRUSKAL tensor M).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -330,8 +335,8 @@ The latent factors can be found with the key 'Factors'.</p>
 </dd></dl>
 
 </div>
-<div class="section" id="module-pyCP_APR.torch_cp.ktensor_Torch">
-<span id="pycp-apr-torch-cp-ktensor-torch-module"></span><h2>pyCP_APR.torch_cp.ktensor_Torch module<a class="headerlink" href="#module-pyCP_APR.torch_cp.ktensor_Torch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-pyCP_APR.torch_backend.ktensor_Torch">
+<span id="pycp-apr-torch-backend-ktensor-torch-module"></span><h2>pyCP_APR.torch_backend.ktensor_Torch module<a class="headerlink" href="#module-pyCP_APR.torch_backend.ktensor_Torch" title="Permalink to this headline">¶</a></h2>
 <p>ktensor_Torch.py contains the K_TENSOR class for KRUSKAL tensor M object representation.</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
@@ -340,8 +345,8 @@ The latent factors can be found with the key 'Factors'.</p>
 <p>[4] Chi, E.C. and Kolda, T.G., 2012. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4), pp.1272-1299.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py class">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.torch_cp.ktensor_Torch.</span></code><code class="sig-name descname"><span class="pre">K_TENSOR</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'torch.DoubleTensor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.torch_backend.ktensor_Torch.K_TENSOR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.torch_backend.ktensor_Torch.</span></span><span class="sig-name descname"><span class="pre">K_TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'torch.DoubleTensor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_backend/ktensor_Torch.html#K_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_backend.ktensor_Torch.K_TENSOR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the K_TENSOR class.</p>
 <p>Creates the object representation of M.</p>
@@ -369,19 +374,8 @@ Default is torch.cuda.DoubleTensor.</p></li>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.arrange">
-<code class="sig-name descname"><span class="pre">arrange</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR.arrange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.arrange" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function arranges the components of KRUSKAL tensor M.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>p</strong> (<em>list</em><em>, </em><em>optional</em>) -- permutation. The default is [].</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.deep_copy_factors">
-<code class="sig-name descname"><span class="pre">deep_copy_factors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR.deep_copy_factors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.deep_copy_factors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.torch_backend.ktensor_Torch.K_TENSOR.deep_copy_factors">
+<span class="sig-name descname"><span class="pre">deep_copy_factors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_backend/ktensor_Torch.html#K_TENSOR.deep_copy_factors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_backend.ktensor_Torch.K_TENSOR.deep_copy_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a deep copy of the latent factors in M.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -393,75 +387,11 @@ Default is torch.cuda.DoubleTensor.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.innerprod">
-<code class="sig-name descname"><span class="pre">innerprod</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR.innerprod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.innerprod" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function takes the inner product of tensor X and KRUSKAL tensor M.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>X</strong> (<em>class</em>) -- Original tensor. sptensor_Torch.SP_TENSOR.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>res</strong> -- inner product of tensor X and KRUSKAL tensor M.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.norm">
-<code class="sig-name descname"><span class="pre">norm</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR.norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.norm" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function takes the Frobenius norm of a KRUSKAL tensor M.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>nrm</strong> -- Frobenius norm of M.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.normalize">
-<code class="sig-name descname"><span class="pre">normalize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR.normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.normalize" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function normalizes the columns of the factor matrices.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor M class. ktensor_Torch.K_TENSOR.</p></li>
-<li><p><strong>normtype</strong> (<em>int</em><em>, </em><em>optional</em>) -- Determines the type of normalization. The default is 1.</p></li>
-<li><p><strong>N</strong> (<em>int</em><em>, </em><em>optional</em>) -- Factor matrix number. The default is -1.</p></li>
-<li><p><strong>mode</strong> (<em>int</em><em>, </em><em>optional</em>) -- Dimension number. The default is -1.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>M</strong> -- Normalized KRUSKAL tensor M class. ktensor_Torch.K_TENSOR.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.redistribute">
-<code class="sig-name descname"><span class="pre">redistribute</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/ktensor_Torch.html#K_TENSOR.redistribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.ktensor_Torch.K_TENSOR.redistribute" title="Permalink to this definition">¶</a></dt>
-<dd><p>This function distributes the weights to a specified dimension or mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>mode</strong> (<em>int</em>) -- Dimension number.</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </div>
-<div class="section" id="module-pyCP_APR.torch_cp.sptensor_Torch">
-<span id="pycp-apr-torch-cp-sptensor-torch-module"></span><h2>pyCP_APR.torch_cp.sptensor_Torch module<a class="headerlink" href="#module-pyCP_APR.torch_cp.sptensor_Torch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-pyCP_APR.torch_backend.sptensor_Torch">
+<span id="pycp-apr-torch-backend-sptensor-torch-module"></span><h2>pyCP_APR.torch_backend.sptensor_Torch module<a class="headerlink" href="#module-pyCP_APR.torch_backend.sptensor_Torch" title="Permalink to this headline">¶</a></h2>
 <p>sptensor_Torch.py contains the SP_TENSOR class which is the object representation
 of the sparse tensor X in COO format.</p>
 <p class="rubric">References</p>
@@ -471,8 +401,8 @@ of the sparse tensor X in COO format.</p>
 <p>[4] Chi, E.C. and Kolda, T.G., 2012. On tensors, sparsity, and nonnegative factorizations. SIAM Journal on Matrix Analysis and Applications, 33(4), pp.1272-1299.</p>
 <p>&#64;author: maksimekineren</p>
 <dl class="py class">
-<dt id="pyCP_APR.torch_cp.sptensor_Torch.SP_TENSOR">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyCP_APR.torch_cp.sptensor_Torch.</span></code><code class="sig-name descname"><span class="pre">SP_TENSOR</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'torch.DoubleTensor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/sptensor_Torch.html#SP_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.sptensor_Torch.SP_TENSOR" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyCP_APR.torch_backend.sptensor_Torch.SP_TENSOR">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.torch_backend.sptensor_Torch.</span></span><span class="sig-name descname"><span class="pre">SP_TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'torch.DoubleTensor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_backend/sptensor_Torch.html#SP_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_backend.sptensor_Torch.SP_TENSOR" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the SP_TENSOR class.</p>
 <p>Sorts the tensor entries.</p>
@@ -502,28 +432,11 @@ The default is cpu.</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="py method">
-<dt id="pyCP_APR.torch_cp.sptensor_Torch.SP_TENSOR.ttv">
-<code class="sig-name descname"><span class="pre">ttv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vecs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/torch_cp/sptensor_Torch.html#SP_TENSOR.ttv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.torch_cp.sptensor_Torch.SP_TENSOR.ttv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Tensor times vector for KRUSKAL tensor M.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vecs</strong> (<em>array</em>) -- column vector.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>c</strong> -- product of KRUSKAL tensor X with the vector vecs.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>array</p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 </div>
-<div class="section" id="module-pyCP_APR.torch_cp">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR.torch_cp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-pyCP_APR.torch_backend">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR.torch_backend" title="Permalink to this headline">¶</a></h2>
 <p>2021. Triad National Security, LLC. All rights reserved.
 This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
 National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
@@ -540,15 +453,20 @@ others to do so.</p>
               </div>
               
         
-        <div class='prev-next-bottom'>
-            
-    <a class='left-prev' id="prev-link" href="pyCP_APR.numpy_cp.html" title="previous page">pyCP_APR.numpy_cp package</a>
-
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pyCP_APR.numpy_backend.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">pyCP_APR.numpy_backend package</p>
         </div>
+    </a>
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -564,8 +482,7 @@ others to do so.</p>
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>

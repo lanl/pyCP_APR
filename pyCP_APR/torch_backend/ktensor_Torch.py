@@ -69,37 +69,20 @@ class K_TENSOR():
         # if initial Factors are passed
         else:
             for d in range(self.Dimensions):
-                self.Factors[str(d)] = Minit[str(d)].to(self.device)
-
-    def innerprod(self, X):
-        """
-        This function takes the inner product of tensor X and KRUSKAL tensor M.
-
-        Parameters
-        ----------
-        X : class
-            Original tensor. sptensor_Torch.SP_TENSOR.
-
-        Returns
-        -------
-        res : array
-            inner product of tensor X and KRUSKAL tensor M.
-
-        """
-
-        # if there are no nonzero terms in X.
-        if len(X.Values) == 0:
-            res = 0
-
-        vecs = dict()
-        res = 0
-
-        for r in range(self.Rank):
-            for d in range(self.Dimensions):
-                vecs[str(d)] = self.Factors[str(d)][:, r]
-            res = res + self.Weights[r] * X.ttv(vecs)
-
-        return res
+                if "Factors" in Minit:
+                    self.Factors[str(d)] = Minit["Factors"][str(d)].to(self.device)
+                else:
+                    self.Factors[str(d)] = Minit[str(d)].to(self.device)
+                    
+            # initial weights are passed
+            if "Weights" in Minit:
+                if len(Minit["Weights"]) > self.Rank:
+                    raise Exception("Number of weights must be same as the tensor rank!")
+                
+                if isinstance(Minit["Weights"], (list, np.ndarray)):
+                    self.Weights = tr.from_numpy(Minit["Weights"]).type(self.dtype).to(self.device)
+                else:
+                    self.Weights = Minit["Weights"].to(self.device)
 
     def deep_copy_factors(self):
         """
@@ -119,123 +102,3 @@ class K_TENSOR():
 
         return Factors_
 
-    def norm(self):
-        """
-        This function takes the Frobenius norm of a KRUSKAL tensor M.
-
-        Returns
-        -------
-        nrm : float
-            Frobenius norm of M.
-
-        """
-
-        weightsMatrix = tr.ones([self.Rank, self.Rank]).to(self.device) * self.Weights
-        coefMatrix = weightsMatrix * weightsMatrix.T
-
-        for d in range(self.Dimensions):
-            tmp = tr.matmul(self.Factors[str(d)].T, self.Factors[str(d)])
-            coefMatrix = tr.mul(coefMatrix, tmp)
-
-        nrm = sqrt(tr.abs(tr.sum(coefMatrix[:])))
-
-        return nrm
-
-    def redistribute(self, mode):
-        """
-        This function distributes the weights to a specified dimension or mode.\n
-
-        Parameters
-        ----------
-        mode : int
-            Dimension number.
-
-        """
-
-        for r in range(self.Rank):
-            self.Factors[str(mode)][:, r] *= self.Weights[r]
-            self.Weights[r] = 1
-
-    def arrange(self, p=[]):
-        """
-        This function arranges the components of KRUSKAL tensor M.
-
-        Parameters
-        ----------
-        p : list, optional
-            permutation. The default is [].
-
-        """
-
-        # Just rearrange and return if second argument is a permutation
-        if len(p) > 0:
-
-            self.Weights = self.Weights[p]
-            for d in range(self.Dimensions):
-                self.Factors[str(d)] = self.Factors[str(d)][:, p]
-
-    def normalize(self, M, normtype=1, N=-1, mode=-1):
-        """
-        This function normalizes the columns of the factor matrices.
-
-        Parameters
-        ----------
-        M : object
-            KRUSKAL tensor M class. ktensor_Torch.K_TENSOR.
-        normtype : int, optional
-            Determines the type of normalization. The default is 1.
-        N : int, optional
-            Factor matrix number. The default is -1.
-        mode : int, optional
-            Dimension number. The default is -1.
-
-        Returns
-        -------
-        M : object
-            Normalized KRUSKAL tensor M class. ktensor_Torch.K_TENSOR.
-
-        """
-
-        # If the target dimension is given
-        if mode != -1:
-            for r in range(M.Rank):
-
-                tmp = tr.norm(M.Factors[str(mode)][:, r], normtype)
-
-                if tmp > 0:
-                    M.Factors[str(mode)][:, r] /= tmp
-
-                M.Weights[r] *= tmp
-
-            return M
-
-        # Normalize each of the component and weights
-        for r in range(M.Rank):
-            for d in range(M.Dimensions):
-
-                tmp = tr.norm(M.Factors[str(d)][:, r], normtype)
-
-                if tmp > 0:
-                    M.Factors[str(d)][:, r] /= tmp
-
-                M.Weights[r] *= tmp
-
-        negative_components = tr.where(M.Weights < 0)
-
-        M.Factors[str(0)][:, [t.to('cpu').numpy() for t in negative_components]] *= -1
-        M.Weights[negative_components] *= -1
-
-        # Absorb the weight into one factor
-        if N == 0:
-            sys.exit("Reached to a location that has not been imlemented yet.")
-
-        elif N > 0:
-            M.Factors[str(N - 1)] = tr.matmul(M.Factors[str(N - 1)], tr.diag(M.Weights).to(self.device))
-            Lambdas = tr.ones(M.Rank)
-
-        elif N == -2:
-            if M.Rank > 1:
-                p = tr.argsort(-M.Weights)
-                M.arrange(p)
-
-        return M

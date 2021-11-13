@@ -20,7 +20,7 @@ class TestPyTorchCP_APR(unittest.TestCase):
         nnz_count = spio.loadmat('../data/test_data/vals_count.mat', squeeze_me=True)['values']
         
         # Initial factor values
-        M_init = {"Factors":{}, "Weights":[1,1]}
+        M_init = {"Factors":{}}
         dim = 0
         for key, values in spio.loadmat('../data/test_data/minit.mat', squeeze_me=True).items():
             if 'init_f' in key:

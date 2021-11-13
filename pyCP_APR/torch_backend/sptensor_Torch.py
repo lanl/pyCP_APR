@@ -61,69 +61,18 @@ class SP_TENSOR():
             self.Size = Tensor.size()
             self.Dimensions = Tensor.dim()
             self.nnz = Tensor._nnz()
-            self.Coords, self.Values = self.__sort_coords(Tensor._indices().numpy(),
+            self.Coords, self.data = self.__sort_coords(Tensor._indices().numpy(),
                                                           Tensor._values().numpy())
 
         # Starting with numpy
         else:
             self.Size = list()
             self.Dimensions = Coords.shape[1]
-            self.Coords, self.Values = self.__sort_coords(Coords, Values)
+            self.Coords, self.data = self.__sort_coords(Coords, Values)
             self.nnz = len(Coords)
 
             for d in range(self.Dimensions):
                 self.Size.append((tr.max(self.Coords[:, d]) + 1).data.tolist())
-
-    def ttv(self, vecs):
-        """
-        Tensor times vector for KRUSKAL tensor M.
-
-        Parameters
-        ----------
-        vecs : array
-            column vector.
-
-        Returns
-        -------
-        c : array
-             product of KRUSKAL tensor X with the vector vecs.
-
-        """
-
-        dims = tr.arange(self.Dimensions)
-        vidx = tr.arange(self.Dimensions)
-
-        combined = tr.cat((dims, vidx))
-        uniques, counts = combined.unique(return_counts=True)
-        difference = uniques[counts == 1]
-        intersection = uniques[counts > 1]
-
-        remdims = difference
-
-        for d in range(self.Dimensions):
-            if len(vecs[str(vidx.data.tolist()[d])]) != self.Size[d]:
-                sys.exit('Multiplicand is wrong size')
-
-        newvals = self.Values
-        subs = self.Coords
-
-        if len(subs) == 0:
-            newsubs = []
-
-        for d in range(self.Dimensions):
-            idx = self.Coords[:, d]
-            w = vecs[str(vidx.data.tolist()[d])]
-            bigw = w[idx]
-            newvals = tr.mul(newvals, bigw)
-
-        newsubs = subs[:, remdims]
-
-        if len(remdims) == 0:
-            c = tr.sum(newvals)
-            return c
-
-        sys.exit("Reached to a location that has not been imlemented yet.")
-        return -1
 
     def __sort_coords(self, Coords, Values):
         """
