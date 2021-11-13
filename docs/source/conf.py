@@ -20,7 +20,7 @@ project = 'pyCP_APR'
 copyright = '2021, LANL'
 author = 'Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov'
 # The full version, including alpha/beta/rc tags
-release = '1.0.0'
+release = '1.0.1'
 
 
 # -- General configuration ---------------------------------------------------
