@@ -14,22 +14,28 @@ References
 @author: Maksim Ekin Eren
 """
 import copy
-import sys
 import time
 from math import sqrt
 from cmath import sqrt as sqrtc
 import numpy as np
+from tqdm import tqdm
 
 from . ktensor import K_TENSOR
 from . sptensor import SP_TENSOR
-from . tenmat import Tenmat
 from . tensor import TENSOR
 
+from . redistribute_ktensor import redistribute
+from . normalize_ktensor import normalize
+from . norm_ktensor import norm
+from . innerprod_ktensor import innerprod
+from . tenmat_tensor import tenmat as tenmat_tensor
+from . tenmat_ktensor import tenmat as tenmat_ktensor
+from . khatrirao_ktensor import khatrirao
 
 class CP_APR_MU:
 
     def __init__(self, epsilon=1e-10, kappa=1e-2, kappa_tol=1e-10, max_inner_iters=10,
-                 n_iters=1000, print_inner_itn=0, verbose=10,
+                 n_iters=1000, print_inner_itn=0, verbose=10, simple_verbose=False,
                  stoptime=1e6, tol=1e-4, random_state=42, return_type='numpy'):
         """
         Initilize the CP_APR_MU class.
@@ -50,6 +56,8 @@ class CP_APR_MU:
             Print every *n* inner iterations. Does not print if 0. Default is 0.
         verbose : int, optional
             Print every n epoch, or ``n_iters``. Does not print if 0. Default is 10.
+        simple_verbose : bool, optional
+            Turns off details for verbose, such as fit, but instead shows a progress bar.
         stoptime : float, optional
             Number of seconds before early stopping. Default is 1e6.
         tol : float, optional
@@ -68,6 +76,7 @@ class CP_APR_MU:
         self.kappaTol = kappa_tol
         self.maxInnerIters = max_inner_iters
         self.verbose = verbose
+        self.simple_verbose = simple_verbose
         self.printInnerItn = print_inner_itn
         self.random_state = random_state
 
@@ -129,7 +138,7 @@ class CP_APR_MU:
         """
 
         if rank <= 0:
-            sys.exit('Number of components requested must be positive')
+            raise Exception('Number of components requested must be positive')
 
         # Setup for iterations
         X, M = self.__setup(tensor, coords, values, Minit, rank, Type)
@@ -141,7 +150,7 @@ class CP_APR_MU:
         self.start_time = time.time()
 
         # Iterate until convergence or early stop
-        for outer_iter in range(self.maxOuterIters):
+        for outer_iter in tqdm(range(self.maxOuterIters), disable=not(self.simple_verbose)):
 
             isConverged = True
             for d in range(X.Dimensions):
@@ -155,8 +164,8 @@ class CP_APR_MU:
                         M.Factors[str(d)][V > 0] += self.kappa
 
                 # Absorb the component weight to dimension d
-                M.redistribute(d)
-
+                M  = redistribute(M, d)
+                
                 # Product of all matrices but the d-th
                 Pi = self.__calculatePi(M, X, d)
 
@@ -181,34 +190,34 @@ class CP_APR_MU:
                     M.Factors[str(d)] = np.multiply(M.Factors[str(d)], Phi[str(d)])
 
                     # Print status
-                    if self.printInnerItn != 0 and (inner_iter % self.printInnerItn == 0):
+                    if self.printInnerItn != 0 and (inner_iter % self.printInnerItn == 0) and (self.simple_verbose == False):
                         print("Mode = %d, Inner Iter = %d, KKT Violation = %.6f" % \
                               (d, inner_iter + 1, kktModeViolations[d]))
 
-                M = M.normalize(M, mode=d)
+                M = normalize(M, mode=d)
 
             self.kktViolations[outer_iter] = np.max(kktModeViolations)
 
             # calculate the log likelihood
-            M_ = M.normalize(copy.deepcopy(M), N=-2)
+            M_ = normalize(copy.deepcopy(M), N=-2)
             obj_ = self.__tt_loglikelihood(M_, X)
             self.logLikelihoods[outer_iter] = obj_
 
             # Print update
-            if self.verbose != 0 and (outer_iter % self.verbose == 0):
+            if self.verbose != 0 and (outer_iter % self.verbose == 0) and (self.simple_verbose == False):
                 print("Iter=%d, Inner Iter=%d, KKT Violation=%.6f, obj=%.6f, nViolations=%d" % \
                       (outer_iter + 1, self.nInnerIters[outer_iter], self.kktViolations[outer_iter], \
                        self.logLikelihoods[outer_iter], nViolations[outer_iter]))
 
             # Check for convergence
-            if isConverged:
+            if isConverged and (self.simple_verbose == False):
                 if self.verbose != 0:
                     print("Exiting because all subproblems reached KKT tol.")
                 break
 
             self.times[outer_iter] = time.time() - self.start_time
             if self.times[-1] > self.stoptime:
-                if self.verbose != 0:
+                if self.verbose != 0 (self.simple_verbose == False):
                     print("Exiting because time limit exceeded.")
                 break
 
@@ -242,7 +251,7 @@ class CP_APR_MU:
         """
 
         # Clean up final result
-        M = M.normalize(M, N=-2)
+        M = normalize(M, N=-2)
         self.obj = self.__tt_loglikelihood(copy.deepcopy(M), X)
 
         self.M = M
@@ -250,19 +259,19 @@ class CP_APR_MU:
 
         self.exec_time = time.time() - self.start_time
 
-        if self.verbose != 0:
+        if self.verbose != 0 and (self.simple_verbose == False):
 
             if X.Type == 'sptensor':
-                normX = np.linalg.norm(X.Values)
+                normX = np.linalg.norm(X.data)
             elif X.Type == 'tensor':
-                normX = np.linalg.norm(X.Tensor.flatten())
+                normX = np.linalg.norm(X.data.flatten())
 
-            nrm_sqr = M.norm() ** 2
-            rem = M.innerprod(X)
+            nrm_sqr = norm(M) ** 2
+            rem = innerprod(M, X)
 
             try:
                 normresidual = sqrt(normX ** 2 + nrm_sqr - 2 * rem)
-            # if negative in sqrt
+            # if negative in sqrt due to overflow
             except Exception as e:
                 normresidual = sqrtc(normX ** 2 + nrm_sqr - 2 * rem)
 
@@ -277,7 +286,7 @@ class CP_APR_MU:
 
         result = dict()
         if self.return_type == 'numpy':
-            if self.verbose != 0:
+            if self.verbose != 0 and (self.simple_verbose == False):
                 print("Converting the latent factors to Numpy arrays.")
 
             if M.Rank == 1:
@@ -345,32 +354,33 @@ class CP_APR_MU:
         # Sparse tensor
         if Type == 'sptensor':
             if len(Coords) == 0:
-                sys.exit('Coordinates of the non-zero elements is not passed for sptensor.\
+                raise Exception('Coordinates of the non-zero elements is not passed for sptensor.\
                          Use the Coords parameter.')
             if len(Values) == 0:
-                sys.exit('Non-zero values are not passed for sptensor.\
+                raise Exception('Non-zero values are not passed for sptensor.\
                          Use the Values parameter')
-            if (Coords < 0).all():
-                sys.exit('Data tensor must be nonnegative for Poisson-based factorization')
-
+            
+            if not isinstance(Coords, np.ndarray):
+                Coords = np.array(Coords)
+                
+            if not isinstance(Values, np.ndarray):
+                Values = np.array(Values)
+                
             X = SP_TENSOR(Coords, Values)
 
         # Dense tensor
         elif Type == 'tensor':
 
             if len(Tensor) == 0:
-                sys.exit('Tensor is not passed for dense tensor type.\
+                raise Exception('Tensor is not passed for dense tensor type.\
                          Use the Tensor parameter.')
-            if (Tensor < 0).all():
-                sys.exit('Data tensor must be nonnegative for Poisson-based factorization')
 
             X = TENSOR(Tensor)
 
         M = K_TENSOR(Rank, X.Size, Minit, self.random_state)
-
-        M = M.normalize(M)
-
-        if self.verbose != 0:
+        M = normalize(M)
+        
+        if self.verbose != 0 and (self.simple_verbose == False):
             print("CP-APR (MU):")
 
         return X, M
@@ -393,7 +403,7 @@ class CP_APR_MU:
 
         """
 
-        M = M.normalize(M, N=1)
+        M = normalize(M, N=1)
         f = 0
 
         if X.Type == 'sptensor':
@@ -403,13 +413,13 @@ class CP_APR_MU:
             for d in range(1, X.Dimensions):
                 A = np.multiply(A, M.Factors[str(d)][X.Coords[:, d], :])
 
-            f = np.sum(np.multiply(X.Values, np.log(np.sum(A, 1)))) - \
+            f = np.sum(np.multiply(X.data, np.log(np.sum(A, 1)))) - \
                 np.sum(np.sum(M.Factors[str(0)], axis=0))
 
         elif X.Type == 'tensor':
 
-            dX = Tenmat(X, 0).Tensor
-            dM = Tenmat(M, 0).Tensor
+            dX = tenmat_tensor(X, 0)
+            dM = tenmat_ktensor(M, 0)
 
             for ii in range(dX.shape[0]):
                 for jj in range(dM.shape[1]):
@@ -472,7 +482,7 @@ class CP_APR_MU:
 
             # not sure about the one below
             v = np.sum(np.multiply(M.Factors[str(mode)][xsubs, :], Pi), 1)
-            wvals = np.divide(X.Values, np.maximum(v, self.epsilon))
+            wvals = np.divide(X.data, np.maximum(v, self.epsilon))
 
             for r in range(M.Rank):
                 Yr = np.bincount(xsubs, np.multiply(wvals, Pi[:, r]), X.Size[mode])
@@ -480,7 +490,7 @@ class CP_APR_MU:
 
         elif X.Type == 'tensor':
 
-            Xn = Tenmat(X, mode).Tensor
+            Xn = tenmat_tensor(X, mode)
             V = np.dot(M.Factors[str(mode)], Pi.T)
             W = np.divide(Xn, np.maximum(V, self.epsilon))
             Y = np.dot(W, Pi)
@@ -521,6 +531,6 @@ class CP_APR_MU:
         elif X.Type == 'tensor':
 
             nn = [str(x) for x in range(0, X.Dimensions) if x != mode]
-            Pi = M.khatrirao(nn)
+            Pi = khatrirao(M, nn)
 
         return Pi

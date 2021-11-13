@@ -15,11 +15,11 @@ References
 """
 import sys
 import numpy as np
-
+import sparse
 
 class SP_TENSOR():
 
-    def __init__(self, Coords, Values):
+    def __init__(self, Coords, Values, Size=[]):
         """
         Initilize the SP_TENSOR class.\n
         Sorts the tensor entries.
@@ -35,63 +35,25 @@ class SP_TENSOR():
             Array of non-zero tensor entries. COO format.\n
             Used when Type = 'sptensor' and tensor parameter is not passed.\n
             Length of values must match the length of coords.
+        Size : list
+            Optional parameter to specify the size of the sparse tensor.
 
         """
-
-        self.Size = list()
         self.Dimensions = Coords.shape[1]
-        self.Coords, self.Values = self.__sort_coords(Coords, Values)
+        self.Coords, self.data = self.__sort_coords(Coords, Values)
         self.Type = 'sptensor'
-
-        for d in range(self.Dimensions):
-            self.Size.append(np.amax(self.Coords[:, d]) + 1)
-
-    def ttv(self, vecs):
-        """
-        Tensor times vector for KRUSKAL tensor M.
-
-        Parameters
-        ----------
-        vecs : array
-            coluumn vector.
-
-        Returns
-        -------
-        c : array
-             product of KRUSKAL tensor X with a (column) vector vecs.
-
-        """
-
-        dims = np.arange(self.Dimensions)
-        vidx = np.arange(self.Dimensions)
-
-        remdims = np.setdiff1d(dims, vidx)
-
-        for d in range(self.Dimensions):
-            if vecs[str(vidx[d])].shape != self.Size[d]:
-                sys.exit('Multiplicand is wrong size')
-
-        newvals = self.Values
-        subs = self.Coords
-
-        if len(subs) == 0:
-            newsubs = []
-
-        for d in range(self.Dimensions):
-            idx = self.Coords[:, d]
-            w = vecs[str(vidx[d])]
-            bigw = w[idx]
-            newvals = np.multiply(newvals, bigw)
-
-        newsubs = subs[:, remdims]
-
-        if len(remdims) == 0:
-            c = np.sum(newvals)
-            return c
-
-        print("TODO")
-        sys.exit("Reached to a location that has not been imlemented yet.")
-        return -1
+        self.Size = []
+        
+        if len(Size) == 0:
+            for n in range(self.Dimensions):
+                self.Size.append(max(self.Coords[:,n])+1)
+        else:
+            self.Size = Size
+        
+    
+    def todense(self):
+        X = sparse.COO(self.Coords.T, self.data, shape=tuple(self.Size))
+        return X.todense()
 
     def __sort_coords(self, Coords, Values):
         """

@@ -36,54 +36,5 @@ class TENSOR():
 
         self.Size = list(Tensor.shape)
         self.Dimensions = Tensor.ndim
-        self.Tensor = Tensor
+        self.data = Tensor
         self.Type = 'tensor'
-
-    def permute(self, order):
-        """
-        This function permutes the dimensions of X.
-
-        Parameters
-        ----------
-        order : array
-            Vector order.
-
-        """
-        self.Tensor = np.transpose(self.Tensor, order)
-
-    def ttv(self, vecs):
-        """
-        Tensor times vector for KRUSKAL tensor M.
-
-        Parameters
-        ----------
-        vecs : array
-            coluumn vector.
-
-        Returns
-        -------
-        c : array
-             product of KRUSKAL tensor X with a (column) vector vecs.
-
-        """
-
-        dims = np.arange(self.Dimensions)
-        vidx = np.arange(self.Dimensions)
-
-        remdims = np.setdiff1d(dims, vidx)
-
-        if self.Dimensions > 0:
-            self.permute([x for x in range(0, self.Dimensions)])
-
-        c = copy.deepcopy(self.Tensor)
-
-        n = self.Dimensions
-        for ii in [x for x in reversed(range(0, self.Dimensions))]:
-            x = int(np.prod(self.Size[0:n - 1]))
-            y = self.Size[n - 1]
-
-            c = np.reshape(c, [x, y])
-            c = np.dot(c, vecs[str(ii)])
-            n -= 1
-
-        return c

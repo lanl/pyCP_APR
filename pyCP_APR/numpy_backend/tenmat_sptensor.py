@@ -13,49 +13,41 @@ References
 @author: Maksim Ekin Eren
 """
 import copy
-
 import numpy as np
-
-from . ktensor import K_TENSOR
-from . tensor import TENSOR
+import sparse
 
 
-class Tenmat():
-
-    def __init__(self, X, mode):
+def tenmat(X, mode):
         """
-        Create a matricized tensor.
-
+        Create a matricized tenso, i.e. the unfolding of the tensor.
         Parameters
         ----------
         X : class
-            Original tensor. sptensor.SP_TENSOR or tensor.TENSOR
+            Sparse tensor. sptensor.SP_TENSOR.
         mode : int
-            Dimension number.
-
+            Dimension number to unfold on.
+            
+        Returns
+        -------
+        X : np.ndarray
+            Matriced version of the sparse tensor in as dense matrix.
+        
         """
-
-        if X.Type == 'tensor':
-            T = TENSOR(copy.deepcopy(X.Tensor))
-
-
-        elif X.Type == 'ktensor':
-            T = K_TENSOR(X.Rank, X.Size, Minit=X.Factors)
-
+        X = copy.deepcopy(X)
+        
         rdims = [mode]
-        tmp = [True] * T.Dimensions
+        tmp = [True] * len(X.Size)
         tmp[rdims[0]] = False
         cdims = np.where(tmp)[0]
         order = rdims + list(cdims)
-
-        T.permute(order)
-
-        x = np.prod([T.Size[i] for i in rdims])
-        y = np.prod([T.Size[i] for i in cdims])
-
-        if X.Type == 'tensor':
-            self.Tensor = np.reshape(T.Tensor, [x, y])
-
-        elif X.Type == 'ktensor':
-            A = T.double()
-            self.Tensor = np.reshape(A, [x, y])
+        
+        x = np.prod([X.Size[i] for i in rdims])
+        y = np.prod([X.Size[i] for i in cdims])
+        
+        X.Coords = X.Coords[:, order]
+        X.Size = tuple(np.array(X.Size)[order])
+        
+        X = sparse.COO(np.array(X.Coords, dtype='int').T, X.data, shape=X.Size)
+        X = X.reshape([x,y])
+        X = X.todense()
+        return X

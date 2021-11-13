@@ -214,7 +214,7 @@ class CP_APR_MU:
 
                 # Absorb the component weight to dimension d
                 M.redistribute(d)
-
+                
                 # Product of all matrices but the d-th
                 Pi = self.__calculatePi(M, X, d)
 
@@ -486,9 +486,8 @@ class CP_APR_MU:
             sys.exit("PyTorch backend only support sparse tensor implementation currently.")
 
         M = K_TENSOR(Rank, X.Size, Minit, self.random_state, self.device, self.dtype)
-
         M = M.normalize(M)
-
+        
         if self.verbose != 0:
             print("CP-APR (MU):")
 

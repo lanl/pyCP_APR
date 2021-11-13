@@ -13,5 +13,5 @@ from .pyCP_APR import CP_APR
 from .version import __version__
 import sys
 sys.path += ["applications/"]
-sys.path += ["numpy_cp/"]
-sys.path += ["torch_cp/"]
+sys.path += ["numpy_backend/"]
+sys.path += ["torch_backend/"]
