@@ -13,7 +13,7 @@ from . tt_dimscheck import tt_dimscheck
 import numpy as np
 import copy
 
-def ttv(X, vecs):
+def ttv(X, vecs, dims=[]):
     """
     Tensor times vector for KRUSKAL tensor M.
 
