@@ -29,7 +29,7 @@ setup(
     description='pyCP_APR: CP-APR Tensor Decomposition with PyTorch Backend.',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    package_dir={'pyCP_APR': 'pyCP_APR/'},
+    package_dir={'pyCP_APR': 'pyCP_APR'},
     platforms = ["Linux", "Mac", "Windows"],
     include_package_data=True,
     setup_requires=[
