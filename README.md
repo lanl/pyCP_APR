@@ -15,7 +15,9 @@
 
 <div align="center", style="font-size: 50px">
 
-### [:information_source: Documentation](https://lanl.github.io/pyCP_APR/) &emsp; [:orange_book: Example Notebooks](examples/) &emsp; [:bar_chart: Datasets](data/tensors) &emsp; [:page_facing_up: Paper](https://ieeexplore.ieee.org/abstract/document/9280524)
+### [:information_source: Documentation](https://lanl.github.io/pyCP_APR/) &emsp; [:orange_book: Example Notebooks](examples/) &emsp; [:bar_chart: Datasets](data/tensors) 
+  
+### [:page_facing_up: Paper 1](https://ieeexplore.ieee.org/abstract/document/9280524) &emsp; [:page_facing_up: Paper 2](https://dl.acm.org/doi/abs/10.1145/3519602)
 
 </div>
 
@@ -83,17 +85,21 @@ y_score = model.predict_scores(coords=coords_test, values=nnz_test)
 
 
 ## How to Cite pyCP_APR?
-
+If you use pyCP_APR please cite the [original paper](https://doi.org/10.1109/ISI49825.2020.9280524) that introduces our anomaly detection framework, and the [follow-up paper](https://doi.org/10.1145/3519602) that generalizes the method to number of other anomaly detection problems and introduces the library alongside new ensemble based extension of our anomaly detection method:
 ```latex
-
-@MISC{Eren2021pyCPAPR,
-  author = {M. E. {Eren} and J. S. {Moore} and E. {Skau} and M. {Bhattarai} and G. {Chennupati} and B. S. {Alexandrov}},
-  title = {pyCP\_APR},
-  year = {2021},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  doi = {10.5281/zenodo.4840598},
-  howpublished = {\url{https://github.com/lanl/pyCP\_APR}}
+@article{10.1145/3519602,
+  author = {Eren, Maksim E. and Moore, Juston S. and Skau, Erik and Moore, Elisabeth and Bhattarai, Manish and Chennupati, Gopinath and Alexandrov, Boian S.},
+  title = {General-Purpose Unsupervised Cyber Anomaly Detection via Non-Negative Tensor Factorization},
+  year = {2022},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  issn = {2692-1626},
+  url = {https://doi.org/10.1145/3519602},
+  doi = {10.1145/3519602},
+  note = {Just Accepted},
+  journal = {Digital Threats},
+  month = {feb},
+  keywords = {malware, anomaly detection, CPD, ensemble learning, non-negative tensor factorization, data fusion, GPU, Poisson tensor factorization, cyber security, unsupervised learning}
 }
 
 @INPROCEEDINGS{Eren2020ISI,
@@ -103,6 +109,16 @@ y_score = model.predict_scores(coords=coords_test, values=nnz_test)
   year={2020},
   pages={1-6},
   doi={10.1109/ISI49825.2020.9280524}
+}
+
+@MISC{Eren2021pyCPAPR,
+  author = {M. E. {Eren} and J. S. {Moore} and E. {Skau} and M. {Bhattarai} and G. {Chennupati} and B. S. {Alexandrov}},
+  title = {pyCP\_APR},
+  year = {2021},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  doi = {10.5281/zenodo.4840598},
+  howpublished = {\url{https://github.com/lanl/pyCP\_APR}}
 }
 ```
 
