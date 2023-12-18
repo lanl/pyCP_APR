@@ -2,7 +2,7 @@
 
 <div align="center", style="font-size: 50px">
 
-[![Build Status](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg) [![Python Version](https://img.shields.io/badge/python-v3.8.5-blue)](https://img.shields.io/badge/python-v3.8.5-blue) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4840598-blue.svg)](https://doi.org/10.5281/zenodo.4840598)
+[![Build Status](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg) [![Python Version](https://img.shields.io/badge/python-v3.9-blue)](https://img.shields.io/badge/python-v3.8.5-blue) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4840598-blue.svg)](https://doi.org/10.5281/zenodo.4840598)
 
 </div>
 
@@ -33,25 +33,12 @@ pip install git+https://github.com/lanl/pyCP_APR.git
 ```shell
 git clone https://github.com/lanl/pyCP_APR.git
 cd pyCP_APR
-conda create --name pyCP_APR python=3.8.5
+conda create --name pyCP_APR python=3.9
 source activate pyCP_APR
-python setup.py install
+pip install -e . # or <python setup.py install>
 ```
 
-## Prerequisites
-- [Anaconda](https://docs.anaconda.com/anaconda/install/)(Optional)
-- numpy>=1.19.2
-- numpy-indexed>=0.3.5
-- pandas>=1.0.5
-- matplotlib>=3.3.4
-- joblib>=1.0.1
-- scikit-learn>=0.22.2
-- scipy>=1.5.3
-- seaborn>=0.11.1
-- torch>=1.6.0
-- requests>=2.25.1
-- tqdm>=4.62.3
-- sparse>=0.13.0
+#### Jupyter Setup Tutorial for using the examples ([Link](https://www.maksimeren.com/post/conda-and-jupyter-setup-for-research/))
 
 ## Example Usage
 ```python

@@ -38,26 +38,12 @@ Installation
 
     git clone https://github.com/lanl/pyCP_APR.git
     cd pyCP_APR
-    conda create --name pyCP_APR python=3.8.5
+    conda create --name pyCP_APR python=3.9
     source activate pyCP_APR
-    python setup.py install
+    pip install -e . # or <python setup.py install>
 
-
-Prerequisites
-========================================
-* `Anaconda <https://docs.anaconda.com/anaconda/install/>`_ (Optional)
-* numpy>=1.19.2
-* numpy-indexed>=0.3.5
-* pandas>=1.0.5
-* matplotlib>=3.3.4
-* joblib>=1.0.1
-* scikit-learn>=0.22.2
-* scipy>=1.5.3
-* seaborn>=0.11.1
-* torch>=1.6.0
-* requests>=2.25.1
-* tqdm>=4.62.3
-* sparse>=0.13.0
+**Optional Tutorial for Examples:**
+Jupyter Setup Tutorial for using the examples (`Link <https://www.maksimeren.com/post/conda-and-jupyter-setup-for-research/>`_)
 
 Example Usage
 ========================================
