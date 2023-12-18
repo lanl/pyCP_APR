@@ -11,7 +11,7 @@ and to permit others to do so.
 """
 from setuptools import setup, find_packages
 from glob import glob
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 # add readme
 with open('README.md', 'r') as f:
@@ -40,10 +40,10 @@ setup(
     packages=find_packages(),
     classifiers=[
         'Development Status :: 3 - Alpha',
-        'Programming Language :: Python :: 3.8.5',
+        'Programming Language :: Python :: 3.9',
         'Topic :: Software Development :: Libraries'
     ],
-    python_requires='>=3.8.5',
+    python_requires='>=3.9',
     install_requires=INSTALL_REQUIRES,
     license='License :: BSD3 License',
 )

@@ -1,352 +1,430 @@
 
+
 <!DOCTYPE html>
 
-<html lang="Python">
+
+<html lang="Python" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pyCP_APR.numpy_backend package &#8212; pyCP_APR 1.0.1 documentation</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>pyCP_APR.numpy_backend package &#8212; pyCP_APR 1.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-      
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyCP_APR.numpy_backend';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pyCP_APR.torch_backend package" href="pyCP_APR.torch_backend.html" />
     <link rel="prev" title="pyCP_APR.applications package" href="pyCP_APR.applications.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="Python">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-      
-      
-      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.1 documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="CP_APR.html">
-   pyCP_APR.CP_APR API
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   pyCP_APR.datasets API
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="modules.html">
-   pyCP_APR Package
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="pyCP_APR.html">
-     pyCP_APR package
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.applications.html">
-       pyCP_APR.applications package
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       pyCP_APR.numpy_backend package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.torch_backend.html">
-       pyCP_APR.torch_backend package
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/pyCP_APR.numpy_backend.rst.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
 
-            <!-- Source interaction buttons -->
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+  
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#submodules">
-   Submodules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.CP_APR">
-   pyCP_APR.numpy_backend.CP_APR module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.accum">
-   pyCP_APR.numpy_backend.accum module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.arrange_ktensor">
-   pyCP_APR.numpy_backend.arrange_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.double_ktensor">
-   pyCP_APR.numpy_backend.double_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.fixsigns_ktensor">
-   pyCP_APR.numpy_backend.fixsigns_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.innerprod_ktensor">
-   pyCP_APR.numpy_backend.innerprod_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ipermute_tensor">
-   pyCP_APR.numpy_backend.ipermute_tensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.khatrirao_ktensor">
-   pyCP_APR.numpy_backend.khatrirao_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.khatrirao_sptensor">
-   pyCP_APR.numpy_backend.khatrirao_sptensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ktensor">
-   pyCP_APR.numpy_backend.ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.norm_ktensor">
-   pyCP_APR.numpy_backend.norm_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.normalize_ktensor">
-   pyCP_APR.numpy_backend.normalize_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.permute_ktensor">
-   pyCP_APR.numpy_backend.permute_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.permute_tensor">
-   pyCP_APR.numpy_backend.permute_tensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.redistribute_ktensor">
-   pyCP_APR.numpy_backend.redistribute_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.sptensor">
-   pyCP_APR.numpy_backend.sptensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_ktensor">
-   pyCP_APR.numpy_backend.tenmat_ktensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_sptensor">
-   pyCP_APR.numpy_backend.tenmat_sptensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_tensor">
-   pyCP_APR.numpy_backend.tenmat_tensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tensor">
-   pyCP_APR.numpy_backend.tensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tt_dimscheck">
-   pyCP_APR.numpy_backend.tt_dimscheck module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttm_sptensor">
-   pyCP_APR.numpy_backend.ttm_sptensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttm_tensor">
-   pyCP_APR.numpy_backend.ttm_tensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttv_sptensor">
-   pyCP_APR.numpy_backend.ttv_sptensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttv_tensor">
-   pyCP_APR.numpy_backend.ttv_tensor module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend">
-   Module contents
-  </a>
- </li>
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pyCP_APR 1.0.2 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CP_APR.html">pyCP_APR.CP_APR API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">pyCP_APR.datasets API</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pyCP_APR Package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="pyCP_APR.html">pyCP_APR package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html">pyCP_APR.applications package</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">pyCP_APR.numpy_backend package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.torch_backend.html">pyCP_APR.torch_backend package</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pyCP_APR.numpy_backend.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pyCP_APR.numpy_backend package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.CP_APR">pyCP_APR.numpy_backend.CP_APR module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU.train"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.accum">pyCP_APR.numpy_backend.accum module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.accum.accum"><code class="docutils literal notranslate"><span class="pre">accum()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.arrange_ktensor">pyCP_APR.numpy_backend.arrange_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.arrange_ktensor.arrange"><code class="docutils literal notranslate"><span class="pre">arrange()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.double_ktensor">pyCP_APR.numpy_backend.double_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.double_ktensor.double"><code class="docutils literal notranslate"><span class="pre">double()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.fixsigns_ktensor">pyCP_APR.numpy_backend.fixsigns_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.fixsigns_ktensor.fixsigns_oneargin"><code class="docutils literal notranslate"><span class="pre">fixsigns_oneargin()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.innerprod_ktensor">pyCP_APR.numpy_backend.innerprod_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.innerprod_ktensor.innerprod"><code class="docutils literal notranslate"><span class="pre">innerprod()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ipermute_tensor">pyCP_APR.numpy_backend.ipermute_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ipermute_tensor.ipermute"><code class="docutils literal notranslate"><span class="pre">ipermute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.khatrirao_ktensor">pyCP_APR.numpy_backend.khatrirao_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.khatrirao_ktensor.khatrirao"><code class="docutils literal notranslate"><span class="pre">khatrirao()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.khatrirao_sptensor">pyCP_APR.numpy_backend.khatrirao_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.khatrirao_sptensor.khatrirao"><code class="docutils literal notranslate"><span class="pre">khatrirao()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ktensor">pyCP_APR.numpy_backend.ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR"><code class="docutils literal notranslate"><span class="pre">K_TENSOR</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR.deep_copy_factors"><code class="docutils literal notranslate"><span class="pre">K_TENSOR.deep_copy_factors()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.norm_ktensor">pyCP_APR.numpy_backend.norm_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.norm_ktensor.norm"><code class="docutils literal notranslate"><span class="pre">norm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.normalize_ktensor">pyCP_APR.numpy_backend.normalize_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.normalize_ktensor.arrange"><code class="docutils literal notranslate"><span class="pre">arrange()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.normalize_ktensor.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.permute_ktensor">pyCP_APR.numpy_backend.permute_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.permute_ktensor.permute"><code class="docutils literal notranslate"><span class="pre">permute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.permute_tensor">pyCP_APR.numpy_backend.permute_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.permute_tensor.permute"><code class="docutils literal notranslate"><span class="pre">permute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.redistribute_ktensor">pyCP_APR.numpy_backend.redistribute_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.redistribute_ktensor.redistribute"><code class="docutils literal notranslate"><span class="pre">redistribute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.sptensor">pyCP_APR.numpy_backend.sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR.todense"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR.todense()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_ktensor">pyCP_APR.numpy_backend.tenmat_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tenmat_ktensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_sptensor">pyCP_APR.numpy_backend.tenmat_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tenmat_sptensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_tensor">pyCP_APR.numpy_backend.tenmat_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tenmat_tensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tensor">pyCP_APR.numpy_backend.tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tensor.TENSOR"><code class="docutils literal notranslate"><span class="pre">TENSOR</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tt_dimscheck">pyCP_APR.numpy_backend.tt_dimscheck module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tt_dimscheck.tt_dimscheck"><code class="docutils literal notranslate"><span class="pre">tt_dimscheck()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttm_sptensor">pyCP_APR.numpy_backend.ttm_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttm_sptensor.ttm"><code class="docutils literal notranslate"><span class="pre">ttm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttm_tensor">pyCP_APR.numpy_backend.ttm_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttm_tensor.ttm"><code class="docutils literal notranslate"><span class="pre">ttm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttv_sptensor">pyCP_APR.numpy_backend.ttv_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttv_sptensor.ttv"><code class="docutils literal notranslate"><span class="pre">ttv()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttv_tensor">pyCP_APR.numpy_backend.ttv_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttv_tensor.ttv"><code class="docutils literal notranslate"><span class="pre">ttv()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend">Module contents</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="pycp-apr-numpy-backend-package">
-<h1>pyCP_APR.numpy_backend package<a class="headerlink" href="#pycp-apr-numpy-backend-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.CP_APR">
-<span id="pycp-apr-numpy-backend-cp-apr-module"></span><h2>pyCP_APR.numpy_backend.CP_APR module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.CP_APR" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pycp-apr-numpy-backend-package">
+<h1>pyCP_APR.numpy_backend package<a class="headerlink" href="#pycp-apr-numpy-backend-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.CP_APR">
+<span id="pycp-apr-numpy-backend-cp-apr-module"></span><h2>pyCP_APR.numpy_backend.CP_APR module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.CP_APR" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of the CP-APR algorithm [1-4] with Numpy backend.</p>
 <p>This backend can be used to factorize sparse tensorsin COO format and dense Numpy tensors.</p>
 <p class="rubric">References</p>
@@ -357,11 +435,11 @@
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.CP_APR.CP_APR_MU">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.CP_APR.</span></span><span class="sig-name descname"><span class="pre">CP_APR_MU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inner_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_inner_itn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stoptime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'numpy'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/CP_APR.html#CP_APR_MU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.CP_APR.</span></span><span class="sig-name descname"><span class="pre">CP_APR_MU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_inner_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_inner_itn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simple_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stoptime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'numpy'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/CP_APR.html#CP_APR_MU"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the CP_APR_MU class.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>epsilon</strong> (<em>float</em><em>, </em><em>optional</em>) -- Prevents zero division. Default is 1e-10.</p></li>
 <li><p><strong>kappa</strong> (<em>float</em><em>, </em><em>optional</em>) -- Fix slackness level. Default is 1e-2.</p></li>
@@ -380,26 +458,26 @@ The default is 42.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.CP_APR.CP_APR_MU.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sptensor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/CP_APR.html#CP_APR_MU.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU.train" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sptensor'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/CP_APR.html#CP_APR_MU.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU.train" title="Permalink to this definition">#</a></dt>
 <dd><p>Factorize the tensor X (i.e. compute the KRUSKAL tensor M).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tensor</strong> (<em>array</em>) -- <p>Original dense tensor X.</p>
 <p>Use with Type = 'tensor' and pass the tensor parameter as a dense Numpy array.</p>
 </p></li>
-<li><p><strong>coords</strong> (<em>Numpy array</em><em> (</em><em>i.e. array that is a list of list</em><em>)</em>) -- <p>Array of non-zero coordinates for sparse tensor X. COO format.</p>
+<li><p><strong>coords</strong> (<em>Numpy array</em><em> (</em><em>i.e. array that is a list</em><em> of </em><em>list</em><em>)</em>) -- <p>Array of non-zero coordinates for sparse tensor X. COO format.</p>
 <p>Each entry in this array is a coordinate of a non-zero value in the tensor.</p>
 <p>Used when Type = 'sptensor' and tensor parameter is not passed.</p>
 <p>len(Coords) is number of total entiries in X, and len(coords[0]) should give the number of dimensions.</p>
 </p></li>
-<li><p><strong>values</strong> (<em>Numpy array</em><em> (</em><em>i.e. list of non-zero values corresponding to each list of non-zero coordinates</em><em>)</em>) -- <p>Array of non-zero tensor entries. COO format.</p>
+<li><p><strong>values</strong> (<em>Numpy array</em><em> (</em><em>i.e. list</em><em> of </em><em>non-zero values corresponding to each list</em><em> of </em><em>non-zero coordinates</em><em>)</em>) -- <p>Array of non-zero tensor entries. COO format.</p>
 <p>Used when Type = 'sptensor' and tensor parameter is not passed.</p>
 <p>Length of values must match the length of coords.</p>
 </p></li>
 <li><p><strong>rank</strong> (<em>int</em>) -- Tensor rank, i.e. number of components to extract.
 The default is 2.</p></li>
-<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary of latent factors</em>) -- <p>Initial value of latent factors.</p>
+<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary</em><em> of </em><em>latent factors</em>) -- <p>Initial value of latent factors.</p>
 <p>If Minit = 'random', initial factors are chosen randomly from uniform distribution between 0 and 1.</p>
 <p>Else, pass dictionary where the key is the mode number and value is array size d x r
 where d is the number of elements on the dimension and r is the rank.</p>
@@ -413,13 +491,13 @@ and the corresponding list of non-zero elements with values parameter.</p>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>result</strong> -- KRUSKAL tensor M is returned.
 The latent factors can be found with the key 'Factors'.</p>
 <p>The weight of each component can be found with the key 'Weights'.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -427,16 +505,16 @@ The latent factors can be found with the key 'Factors'.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.accum">
-<span id="pycp-apr-numpy-backend-accum-module"></span><h2>pyCP_APR.numpy_backend.accum module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.accum" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.accum">
+<span id="pycp-apr-numpy-backend-accum-module"></span><h2>pyCP_APR.numpy_backend.accum module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.accum" title="Permalink to this heading">#</a></h2>
 <p>Source: <a class="reference external" href="https://scipy-cookbook.readthedocs.io/items/AccumarrayLike.html">https://scipy-cookbook.readthedocs.io/items/AccumarrayLike.html</a></p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.accum.accum">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.accum.</span></span><span class="sig-name descname"><span class="pre">accum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/accum.html#accum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.accum.accum" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.accum.</span></span><span class="sig-name descname"><span class="pre">accum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/accum.html#accum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.accum.accum" title="Permalink to this definition">#</a></dt>
 <dd><p>An accumulation function similar to Matlab's <cite>accumarray</cite> function.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>accmap</strong> (<em>ndarray</em>) -- This is the &quot;accumulation map&quot;.  It maps input (i.e. indices into
 <cite>a</cite>) to their destination in the output array.  The first <cite>a.ndim</cite>
@@ -459,14 +537,14 @@ from <cite>accmap</cite>.</p></li>
 <cite>a</cite> is used.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>out</strong> -- The accumulated results.</p>
 <p>The shape of <cite>out</cite> is <cite>size</cite> if <cite>size</cite> is given.  Otherwise the
 shape is determined by the (lexicographically) largest indices of
 the output found in <cite>accmap</cite>.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
 </dd>
 </dl>
@@ -501,144 +579,144 @@ the output found in <cite>accmap</cite>.</p>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.arrange_ktensor">
-<span id="pycp-apr-numpy-backend-arrange-ktensor-module"></span><h2>pyCP_APR.numpy_backend.arrange_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.arrange_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.arrange_ktensor">
+<span id="pycp-apr-numpy-backend-arrange-ktensor-module"></span><h2>pyCP_APR.numpy_backend.arrange_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.arrange_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of arrange utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.arrange_ktensor.arrange">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.arrange_ktensor.</span></span><span class="sig-name descname"><span class="pre">arrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/arrange_ktensor.html#arrange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.arrange_ktensor.arrange" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.arrange_ktensor.</span></span><span class="sig-name descname"><span class="pre">arrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/arrange_ktensor.html#arrange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.arrange_ktensor.arrange" title="Permalink to this definition">#</a></dt>
 <dd><p>This function arranges the components of KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p></li>
 <li><p><strong>p</strong> (<em>list</em><em>, </em><em>optional</em>) -- permutation. The default is [].</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>M</strong> -- KRUSKAL tensor class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.double_ktensor">
-<span id="pycp-apr-numpy-backend-double-ktensor-module"></span><h2>pyCP_APR.numpy_backend.double_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.double_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.double_ktensor">
+<span id="pycp-apr-numpy-backend-double-ktensor-module"></span><h2>pyCP_APR.numpy_backend.double_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.double_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of double utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.double_ktensor.double">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.double_ktensor.</span></span><span class="sig-name descname"><span class="pre">double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/double_ktensor.html#double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.double_ktensor.double" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.double_ktensor.</span></span><span class="sig-name descname"><span class="pre">double</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/double_ktensor.html#double"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.double_ktensor.double" title="Permalink to this definition">#</a></dt>
 <dd><p>This function converts the KTENSOR M to a double array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>A</strong> -- Double array of M.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.fixsigns_ktensor">
-<span id="pycp-apr-numpy-backend-fixsigns-ktensor-module"></span><h2>pyCP_APR.numpy_backend.fixsigns_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.fixsigns_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.fixsigns_ktensor">
+<span id="pycp-apr-numpy-backend-fixsigns-ktensor-module"></span><h2>pyCP_APR.numpy_backend.fixsigns_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.fixsigns_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of fixsigns_oneargin utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.fixsigns_ktensor.fixsigns_oneargin">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.fixsigns_ktensor.</span></span><span class="sig-name descname"><span class="pre">fixsigns_oneargin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/fixsigns_ktensor.html#fixsigns_oneargin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.fixsigns_ktensor.fixsigns_oneargin" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.fixsigns_ktensor.</span></span><span class="sig-name descname"><span class="pre">fixsigns_oneargin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/fixsigns_ktensor.html#fixsigns_oneargin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.fixsigns_ktensor.fixsigns_oneargin" title="Permalink to this definition">#</a></dt>
 <dd><p>Fix sign ambiguity of a ktensor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>K</strong> -- KRUSKAL tensor where signs on latent factor columns have been flipped.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.innerprod_ktensor">
-<span id="pycp-apr-numpy-backend-innerprod-ktensor-module"></span><h2>pyCP_APR.numpy_backend.innerprod_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.innerprod_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.innerprod_ktensor">
+<span id="pycp-apr-numpy-backend-innerprod-ktensor-module"></span><h2>pyCP_APR.numpy_backend.innerprod_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.innerprod_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of innerprod utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.innerprod_ktensor.innerprod">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.innerprod_ktensor.</span></span><span class="sig-name descname"><span class="pre">innerprod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/innerprod_ktensor.html#innerprod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.innerprod_ktensor.innerprod" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.innerprod_ktensor.</span></span><span class="sig-name descname"><span class="pre">innerprod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/innerprod_ktensor.html#innerprod"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.innerprod_ktensor.innerprod" title="Permalink to this definition">#</a></dt>
 <dd><p>This function takes the inner product of tensor X and KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p></li>
 <li><p><strong>X</strong> (<em>class</em>) -- Original tensor. sptensor.SP_TENSOR.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>res</strong> -- inner product of tensor X and KRUSKAL tensor M.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.ipermute_tensor">
-<span id="pycp-apr-numpy-backend-ipermute-tensor-module"></span><h2>pyCP_APR.numpy_backend.ipermute_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ipermute_tensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.ipermute_tensor">
+<span id="pycp-apr-numpy-backend-ipermute-tensor-module"></span><h2>pyCP_APR.numpy_backend.ipermute_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ipermute_tensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of ipermute utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ipermute_tensor.ipermute">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ipermute_tensor.</span></span><span class="sig-name descname"><span class="pre">ipermute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ipermute_tensor.html#ipermute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ipermute_tensor.ipermute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ipermute_tensor.</span></span><span class="sig-name descname"><span class="pre">ipermute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ipermute_tensor.html#ipermute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ipermute_tensor.ipermute" title="Permalink to this definition">#</a></dt>
 <dd><p>This function inverse-permutes the dimensions of X.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>dense tensor</em>) -- Dense tensor object X.</p></li>
 <li><p><strong>order</strong> (<em>array</em>) -- Vector order.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>X</strong> -- Inverse permute of X by the order specified.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dense tensor</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.khatrirao_ktensor">
-<span id="pycp-apr-numpy-backend-khatrirao-ktensor-module"></span><h2>pyCP_APR.numpy_backend.khatrirao_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.khatrirao_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.khatrirao_ktensor">
+<span id="pycp-apr-numpy-backend-khatrirao-ktensor-module"></span><h2>pyCP_APR.numpy_backend.khatrirao_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.khatrirao_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Takes the Khatrirao product of KRUSKAL tensor M.</p>
 <p class="rubric">References</p>
-<p>[1] Mrdmnd. (n.d.). mrdmnd/scikit-tensor. GitHub. <a class="reference external" href="https://github.com/mrdmnd/scikit-tensor/blob/master/src/tensor_tools.py">https://github.com/mrdmnd/scikit-tensor/blob/master/src/tensor_tools.py</a>.</p>
+<p>[1] Mrdmnd. (n.d.). mrdmnd/scikit-tensor. GitHub. <a class="github reference external" href="https://github.com/mrdmnd/scikit-tensor/blob/master/src/tensor_tools.py">mrdmnd/scikit-tensor</a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.khatrirao_ktensor.khatrirao">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.khatrirao_ktensor.</span></span><span class="sig-name descname"><span class="pre">khatrirao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/khatrirao_ktensor.html#khatrirao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.khatrirao_ktensor.khatrirao" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.khatrirao_ktensor.</span></span><span class="sig-name descname"><span class="pre">khatrirao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/khatrirao_ktensor.html#khatrirao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.khatrirao_ktensor.khatrirao" title="Permalink to this definition">#</a></dt>
 <dd><p>KHATRIRAO Khatri-Rao product of matrices.
 <strong>Citation:</strong>
-Mrdmnd. (n.d.). mrdmnd/scikit-tensor. GitHub. <a class="reference external" href="https://github.com/mrdmnd/scikit-tensor/blob/master/src/tensor_tools.py">https://github.com/mrdmnd/scikit-tensor/blob/master/src/tensor_tools.py</a>.</p>
+Mrdmnd. (n.d.). mrdmnd/scikit-tensor. GitHub. <a class="github reference external" href="https://github.com/mrdmnd/scikit-tensor/blob/master/src/tensor_tools.py">mrdmnd/scikit-tensor</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- </p></li>
 <li><p><strong>ktensor.K_TENSOR.</strong> (<em>KRUSKAL tensor class.</em>) -- </p></li>
@@ -646,48 +724,48 @@ Mrdmnd. (n.d.). mrdmnd/scikit-tensor. GitHub. <a class="reference external" href
 <li><p><strong>reverse</strong> (<em>bool</em><em>, </em><em>optional</em>) -- When true, product is in reverse order. The default is True.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>ValueError</strong> -- Invalid tensors.</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>P</strong> -- Khatri-Rao product of matrices.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.khatrirao_sptensor">
-<span id="pycp-apr-numpy-backend-khatrirao-sptensor-module"></span><h2>pyCP_APR.numpy_backend.khatrirao_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.khatrirao_sptensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.khatrirao_sptensor">
+<span id="pycp-apr-numpy-backend-khatrirao-sptensor-module"></span><h2>pyCP_APR.numpy_backend.khatrirao_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.khatrirao_sptensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of khatrirao utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.khatrirao_sptensor.khatrirao">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.khatrirao_sptensor.</span></span><span class="sig-name descname"><span class="pre">khatrirao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/khatrirao_sptensor.html#khatrirao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.khatrirao_sptensor.khatrirao" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.khatrirao_sptensor.</span></span><span class="sig-name descname"><span class="pre">khatrirao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/khatrirao_sptensor.html#khatrirao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.khatrirao_sptensor.khatrirao" title="Permalink to this definition">#</a></dt>
 <dd><p>Takes the Khatrirao product of sparse tensor X and KRUSKAL tesor M</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p></li>
 <li><p><strong>X</strong> (<em>sptensor tensor</em>) -- Sparse tensor X.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) -- Mode to skip</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>K</strong> -- KRUSKAL tensor where signs on latent factor columns have been flipped.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.ktensor">
-<span id="pycp-apr-numpy-backend-ktensor-module"></span><h2>pyCP_APR.numpy_backend.ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.ktensor">
+<span id="pycp-apr-numpy-backend-ktensor-module"></span><h2>pyCP_APR.numpy_backend.ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ktensor" title="Permalink to this heading">#</a></h2>
 <p>ktensor.py contains the K_TENSOR class for KRUSKAL tensor M object representation.</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
@@ -697,17 +775,17 @@ Mrdmnd. (n.d.). mrdmnd/scikit-tensor. GitHub. <a class="reference external" href
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ktensor.K_TENSOR">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ktensor.</span></span><span class="sig-name descname"><span class="pre">K_TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ktensor.html#K_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ktensor.</span></span><span class="sig-name descname"><span class="pre">K_TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Minit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ktensor.html#K_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the K_TENSOR class.</p>
 <p>Creates the object representation of M.</p>
 <p>If initial M is not passed, by default, creates M from uniform distribution.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>Rank</strong> (<em>int</em>) -- Tensor rank, i.e. number of components in M.</p></li>
 <li><p><strong>Size</strong> (<em>list</em>) -- Shape of the tensor.</p></li>
-<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary of latent factors</em>) -- <p>Initial value of latent factors.</p>
+<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary</em><em> of </em><em>latent factors</em>) -- <p>Initial value of latent factors.</p>
 <p>If Minit = 'random', initial factors are chosen randomly from uniform distribution between 0 and 1.</p>
 <p>Else, pass dictionary where the key is the mode number and value is array size d x r
 where d is the number of elements on the dimension and r is the rank.</p>
@@ -721,13 +799,13 @@ The default is 42.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ktensor.K_TENSOR.deep_copy_factors">
-<span class="sig-name descname"><span class="pre">deep_copy_factors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ktensor.html#K_TENSOR.deep_copy_factors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR.deep_copy_factors" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">deep_copy_factors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ktensor.html#K_TENSOR.deep_copy_factors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR.deep_copy_factors" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a deep copy of the latent factors in M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>factors</strong> -- Copy of the latent factors of M.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
@@ -735,41 +813,41 @@ The default is 42.</p></li>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.norm_ktensor">
-<span id="pycp-apr-numpy-backend-norm-ktensor-module"></span><h2>pyCP_APR.numpy_backend.norm_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.norm_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.norm_ktensor">
+<span id="pycp-apr-numpy-backend-norm-ktensor-module"></span><h2>pyCP_APR.numpy_backend.norm_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.norm_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of norm utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.norm_ktensor.norm">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.norm_ktensor.</span></span><span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/norm_ktensor.html#norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.norm_ktensor.norm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.norm_ktensor.</span></span><span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/norm_ktensor.html#norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.norm_ktensor.norm" title="Permalink to this definition">#</a></dt>
 <dd><p>This function takes the Frobenius norm of a KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>nrm</strong> -- Frobenius norm of M.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.normalize_ktensor">
-<span id="pycp-apr-numpy-backend-normalize-ktensor-module"></span><h2>pyCP_APR.numpy_backend.normalize_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.normalize_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.normalize_ktensor">
+<span id="pycp-apr-numpy-backend-normalize-ktensor-module"></span><h2>pyCP_APR.numpy_backend.normalize_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.normalize_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of normalize utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.normalize_ktensor.arrange">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.normalize_ktensor.</span></span><span class="sig-name descname"><span class="pre">arrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/normalize_ktensor.html#arrange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.normalize_ktensor.arrange" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.normalize_ktensor.</span></span><span class="sig-name descname"><span class="pre">arrange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/normalize_ktensor.html#arrange"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.normalize_ktensor.arrange" title="Permalink to this definition">#</a></dt>
 <dd><p>This function arranges the components of KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>p</strong> (<em>list</em><em>, </em><em>optional</em>) -- permutation. The default is [].</p>
 </dd>
 </dl>
@@ -777,10 +855,10 @@ The default is 42.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.normalize_ktensor.normalize">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.normalize_ktensor.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/normalize_ktensor.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.normalize_ktensor.normalize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.normalize_ktensor.</span></span><span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/normalize_ktensor.html#normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.normalize_ktensor.normalize" title="Permalink to this definition">#</a></dt>
 <dd><p>This function normalizes the columns of the factor matrices.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor M class. ktensor.K_TENSOR.</p></li>
 <li><p><strong>normtype</strong> (<em>int</em><em>, </em><em>optional</em>) -- Determines the type of normalization. The default is 1.</p></li>
@@ -788,96 +866,96 @@ The default is 42.</p></li>
 <li><p><strong>mode</strong> (<em>int</em><em>, </em><em>optional</em>) -- Dimension number. The default is -1.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>M</strong> -- Normalized KRUSKAL tensor M class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.permute_ktensor">
-<span id="pycp-apr-numpy-backend-permute-ktensor-module"></span><h2>pyCP_APR.numpy_backend.permute_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.permute_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.permute_ktensor">
+<span id="pycp-apr-numpy-backend-permute-ktensor-module"></span><h2>pyCP_APR.numpy_backend.permute_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.permute_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of permute utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.permute_ktensor.permute">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.permute_ktensor.</span></span><span class="sig-name descname"><span class="pre">permute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/permute_ktensor.html#permute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.permute_ktensor.permute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.permute_ktensor.</span></span><span class="sig-name descname"><span class="pre">permute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/permute_ktensor.html#permute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.permute_ktensor.permute" title="Permalink to this definition">#</a></dt>
 <dd><p>This function permutes the dimensions of the KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p></li>
 <li><p><strong>order</strong> (<em>array</em>) -- Vector order.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>M</strong> -- KRUSKAL tensor class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.permute_tensor">
-<span id="pycp-apr-numpy-backend-permute-tensor-module"></span><h2>pyCP_APR.numpy_backend.permute_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.permute_tensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.permute_tensor">
+<span id="pycp-apr-numpy-backend-permute-tensor-module"></span><h2>pyCP_APR.numpy_backend.permute_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.permute_tensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of permute utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.permute_tensor.permute">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.permute_tensor.</span></span><span class="sig-name descname"><span class="pre">permute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/permute_tensor.html#permute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.permute_tensor.permute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.permute_tensor.</span></span><span class="sig-name descname"><span class="pre">permute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/permute_tensor.html#permute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.permute_tensor.permute" title="Permalink to this definition">#</a></dt>
 <dd><p>This function permutes the dimensions of X.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>object</em>) -- Dense tensor class. tensor.TENSOR.</p></li>
 <li><p><strong>order</strong> (<em>array</em>) -- Vector order.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>X</strong> -- Dense tensor class. tensor.TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.redistribute_ktensor">
-<span id="pycp-apr-numpy-backend-redistribute-ktensor-module"></span><h2>pyCP_APR.numpy_backend.redistribute_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.redistribute_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.redistribute_ktensor">
+<span id="pycp-apr-numpy-backend-redistribute-ktensor-module"></span><h2>pyCP_APR.numpy_backend.redistribute_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.redistribute_ktensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of redistribute utility with Numpy backend from the MATLAB Tensor Toolbox [1].
 .. rubric:: References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.redistribute_ktensor.redistribute">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.redistribute_ktensor.</span></span><span class="sig-name descname"><span class="pre">redistribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/redistribute_ktensor.html#redistribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.redistribute_ktensor.redistribute" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.redistribute_ktensor.</span></span><span class="sig-name descname"><span class="pre">redistribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/redistribute_ktensor.html#redistribute"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.redistribute_ktensor.redistribute" title="Permalink to this definition">#</a></dt>
 <dd><p>This function distributes the weights to a specified dimension or mode.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>M</strong> (<em>object</em>) -- KRUSKAL tensor class. ktensor.K_TENSOR.</p></li>
 <li><p><strong>mode</strong> (<em>int</em>) -- Dimension number.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>M</strong> -- KRUSKAL tensor class. ktensor.K_TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.sptensor">
-<span id="pycp-apr-numpy-backend-sptensor-module"></span><h2>pyCP_APR.numpy_backend.sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.sptensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.sptensor">
+<span id="pycp-apr-numpy-backend-sptensor-module"></span><h2>pyCP_APR.numpy_backend.sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.sptensor" title="Permalink to this heading">#</a></h2>
 <p>sptensor.py contains the SP_TENSOR class which is the object representation
 of the sparse tensor X in COO format.</p>
 <p class="rubric">References</p>
@@ -888,19 +966,19 @@ of the sparse tensor X in COO format.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.sptensor.SP_TENSOR">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.sptensor.</span></span><span class="sig-name descname"><span class="pre">SP_TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/sptensor.html#SP_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.sptensor.</span></span><span class="sig-name descname"><span class="pre">SP_TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/sptensor.html#SP_TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the SP_TENSOR class.</p>
 <p>Sorts the tensor entries.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>Coords</strong> (<em>Numpy array</em><em> (</em><em>i.e. array that is a list of list</em><em>)</em>) -- <p>Array of non-zero coordinates for sparse tensor X. COO format.</p>
+<li><p><strong>Coords</strong> (<em>Numpy array</em><em> (</em><em>i.e. array that is a list</em><em> of </em><em>list</em><em>)</em>) -- <p>Array of non-zero coordinates for sparse tensor X. COO format.</p>
 <p>Each entry in this array is a coordinate of a non-zero value in the tensor.</p>
 <p>Used when Type = 'sptensor' and tensor parameter is not passed.</p>
 <p>len(Coords) is number of total entiries in X, and len(coords[0]) should give the number of dimensions.</p>
 </p></li>
-<li><p><strong>Values</strong> (<em>Numpy array</em><em> (</em><em>i.e. list of non-zero values corresponding to each list of non-zero coordinates</em><em>)</em>) -- <p>Array of non-zero tensor entries. COO format.</p>
+<li><p><strong>Values</strong> (<em>Numpy array</em><em> (</em><em>i.e. list</em><em> of </em><em>non-zero values corresponding to each list</em><em> of </em><em>non-zero coordinates</em><em>)</em>) -- <p>Array of non-zero tensor entries. COO format.</p>
 <p>Used when Type = 'sptensor' and tensor parameter is not passed.</p>
 <p>Length of values must match the length of coords.</p>
 </p></li>
@@ -910,14 +988,14 @@ of the sparse tensor X in COO format.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.sptensor.SP_TENSOR.todense">
-<span class="sig-name descname"><span class="pre">todense</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/sptensor.html#SP_TENSOR.todense"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR.todense" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">todense</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/sptensor.html#SP_TENSOR.todense"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR.todense" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.tenmat_ktensor">
-<span id="pycp-apr-numpy-backend-tenmat-ktensor-module"></span><h2>pyCP_APR.numpy_backend.tenmat_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tenmat_ktensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.tenmat_ktensor">
+<span id="pycp-apr-numpy-backend-tenmat-ktensor-module"></span><h2>pyCP_APR.numpy_backend.tenmat_ktensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tenmat_ktensor" title="Permalink to this heading">#</a></h2>
 <p>tenmat.py creates a matricized tensor.</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
@@ -927,25 +1005,25 @@ of the sparse tensor X in COO format.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.tenmat_ktensor.tenmat">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tenmat_ktensor.</span></span><span class="sig-name descname"><span class="pre">tenmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tenmat_ktensor.html#tenmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tenmat_ktensor.tenmat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tenmat_ktensor.</span></span><span class="sig-name descname"><span class="pre">tenmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tenmat_ktensor.html#tenmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tenmat_ktensor.tenmat" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a matricized tensor.
 :param X: Kruskal tensor, ktensor.K_TENSOR.
 :type X: class
 :param mode: Dimension number to unfold on.
 :type mode: int</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>X</strong> -- Matriced version of the sparse tensor in as dense matrix.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.tenmat_sptensor">
-<span id="pycp-apr-numpy-backend-tenmat-sptensor-module"></span><h2>pyCP_APR.numpy_backend.tenmat_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tenmat_sptensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.tenmat_sptensor">
+<span id="pycp-apr-numpy-backend-tenmat-sptensor-module"></span><h2>pyCP_APR.numpy_backend.tenmat_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tenmat_sptensor" title="Permalink to this heading">#</a></h2>
 <p>tenmat.py creates a matricized tensor.</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
@@ -955,25 +1033,25 @@ of the sparse tensor X in COO format.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.tenmat_sptensor.tenmat">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tenmat_sptensor.</span></span><span class="sig-name descname"><span class="pre">tenmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tenmat_sptensor.html#tenmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tenmat_sptensor.tenmat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tenmat_sptensor.</span></span><span class="sig-name descname"><span class="pre">tenmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tenmat_sptensor.html#tenmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tenmat_sptensor.tenmat" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a matricized tenso, i.e. the unfolding of the tensor.
 :param X: Sparse tensor. sptensor.SP_TENSOR.
 :type X: class
 :param mode: Dimension number to unfold on.
 :type mode: int</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>X</strong> -- Matriced version of the sparse tensor in as dense matrix.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.tenmat_tensor">
-<span id="pycp-apr-numpy-backend-tenmat-tensor-module"></span><h2>pyCP_APR.numpy_backend.tenmat_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tenmat_tensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.tenmat_tensor">
+<span id="pycp-apr-numpy-backend-tenmat-tensor-module"></span><h2>pyCP_APR.numpy_backend.tenmat_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tenmat_tensor" title="Permalink to this heading">#</a></h2>
 <p>tenmat.py creates a matricized tensor.</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
@@ -983,25 +1061,25 @@ of the sparse tensor X in COO format.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.tenmat_tensor.tenmat">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tenmat_tensor.</span></span><span class="sig-name descname"><span class="pre">tenmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tenmat_tensor.html#tenmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tenmat_tensor.tenmat" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tenmat_tensor.</span></span><span class="sig-name descname"><span class="pre">tenmat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tenmat_tensor.html#tenmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tenmat_tensor.tenmat" title="Permalink to this definition">#</a></dt>
 <dd><p>Create a matricized tensor.
 :param X: Dense. tensor. tensor.TENSOR.
 :type X: class
 :param mode: Dimension number to unfold on.
 :type mode: int</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>X</strong> -- Matriced version of the sparse tensor in as dense matrix.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.tensor">
-<span id="pycp-apr-numpy-backend-tensor-module"></span><h2>pyCP_APR.numpy_backend.tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.tensor">
+<span id="pycp-apr-numpy-backend-tensor-module"></span><h2>pyCP_APR.numpy_backend.tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tensor" title="Permalink to this heading">#</a></h2>
 <p>tensor.py contains the TENSOR class for tensor X object representation.</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.
@@ -1011,42 +1089,39 @@ of the sparse tensor X in COO format.</p>
 <p>&#64;author: Maksim Ekin Eren</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.tensor.TENSOR">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tensor.</span></span><span class="sig-name descname"><span class="pre">TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tensor.html#TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tensor.TENSOR" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tensor.</span></span><span class="sig-name descname"><span class="pre">TENSOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tensor.html#TENSOR"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tensor.TENSOR" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Initilize the tensor X class.</p>
 <p>Creates the object representation of X.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>Tensor</strong> (<em>array</em>) -- Dense Numpy tensor.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p></p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>None.</p>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.tt_dimscheck">
-<span id="pycp-apr-numpy-backend-tt-dimscheck-module"></span><h2>pyCP_APR.numpy_backend.tt_dimscheck module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tt_dimscheck" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.tt_dimscheck">
+<span id="pycp-apr-numpy-backend-tt-dimscheck-module"></span><h2>pyCP_APR.numpy_backend.tt_dimscheck module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.tt_dimscheck" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of tt_dimscheck utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.tt_dimscheck.tt_dimscheck">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tt_dimscheck.</span></span><span class="sig-name descname"><span class="pre">tt_dimscheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tt_dimscheck.html#tt_dimscheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tt_dimscheck.tt_dimscheck" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.tt_dimscheck.</span></span><span class="sig-name descname"><span class="pre">tt_dimscheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dims</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/tt_dimscheck.html#tt_dimscheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.tt_dimscheck.tt_dimscheck" title="Permalink to this definition">#</a></dt>
 <dd><p>Processes tensor dimensions.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dims</strong> (<em>list</em><em> or </em><em>int</em>) -- Dimension indices.</p></li>
 <li><p><strong>N</strong> (<em>int</em>) -- tensor order.</p></li>
 <li><p><strong>M</strong> (<em>int</em>) -- Multiplicants</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
 <li><p><strong>sdims</strong> (<em>list</em>) -- index for M muliplicands</p></li>
 <li><p><strong>vidx</strong> (<em>list</em>) -- index for M muliplicands</p></li>
@@ -1056,160 +1131,327 @@ of the sparse tensor X in COO format.</p>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.ttm_sptensor">
-<span id="pycp-apr-numpy-backend-ttm-sptensor-module"></span><h2>pyCP_APR.numpy_backend.ttm_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttm_sptensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.ttm_sptensor">
+<span id="pycp-apr-numpy-backend-ttm-sptensor-module"></span><h2>pyCP_APR.numpy_backend.ttm_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttm_sptensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of ttm utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ttm_sptensor.ttm">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttm_sptensor.</span></span><span class="sig-name descname"><span class="pre">ttm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varargin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttm_sptensor.html#ttm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttm_sptensor.ttm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttm_sptensor.</span></span><span class="sig-name descname"><span class="pre">ttm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varargin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttm_sptensor.html#ttm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttm_sptensor.ttm" title="Permalink to this definition">#</a></dt>
 <dd><p>Tensor times matrix operation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>object</em>) -- Sparse tensor. sptensor.SP_TENSOR.</p></li>
 <li><p><strong>V</strong> (<em>np.ndarray</em>) -- Numpy array.</p></li>
 <li><p><strong>varargin</strong> (<em>dict</em>) -- Optional parameter to specify tflag and or mode settings.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>Y</strong> -- Sparse tensor. sptensor.SP_TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.ttm_tensor">
-<span id="pycp-apr-numpy-backend-ttm-tensor-module"></span><h2>pyCP_APR.numpy_backend.ttm_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttm_tensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.ttm_tensor">
+<span id="pycp-apr-numpy-backend-ttm-tensor-module"></span><h2>pyCP_APR.numpy_backend.ttm_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttm_tensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of ttm utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ttm_tensor.ttm">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttm_tensor.</span></span><span class="sig-name descname"><span class="pre">ttm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varargin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttm_tensor.html#ttm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttm_tensor.ttm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttm_tensor.</span></span><span class="sig-name descname"><span class="pre">ttm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varargin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttm_tensor.html#ttm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttm_tensor.ttm" title="Permalink to this definition">#</a></dt>
 <dd><p>Tensor times matrix operation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>object</em>) -- Sparse tensor. sptensor.SP_TENSOR.</p></li>
 <li><p><strong>V</strong> (<em>np.ndarray</em>) -- Numpy array.</p></li>
 <li><p><strong>varargin</strong> (<em>dict</em>) -- Optional parameter to specify tflag and or mode settings.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>Y</strong> -- Sparse tensor. sptensor.SP_TENSOR.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.ttv_sptensor">
-<span id="pycp-apr-numpy-backend-ttv-sptensor-module"></span><h2>pyCP_APR.numpy_backend.ttv_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttv_sptensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.ttv_sptensor">
+<span id="pycp-apr-numpy-backend-ttv-sptensor-module"></span><h2>pyCP_APR.numpy_backend.ttv_sptensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttv_sptensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of ttv utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ttv_sptensor.ttv">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttv_sptensor.</span></span><span class="sig-name descname"><span class="pre">ttv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttv_sptensor.html#ttv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttv_sptensor.ttv" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttv_sptensor.</span></span><span class="sig-name descname"><span class="pre">ttv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttv_sptensor.html#ttv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttv_sptensor.ttv" title="Permalink to this definition">#</a></dt>
 <dd><p>Tensor times vector for KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>object</em>) -- Sparse tensor. sptensor.SP_TENSOR.</p></li>
 <li><p><strong>vecs</strong> (<em>array</em>) -- coluumn vector.</p></li>
 <li><p><strong>dims</strong> (<em>list</em>) -- list of dimension indices.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>c</strong> -- product of KRUSKAL tensor X with a (column) vector vecs.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend.ttv_tensor">
-<span id="pycp-apr-numpy-backend-ttv-tensor-module"></span><h2>pyCP_APR.numpy_backend.ttv_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttv_tensor" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.numpy_backend.ttv_tensor">
+<span id="pycp-apr-numpy-backend-ttv-tensor-module"></span><h2>pyCP_APR.numpy_backend.ttv_tensor module<a class="headerlink" href="#module-pyCP_APR.numpy_backend.ttv_tensor" title="Permalink to this heading">#</a></h2>
 <p>Python implementation of ttv utility with Numpy backend from the MATLAB Tensor Toolbox [1].</p>
 <p class="rubric">References</p>
 <p>[1] General software, latest release: Brett W. Bader, Tamara G. Kolda and others, Tensor Toolbox for MATLAB, Version 3.2.1, www.tensortoolbox.org, April 5, 2021.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="pyCP_APR.numpy_backend.ttv_tensor.ttv">
-<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttv_tensor.</span></span><span class="sig-name descname"><span class="pre">ttv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vecs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttv_tensor.html#ttv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttv_tensor.ttv" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">pyCP_APR.numpy_backend.ttv_tensor.</span></span><span class="sig-name descname"><span class="pre">ttv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyCP_APR/numpy_backend/ttv_tensor.html#ttv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyCP_APR.numpy_backend.ttv_tensor.ttv" title="Permalink to this definition">#</a></dt>
 <dd><p>Tensor times vector for KRUSKAL tensor M.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>X</strong> (<em>object</em>) -- Dense tensor class. tensor.TENSOR.</p></li>
 <li><p><strong>vecs</strong> (<em>array</em>) -- coluumn vector.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>c</strong> -- product of KRUSKAL tensor X with a (column) vector vecs.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.numpy_backend">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR.numpy_backend" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="module-pyCP_APR.numpy_backend">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR.numpy_backend" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
 
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="pyCP_APR.applications.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">pyCP_APR.applications package</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pyCP_APR.applications.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyCP_APR.applications package</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="pyCP_APR.torch_backend.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="pyCP_APR.torch_backend.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">pyCP_APR.torch_backend package</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
-        
-            &copy; Copyright 2021, LANL.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.CP_APR">pyCP_APR.numpy_backend.CP_APR module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU.train"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.accum">pyCP_APR.numpy_backend.accum module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.accum.accum"><code class="docutils literal notranslate"><span class="pre">accum()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.arrange_ktensor">pyCP_APR.numpy_backend.arrange_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.arrange_ktensor.arrange"><code class="docutils literal notranslate"><span class="pre">arrange()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.double_ktensor">pyCP_APR.numpy_backend.double_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.double_ktensor.double"><code class="docutils literal notranslate"><span class="pre">double()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.fixsigns_ktensor">pyCP_APR.numpy_backend.fixsigns_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.fixsigns_ktensor.fixsigns_oneargin"><code class="docutils literal notranslate"><span class="pre">fixsigns_oneargin()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.innerprod_ktensor">pyCP_APR.numpy_backend.innerprod_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.innerprod_ktensor.innerprod"><code class="docutils literal notranslate"><span class="pre">innerprod()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ipermute_tensor">pyCP_APR.numpy_backend.ipermute_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ipermute_tensor.ipermute"><code class="docutils literal notranslate"><span class="pre">ipermute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.khatrirao_ktensor">pyCP_APR.numpy_backend.khatrirao_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.khatrirao_ktensor.khatrirao"><code class="docutils literal notranslate"><span class="pre">khatrirao()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.khatrirao_sptensor">pyCP_APR.numpy_backend.khatrirao_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.khatrirao_sptensor.khatrirao"><code class="docutils literal notranslate"><span class="pre">khatrirao()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ktensor">pyCP_APR.numpy_backend.ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR"><code class="docutils literal notranslate"><span class="pre">K_TENSOR</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ktensor.K_TENSOR.deep_copy_factors"><code class="docutils literal notranslate"><span class="pre">K_TENSOR.deep_copy_factors()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.norm_ktensor">pyCP_APR.numpy_backend.norm_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.norm_ktensor.norm"><code class="docutils literal notranslate"><span class="pre">norm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.normalize_ktensor">pyCP_APR.numpy_backend.normalize_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.normalize_ktensor.arrange"><code class="docutils literal notranslate"><span class="pre">arrange()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.normalize_ktensor.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.permute_ktensor">pyCP_APR.numpy_backend.permute_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.permute_ktensor.permute"><code class="docutils literal notranslate"><span class="pre">permute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.permute_tensor">pyCP_APR.numpy_backend.permute_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.permute_tensor.permute"><code class="docutils literal notranslate"><span class="pre">permute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.redistribute_ktensor">pyCP_APR.numpy_backend.redistribute_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.redistribute_ktensor.redistribute"><code class="docutils literal notranslate"><span class="pre">redistribute()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.sptensor">pyCP_APR.numpy_backend.sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.sptensor.SP_TENSOR.todense"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR.todense()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_ktensor">pyCP_APR.numpy_backend.tenmat_ktensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tenmat_ktensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_sptensor">pyCP_APR.numpy_backend.tenmat_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tenmat_sptensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tenmat_tensor">pyCP_APR.numpy_backend.tenmat_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tenmat_tensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tensor">pyCP_APR.numpy_backend.tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tensor.TENSOR"><code class="docutils literal notranslate"><span class="pre">TENSOR</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.tt_dimscheck">pyCP_APR.numpy_backend.tt_dimscheck module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.tt_dimscheck.tt_dimscheck"><code class="docutils literal notranslate"><span class="pre">tt_dimscheck()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttm_sptensor">pyCP_APR.numpy_backend.ttm_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttm_sptensor.ttm"><code class="docutils literal notranslate"><span class="pre">ttm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttm_tensor">pyCP_APR.numpy_backend.ttm_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttm_tensor.ttm"><code class="docutils literal notranslate"><span class="pre">ttm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttv_sptensor">pyCP_APR.numpy_backend.ttv_sptensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttv_sptensor.ttv"><code class="docutils literal notranslate"><span class="pre">ttv()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend.ttv_tensor">pyCP_APR.numpy_backend.ttv_tensor module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pyCP_APR.numpy_backend.ttv_tensor.ttv"><code class="docutils literal notranslate"><span class="pre">ttv()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.numpy_backend">Module contents</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, LANL.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

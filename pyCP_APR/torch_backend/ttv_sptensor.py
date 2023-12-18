@@ -26,8 +26,8 @@ def ttv(M, vecs, dims=[]):
          product of KRUSKAL tensor X with a (column) vector vecs.
     """
 
-    dims = tr.arange(M.Dimensions)
-    vidx = tr.arange(M.Dimensions)
+    dims = tr.arange(M.Dimensions).to(M.device)
+    vidx = tr.arange(M.Dimensions).to(M.device)
 
     combined = tr.cat((dims, vidx))
     uniques, counts = combined.unique(return_counts=True)

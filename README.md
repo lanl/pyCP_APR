@@ -2,7 +2,7 @@
 
 <div align="center", style="font-size: 50px">
 
-[![Build Status](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg) [![Python Version](https://img.shields.io/badge/python-v3.8.5-blue)](https://img.shields.io/badge/python-v3.8.5-blue) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4840598-blue.svg)](https://doi.org/10.5281/zenodo.4840598)
+[![Build Status](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/lanl/pyCP_APR/actions/workflows/ci_tests.yml/badge.svg?branch=main) [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg) [![Python Version](https://img.shields.io/badge/python-v3.9-blue)](https://img.shields.io/badge/python-v3.8.5-blue) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.4840598-blue.svg)](https://doi.org/10.5281/zenodo.4840598)
 
 </div>
 
@@ -10,7 +10,7 @@
   <img width="324" height="200" src="docs/rd100.png">
 </p>
 
-**pyCP_APR** is a Python library for tensor decomposition and anomaly detection that is developed as part of the R&D 100 award wining [**SmartTensors**](https://www.lanl.gov/collaboration/smart-tensors/) project. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in [6] using the [Unified Host and Network Dataset](https://csr.lanl.gov/data/2017/) [5]. Our work follows the [MATLAB Tensor Toolbox](https://www.tensortoolbox.org/cp.html) [1-3] implementation of CP-APR [4].
+**pyCP_APR** is a Python library for tensor decomposition and anomaly detection that is developed as part of the R&D 100 award wining **[SmartTensors AI](https://smart-tensors.lanl.gov/software/)** project. It is designed for the fast analysis of large datasets by accelerating computation speed using GPUs. pyCP_APR uses the CANDECOMP/PARAFAC Alternating Poisson Regression (CP-APR) tensor factorization algorithm utilizing both Numpy and PyTorch backend. While the Numpy backend can be used for the analysis of both sparse and dense tensors, PyTorch backend provides faster decomposition of large and sparse tensors on the GPU. pyCP_APR's Scikit-learn like API allows comfortable interaction with the library, and include the methods for anomaly detection via the p-values obtained from the CP-APR factorization. The anomaly detection methods via the p-values optained from CP-APR was introduced by Eren et al. in [6] using the [Unified Host and Network Dataset](https://csr.lanl.gov/data/2017/) [5]. Our work follows the [MATLAB Tensor Toolbox](https://www.tensortoolbox.org/cp.html) [1-3] implementation of CP-APR [4].
 
 
 <div align="center", style="font-size: 50px">
@@ -18,6 +18,8 @@
 ### [:information_source: Documentation](https://lanl.github.io/pyCP_APR/) &emsp; [:orange_book: Example Notebooks](examples/) &emsp; [:bar_chart: Datasets](data/tensors) 
   
 ### [:page_facing_up: Paper 1](https://ieeexplore.ieee.org/abstract/document/9280524) &emsp; [:page_facing_up: Paper 2](https://dl.acm.org/doi/abs/10.1145/3519602)
+    
+### [:link: Website](https://smart-tensors.LANL.gov)
 
 </div>
 
@@ -33,25 +35,12 @@ pip install git+https://github.com/lanl/pyCP_APR.git
 ```shell
 git clone https://github.com/lanl/pyCP_APR.git
 cd pyCP_APR
-conda create --name pyCP_APR python=3.8.5
+conda create --name pyCP_APR python=3.9
 source activate pyCP_APR
-python setup.py install
+pip install -e . # or <python setup.py install>
 ```
 
-## Prerequisites
-- [Anaconda](https://docs.anaconda.com/anaconda/install/)(Optional)
-- numpy>=1.19.2
-- numpy-indexed>=0.3.5
-- pandas>=1.0.5
-- matplotlib>=3.3.4
-- joblib>=1.0.1
-- scikit-learn>=0.22.2
-- scipy>=1.5.3
-- seaborn>=0.11.1
-- torch>=1.6.0
-- requests>=2.25.1
-- tqdm>=4.62.3
-- sparse>=0.13.0
+#### Jupyter Setup Tutorial for using the examples ([Link](https://www.maksimeren.com/post/conda-and-jupyter-setup-for-research/))
 
 ## Example Usage
 ```python
