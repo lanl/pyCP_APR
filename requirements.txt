@@ -1,4 +1,4 @@
-jobli
+joblib
 matplotlib
 numpy
 numpy-indexed

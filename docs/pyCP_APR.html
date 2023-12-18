@@ -1,302 +1,507 @@
 
+
 <!DOCTYPE html>
 
-<html lang="Python">
+
+<html lang="Python" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pyCP_APR package &#8212; pyCP_APR 1.0.1 documentation</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    <title>pyCP_APR package &#8212; pyCP_APR 1.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
-    
-      
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyCP_APR';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="pyCP_APR.applications package" href="pyCP_APR.applications.html" />
     <link rel="prev" title="pyCP_APR Package" href="modules.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="Python">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="Python"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-      
-      
-      <h1 class="site-logo" id="site-title">pyCP_APR 1.0.1 documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Contents:
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="CP_APR.html">
-   pyCP_APR.CP_APR API
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="datasets.html">
-   pyCP_APR.datasets API
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="modules.html">
-   pyCP_APR Package
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="current reference internal" href="#">
-     pyCP_APR package
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.applications.html">
-       pyCP_APR.applications package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.numpy_backend.html">
-       pyCP_APR.numpy_backend package
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="pyCP_APR.torch_backend.html">
-       pyCP_APR.torch_backend package
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/pyCP_APR.rst.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.rst</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
 
-            <!-- Source interaction buttons -->
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+  
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subpackages">
-   Subpackages
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#submodules">
-   Submodules
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pycp-apr-datasets-module">
-   pyCP_APR.datasets module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pycp-apr-pycp-apr-module">
-   pyCP_APR.pyCP_APR module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR.version">
-   pyCP_APR.version module
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#module-pyCP_APR">
-   Module contents
-  </a>
- </li>
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">pyCP_APR 1.0.2 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CP_APR.html">pyCP_APR.CP_APR API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">pyCP_APR.datasets API</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">pyCP_APR Package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">pyCP_APR package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html">pyCP_APR.applications package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html">pyCP_APR.numpy_backend package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.torch_backend.html">pyCP_APR.torch_backend package</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pyCP_APR.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pyCP_APR package</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycp-apr-datasets-module">pyCP_APR.datasets module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycp-apr-pycp-apr-module">pyCP_APR.pyCP_APR module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.version">pyCP_APR.version module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR">Module contents</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="pycp-apr-package">
-<h1>pyCP_APR package<a class="headerlink" href="#pycp-apr-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="pycp-apr-package">
+<h1>pyCP_APR package<a class="headerlink" href="#pycp-apr-package" title="Permalink to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyCP_APR.applications.html">pyCP_APR.applications package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.ktensor_utils">pyCP_APR.applications.ktensor_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.sptensor_utils">pyCP_APR.applications.sptensor_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.stat_utils">pyCP_APR.applications.stat_utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.tensor_anomaly_detection">pyCP_APR.applications.tensor_anomaly_detection module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.tensor_anomaly_detection_v2">pyCP_APR.applications.tensor_anomaly_detection_v2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.ktensor_utils">pyCP_APR.applications.ktensor_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.ktensor_utils.get_X_hat"><code class="docutils literal notranslate"><span class="pre">get_X_hat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.ktensor_utils.get_X_size"><code class="docutils literal notranslate"><span class="pre">get_X_size()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.sptensor_utils">pyCP_APR.applications.sptensor_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.sptensor_utils.get_X_dim_size"><code class="docutils literal notranslate"><span class="pre">get_X_dim_size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.sptensor_utils.get_X_dimensions"><code class="docutils literal notranslate"><span class="pre">get_X_dimensions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.sptensor_utils.get_X_num_non_zeros"><code class="docutils literal notranslate"><span class="pre">get_X_num_non_zeros()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.sptensor_utils.get_X_num_zeros"><code class="docutils literal notranslate"><span class="pre">get_X_num_zeros()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.sptensor_utils.get_X_size"><code class="docutils literal notranslate"><span class="pre">get_X_size()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.stat_utils">pyCP_APR.applications.stat_utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.stat_utils.mrr_fuse_ranks"><code class="docutils literal notranslate"><span class="pre">mrr_fuse_ranks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.tensor_anomaly_detection">pyCP_APR.applications.tensor_anomaly_detection module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly"><code class="docutils literal notranslate"><span class="pre">PoissonTensorAnomaly</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection.PoissonTensorAnomaly.predict"><code class="docutils literal notranslate"><span class="pre">PoissonTensorAnomaly.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications.tensor_anomaly_detection_v2">pyCP_APR.applications.tensor_anomaly_detection_v2 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2"><code class="docutils literal notranslate"><span class="pre">PoissonTensorAnomaly_v2</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_dimension_fusion_scores"><code class="docutils literal notranslate"><span class="pre">PoissonTensorAnomaly_v2.get_dimension_fusion_scores()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_lambdas"><code class="docutils literal notranslate"><span class="pre">PoissonTensorAnomaly_v2.get_lambdas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.applications.html#pyCP_APR.applications.tensor_anomaly_detection_v2.PoissonTensorAnomaly_v2.get_link_prediction_scores"><code class="docutils literal notranslate"><span class="pre">PoissonTensorAnomaly_v2.get_link_prediction_scores()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pyCP_APR.applications.html#module-pyCP_APR.applications">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pyCP_APR.numpy_backend.html">pyCP_APR.numpy_backend package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.CP_APR">pyCP_APR.numpy_backend.CP_APR module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.accum">pyCP_APR.numpy_backend.accum module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.arrange_ktensor">pyCP_APR.numpy_backend.arrange_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.double_ktensor">pyCP_APR.numpy_backend.double_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.fixsigns_ktensor">pyCP_APR.numpy_backend.fixsigns_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.innerprod_ktensor">pyCP_APR.numpy_backend.innerprod_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ipermute_tensor">pyCP_APR.numpy_backend.ipermute_tensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.khatrirao_ktensor">pyCP_APR.numpy_backend.khatrirao_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.khatrirao_sptensor">pyCP_APR.numpy_backend.khatrirao_sptensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ktensor">pyCP_APR.numpy_backend.ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.norm_ktensor">pyCP_APR.numpy_backend.norm_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.normalize_ktensor">pyCP_APR.numpy_backend.normalize_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.permute_ktensor">pyCP_APR.numpy_backend.permute_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.permute_tensor">pyCP_APR.numpy_backend.permute_tensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.redistribute_ktensor">pyCP_APR.numpy_backend.redistribute_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.sptensor">pyCP_APR.numpy_backend.sptensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tenmat_ktensor">pyCP_APR.numpy_backend.tenmat_ktensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tenmat_sptensor">pyCP_APR.numpy_backend.tenmat_sptensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tenmat_tensor">pyCP_APR.numpy_backend.tenmat_tensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tensor">pyCP_APR.numpy_backend.tensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tt_dimscheck">pyCP_APR.numpy_backend.tt_dimscheck module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttm_sptensor">pyCP_APR.numpy_backend.ttm_sptensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttm_tensor">pyCP_APR.numpy_backend.ttm_tensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttv_sptensor">pyCP_APR.numpy_backend.ttv_sptensor module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttv_tensor">pyCP_APR.numpy_backend.ttv_tensor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.CP_APR">pyCP_APR.numpy_backend.CP_APR module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.CP_APR.CP_APR_MU.train"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.accum">pyCP_APR.numpy_backend.accum module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.accum.accum"><code class="docutils literal notranslate"><span class="pre">accum()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.arrange_ktensor">pyCP_APR.numpy_backend.arrange_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.arrange_ktensor.arrange"><code class="docutils literal notranslate"><span class="pre">arrange()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.double_ktensor">pyCP_APR.numpy_backend.double_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.double_ktensor.double"><code class="docutils literal notranslate"><span class="pre">double()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.fixsigns_ktensor">pyCP_APR.numpy_backend.fixsigns_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.fixsigns_ktensor.fixsigns_oneargin"><code class="docutils literal notranslate"><span class="pre">fixsigns_oneargin()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.innerprod_ktensor">pyCP_APR.numpy_backend.innerprod_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.innerprod_ktensor.innerprod"><code class="docutils literal notranslate"><span class="pre">innerprod()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ipermute_tensor">pyCP_APR.numpy_backend.ipermute_tensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ipermute_tensor.ipermute"><code class="docutils literal notranslate"><span class="pre">ipermute()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.khatrirao_ktensor">pyCP_APR.numpy_backend.khatrirao_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.khatrirao_ktensor.khatrirao"><code class="docutils literal notranslate"><span class="pre">khatrirao()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.khatrirao_sptensor">pyCP_APR.numpy_backend.khatrirao_sptensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.khatrirao_sptensor.khatrirao"><code class="docutils literal notranslate"><span class="pre">khatrirao()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ktensor">pyCP_APR.numpy_backend.ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ktensor.K_TENSOR"><code class="docutils literal notranslate"><span class="pre">K_TENSOR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ktensor.K_TENSOR.deep_copy_factors"><code class="docutils literal notranslate"><span class="pre">K_TENSOR.deep_copy_factors()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.norm_ktensor">pyCP_APR.numpy_backend.norm_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.norm_ktensor.norm"><code class="docutils literal notranslate"><span class="pre">norm()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.normalize_ktensor">pyCP_APR.numpy_backend.normalize_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.normalize_ktensor.arrange"><code class="docutils literal notranslate"><span class="pre">arrange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.normalize_ktensor.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.permute_ktensor">pyCP_APR.numpy_backend.permute_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.permute_ktensor.permute"><code class="docutils literal notranslate"><span class="pre">permute()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.permute_tensor">pyCP_APR.numpy_backend.permute_tensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.permute_tensor.permute"><code class="docutils literal notranslate"><span class="pre">permute()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.redistribute_ktensor">pyCP_APR.numpy_backend.redistribute_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.redistribute_ktensor.redistribute"><code class="docutils literal notranslate"><span class="pre">redistribute()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.sptensor">pyCP_APR.numpy_backend.sptensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.sptensor.SP_TENSOR"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.sptensor.SP_TENSOR.todense"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR.todense()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tenmat_ktensor">pyCP_APR.numpy_backend.tenmat_ktensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.tenmat_ktensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tenmat_sptensor">pyCP_APR.numpy_backend.tenmat_sptensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.tenmat_sptensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tenmat_tensor">pyCP_APR.numpy_backend.tenmat_tensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.tenmat_tensor.tenmat"><code class="docutils literal notranslate"><span class="pre">tenmat()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tensor">pyCP_APR.numpy_backend.tensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.tensor.TENSOR"><code class="docutils literal notranslate"><span class="pre">TENSOR</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.tt_dimscheck">pyCP_APR.numpy_backend.tt_dimscheck module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.tt_dimscheck.tt_dimscheck"><code class="docutils literal notranslate"><span class="pre">tt_dimscheck()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttm_sptensor">pyCP_APR.numpy_backend.ttm_sptensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ttm_sptensor.ttm"><code class="docutils literal notranslate"><span class="pre">ttm()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttm_tensor">pyCP_APR.numpy_backend.ttm_tensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ttm_tensor.ttm"><code class="docutils literal notranslate"><span class="pre">ttm()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttv_sptensor">pyCP_APR.numpy_backend.ttv_sptensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ttv_sptensor.ttv"><code class="docutils literal notranslate"><span class="pre">ttv()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend.ttv_tensor">pyCP_APR.numpy_backend.ttv_tensor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.numpy_backend.html#pyCP_APR.numpy_backend.ttv_tensor.ttv"><code class="docutils literal notranslate"><span class="pre">ttv()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pyCP_APR.numpy_backend.html#module-pyCP_APR.numpy_backend">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="pyCP_APR.torch_backend.html">pyCP_APR.torch_backend package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend.CP_APR_Torch">pyCP_APR.torch_backend.CP_APR_Torch module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend.ktensor_Torch">pyCP_APR.torch_backend.ktensor_Torch module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend.sptensor_Torch">pyCP_APR.torch_backend.sptensor_Torch module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend.CP_APR_Torch">pyCP_APR.torch_backend.CP_APR_Torch module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.torch_backend.html#pyCP_APR.torch_backend.CP_APR_Torch.CP_APR_MU"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.torch_backend.html#pyCP_APR.torch_backend.CP_APR_Torch.CP_APR_MU.train"><code class="docutils literal notranslate"><span class="pre">CP_APR_MU.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend.ktensor_Torch">pyCP_APR.torch_backend.ktensor_Torch module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.torch_backend.html#pyCP_APR.torch_backend.ktensor_Torch.K_TENSOR"><code class="docutils literal notranslate"><span class="pre">K_TENSOR</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pyCP_APR.torch_backend.html#pyCP_APR.torch_backend.ktensor_Torch.K_TENSOR.deep_copy_factors"><code class="docutils literal notranslate"><span class="pre">K_TENSOR.deep_copy_factors()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend.sptensor_Torch">pyCP_APR.torch_backend.sptensor_Torch module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pyCP_APR.torch_backend.html#pyCP_APR.torch_backend.sptensor_Torch.SP_TENSOR"><code class="docutils literal notranslate"><span class="pre">SP_TENSOR</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="pyCP_APR.torch_backend.html#module-pyCP_APR.torch_backend">Module contents</a></li>
 </ul>
 </li>
 </ul>
 </div>
-</div>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="pycp-apr-datasets-module">
-<h2>pyCP_APR.datasets module<a class="headerlink" href="#pycp-apr-datasets-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="pycp-apr-datasets-module">
+<h2>pyCP_APR.datasets module<a class="headerlink" href="#pycp-apr-datasets-module" title="Permalink to this heading">#</a></h2>
 <p>datasets.py is used to load the example tensors.</p>
 <p>&#64;author Maksim Ekin Eren</p>
 <dl class="py function">
@@ -305,10 +510,10 @@
 <dd><p>This function returns the list of tensor names that are available to load.</p>
 <p>If the listing is requested for the first time, a new directory for the datasets is created.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>datasets</strong> -- List of tensor names that are available to load.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list</p>
 </dd>
 </dl>
@@ -335,13 +540,13 @@
 <p>If a dataset is requested for the first time, it gets downloaded from GitHub.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>name</strong> (<em>string</em><em>, </em><em>optional</em>) -- The name of the tensor to load. The default is <code class="docutils literal notranslate"><span class="pre">name=&quot;TOY&quot;</span></code>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>data</strong> -- Tensor contents compressed in Numpy NPZ  format.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Numpy NPZ</p>
 </dd>
 </dl>
@@ -370,9 +575,9 @@
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="pycp-apr-pycp-apr-module">
-<h2>pyCP_APR.pyCP_APR module<a class="headerlink" href="#pycp-apr-pycp-apr-module" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pycp-apr-pycp-apr-module">
+<h2>pyCP_APR.pyCP_APR module<a class="headerlink" href="#pycp-apr-pycp-apr-module" title="Permalink to this heading">#</a></h2>
 <p>pyCP_APR.py is the Scikit-learn like API for interacting with the CP-APR algorithm. The <strong>pyCP_APR.CP_APR</strong> wraps
 both the Numpy and PyTorch backend. <strong>pyCP_APR.CP_APR</strong> also includes API calls for anomaly detection utilities. Sparse tensor entries are scored by calculating p-values over the fitted model, where the lower p-value scores are an indicator for anomaly.</p>
 <p>The fitted model (or factorized tensor, i.e. the KRUSKAL tensor M) during the training time describes the normal or the expected behavior which follows the Poisson distribution. We say that the entries of the tensor in the test set are drawn from the same distribution
@@ -392,7 +597,7 @@ as the factorized training tensor M. Using M, we calculate how likely the entrie
 <p>Initilize the <strong>pyCP_APR.CP_APR</strong> class. <strong>pyCP_APR.CP_APR</strong> class is the wrapper for the CP-APR algorithm's Python implementation with
 both <em>Numpy</em> and <em>PyTorch</em> backend.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>method</strong> (<em>string</em><em>, </em><em>optional</em>) -- <p>Specifies which backend to use when running CP-APR, and sets the model (i.e. <strong>pyCP_APR.CP_APR.model</strong>)
 accordingly.</p>
@@ -473,7 +678,7 @@ The default is False.</p></li>
 <p>If a list of ranks is passed, factorize the tensor for each 2 of the ranks.</p>
 <p>The factorized 2 tensors M in this case will follow the weighted lambda calculations during prediction.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tensor</strong> (<em>PyTorch.sparse</em><em> or </em><em>Numpy array</em>) -- <p>Original dense or sparse tensor X.</p>
 <p>Can be used when <code class="docutils literal notranslate"><span class="pre">Type='sptensor'</span></code>. In this case, <code class="docutils literal notranslate"><span class="pre">Tensor</span></code> needs to be a <em>PyTorch Sparse</em> tensor format.</p>
@@ -509,7 +714,7 @@ Array of non-zero tensor entries. COO format.</p>
 <p>Pass a single integer or list of length two.</p>
 <p>The default is <code class="docutils literal notranslate"><span class="pre">rank=2</span></code>.</p>
 </p></li>
-<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary of latent factors</em>) -- <p>Initial value of latent factors.</p>
+<li><p><strong>Minit</strong> (<em>string</em><em> or </em><em>dictionary</em><em> of </em><em>latent factors</em>) -- <p>Initial value of latent factors.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">Minit='random'</span></code>, initial factors are drawn randomly from uniform distribution between 0 and 1.</p>
 <p>Else, pass a dictionary where the key is the mode number and value is array size <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">x</span> <span class="pre">r</span></code>
 where <code class="docutils literal notranslate"><span class="pre">d</span></code> is the number of elements on the dimension and <code class="docutils literal notranslate"><span class="pre">r</span></code> is the rank.</p>
@@ -561,13 +766,13 @@ In that case, pass the tensor X that is in <em>torch.sparse</em> format using th
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>KRUSKAL tensor M</strong> -- KRUSKAL tensor M is returned in dict format.</p>
 <p>The latent factors can be found with the key 'Factors'.</p>
 <p>The weight of each component can be found with the key 'Weights'.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -825,13 +1030,13 @@ and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores
 <p>The 'objective' key depends on the <code class="docutils literal notranslate"><span class="pre">objective</span></code> parameter used when predicting the scores in <strong>pyCP_APR.CP_APR.predict_scores()</strong>.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p><strong>predictions</strong> -- The prediction contents are based on the objective parameter used during <strong>pyCP_APR.CP_APR.predict_scores()</strong>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code>, returns <code class="docutils literal notranslate"><span class="pre">{'p_value':</span> <span class="pre">array,</span> <span class="pre">'lambda':</span> <span class="pre">array}</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">objective='log_likelihood'</span></code>, returns <code class="docutils literal notranslate"><span class="pre">{'log_likelihood':</span> <span class="pre">array,</span> <span class="pre">'lambda':</span> <span class="pre">array}</span></code>.</p>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
@@ -858,10 +1063,10 @@ and links must be already predicted using <strong>pyCP_APR.CP_APR.predict_scores
 <p>If an ensemble of tensors is trained (see <strong>pyCP_APR.CP_APR.fit()</strong>), a list of scores is provided instead.</p>
 <p>Note that the model has to be already fit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>score</strong> -- Model fit score.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>float</p>
 </dd>
 </dl>
@@ -889,7 +1094,7 @@ While using <strong>transform()</strong> and <strong>predict_probas()</strong> y
 </ol>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>y</strong> (<em>list</em><em> or </em><em>array</em>) -- Labels for each entry in the sparse test tensor.</p></li>
 <li><p><strong>axis_map</strong> (<em>OrderedDict</em><em>, </em><em>optional</em>) -- <p>If fusing dimensions, list of dimension numbers can be passed as <em>OrderedDict</em> to identify which dimensions to fuse.</p>
@@ -899,14 +1104,14 @@ The default is <code class="docutils literal notranslate"><span class="pre">axis
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>prediction scores</strong> -- If not fusing the dimensions over the transformed tensor, returns a dictionary with prediction scores.</p>
 <p><code class="docutils literal notranslate"><span class="pre">{&quot;roc_auc&quot;:float,</span> <span class="pre">&quot;pr_auc&quot;:float}</span></code></p>
 <p>If dimensions are being fused using the <code class="docutils literal notranslate"><span class="pre">axis_map</span></code> parameter, returns a <em>Pandas DataFrame</em> with the prediction
 scores. The columns for the returned DataFrame in this case are 'fusion', 'method', 'metric', and 'score'.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>dict or Pandas DataFrame</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -949,7 +1154,7 @@ If two tensors trained during fitting, the prediction will weight the lambdas be
 </ul>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>coords</strong> (<em>array</em>) -- Coordinates of the non-zero values.</p></li>
 <li><p><strong>values</strong> (<em>list</em>) -- <p>List of non-zero values.</p>
@@ -968,7 +1173,7 @@ via the <code class="docutils literal notranslate"><span class="pre">p_value_fus
 <p>Calculate log_likelihood of observing the link with <code class="docutils literal notranslate"><span class="pre">objective='log_likelihood'</span></code>.</p>
 <p>The default is <code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code>.</p>
 </p></li>
-<li><p><strong>ensemble_significance</strong> (<em>list of length two</em><em>, </em><em>optional</em>) -- Weight of each tensor, if two is trained. Two is trained when <code class="docutils literal notranslate"><span class="pre">rank=[r1,r2]</span></code> during <strong>pyCP_APR.CP_APR.fit()</strong>
+<li><p><strong>ensemble_significance</strong> (<em>list</em><em> of </em><em>length two</em><em>, </em><em>optional</em>) -- Weight of each tensor, if two is trained. Two is trained when <code class="docutils literal notranslate"><span class="pre">rank=[r1,r2]</span></code> during <strong>pyCP_APR.CP_APR.fit()</strong>
 where <em>r1</em> and <em>r2</em> are intiger ranks.
 The default is <code class="docutils literal notranslate"><span class="pre">ensemble_significance=[0.1,</span> <span class="pre">0.9]</span></code>.</p></li>
 <li><p><strong>p_value_fusion_index</strong> (<em>list</em><em>, </em><em>optional</em>) -- <p>Fuses down to the target dimensions.</p>
@@ -982,12 +1187,12 @@ The default is <code class="docutils literal notranslate"><span class="pre">p_va
 <li><p><strong>ignore_dimensions_indx</strong> (<em>list</em><em>, </em><em>optional</em>) -- If used, the dimension numbers in the list will be ignored during the calculation of the lambdas.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p><strong>predictions</strong> -- Returns the prediction objective.</p>
 <p>For instance, if parameter was <code class="docutils literal notranslate"><span class="pre">objective='p_value'</span></code>, array of p-values are returned for each entry in the test tensor.</p>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
@@ -1041,13 +1246,13 @@ The default is <code class="docutils literal notranslate"><span class="pre">p_va
 <dd><p>Sets the model parameters.</p>
 <p>Here the model is <strong>pyCP_APR.CP_APR.model</strong>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>parameters</strong> (<em>dict</em>) -- All model parameters. See <strong>pyCP_APR.CP_APR</strong> class initilization parameters.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>self</strong> -- self is returned.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>object</p>
 </dd>
 </dl>
@@ -1071,7 +1276,7 @@ what we have learned during the training time.</p>
 <p>To use the <strong>transform()</strong> function, the model has to be <strong>fit()</strong> first.</p>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>indicies</strong> (<em>list</em><em> or </em><em>array</em>) -- List of non-zero coordinates in the test tensor.</p></li>
 <li><p><strong>ensemble_significance</strong> (<em>list</em><em>, </em><em>optional</em>) -- <p>The weight of each tensor during lambda calculations.</p>
@@ -1081,10 +1286,10 @@ what we have learned during the training time.</p>
 </p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>lambdas</strong> -- List of lambda values for each of the non-zero coordinates.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>array</p>
 </dd>
 </dl>
@@ -1122,13 +1327,13 @@ what we have learned during the training time.</p>
 
 </dd></dl>
 
-</div>
-<div class="section" id="module-pyCP_APR.version">
-<span id="pycp-apr-version-module"></span><h2>pyCP_APR.version module<a class="headerlink" href="#module-pyCP_APR.version" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR.version">
+<span id="pycp-apr-version-module"></span><h2>pyCP_APR.version module<a class="headerlink" href="#module-pyCP_APR.version" title="Permalink to this heading">#</a></h2>
 <p>pyCP_APR version.</p>
-</div>
-<div class="section" id="module-pyCP_APR">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-pyCP_APR">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pyCP_APR" title="Permalink to this heading">#</a></h2>
 <p>2021. Triad National Security, LLC. All rights reserved.
 This program was produced under U.S. Government contract 89233218CNA000001 for Los Alamos
 National Laboratory (LANL), which is operated by Triad National Security, LLC for the U.S.
@@ -1138,50 +1343,111 @@ Security Administration. The Government is granted for itself and others acting 
 nonexclusive, paid-up, irrevocable worldwide license in this material to reproduce, prepare
 derivative works, distribute copies to the public, perform publicly and display publicly,
 and to permit others to do so.</p>
-</div>
-</div>
+</section>
+</section>
 
 
-              </div>
+                </article>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="modules.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">pyCP_APR Package</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">pyCP_APR Package</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="pyCP_APR.applications.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="pyCP_APR.applications.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">pyCP_APR.applications package</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-        
-        </div>
-    </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov<br/>
-        
-            &copy; Copyright 2021, LANL.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycp-apr-datasets-module">pyCP_APR.datasets module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pycp-apr-pycp-apr-module">pyCP_APR.pyCP_APR module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR.version">pyCP_APR.version module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-pyCP_APR">Module contents</a></li>
+</ul>
+  </nav></div>
 
-      </div>
-    </div>
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Maksim E. Eren, Juston S. Moore, Erik Skau, Manish Bhattarai, Gopinath Chennupati, Boian S. Alexandrov
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, LANL.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
